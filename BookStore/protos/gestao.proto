@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package gestao;
+
+// Servico que permite gestao de pedidos no server
+service GestaoPedidos {
+    // Funcao que deve receber session e id do pedido para retornar dados dele
+    rpc ConsultarPedido (DadosConsulta) returns (StatusPedido);
+
+    // Funcao que deve receber session do user e retornar todos o pedidos daquela session
+    rpc ConsultarHistorico (DadosUser) returns (HistorioUser);
+}
+
+// Parametros da request com session e id do pedido a ser consultado
+message DadosConsulta {
+    string session_cookie = 1;
+    string id_pedido = 2;
+}
+
+// Dados dos livros a serem exibidos, estrategia de representar lista de livros
+message IdLivro {
+    string titulo = 1;
+}
+
+// Response com dados necessarios do pedido consultado
+message StatusPedido {
+    repeated IdLivro livros = 1;
+    int32 preco_total = 2;
+}
+
+// Request com dados do user a ter historico consultado 
+message DadosUser {
+    string session_cookie = 1;
+}
+
+// Response com dados necessarios do historico consultado
+message HistorioUser {
+    repeated IdLivro livros = 1;
+}

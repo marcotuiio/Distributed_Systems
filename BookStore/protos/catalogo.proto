@@ -45,4 +45,5 @@ message FullCatalogo {
 // Resposta apos sucesso na operacao de compra
 message SuccessMessage {
     string m = 1;
+    string id_pedido = 2;
 }

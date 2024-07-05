@@ -10,6 +10,9 @@ import catalogo.catalogo_pb2_grpc as catalogo_pb2_grpc
 import auth.auth_pb2 as auth_pb2
 import auth.auth_pb2_grpc as auth_pb2_grpc
 
+import gestao.gestao_pb2 as gestao_pb2
+import gestao.gestao_pb2_grpc as gestao_pb2_grpc
+
 
 class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
     def __init__(self):
@@ -17,9 +20,10 @@ class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
             {
                 "user": "robert@gmail",
                 "password": "1234",
-                "cookies": "0999"
+                "cookies": "abc345"
             }
         ]
+
 
     def CreateUser(self, request, context):
         df = pd.DataFrame(self.users)
@@ -49,8 +53,8 @@ class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
             else:
                 return auth_pb2.LoginResponse(response=False, session_cookie=None, message="Credenciais incorretas, tente novamente.")        
 
-class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
 
+class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
     def __init__(self):
         self.books = [
             catalogo_pb2.Book(
@@ -127,6 +131,7 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
             )
         ]
 
+
     def GetCatalogo(self, request, context):
         print("+ GetCatalogo Request Made:")
         print(request)
@@ -137,6 +142,7 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
 
         return reply
     
+
     def UpdateCatalogo(self, request, context):
         print("+ UpdateCatalogo Request Made:")
         message = ""
@@ -147,26 +153,72 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
 
         # Percorre a lista completa de livros, verificando se aquele livro esta presente no carrinho
         # caso esteja e tenha estoque, faz o necessario e retorna a mensagem com os resultados de cada um
+        livros = []
+        preco_compra = 0
         for b in self.books:
             if b.titulo in titulos:
                 if b.em_estoque > 0:
                     b.em_estoque -= 1;
                     message += f"{b.titulo} comprado com sucesso! :D \t\t"
+                    livros.append(b.titulo)
+                    preco_compra += b.preco
                 else:
                     message += f"{b.titulo} sem estoque. :D \t\t"
 
         message += f"Operação concluída! :D \t\t"
         # print(message)
         
-        ######## GERAR E RETORNAR PEDIDO
-
-        return catalogo_pb2.SuccessMessage(m=message)
+        id_pedido = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        message += f'ID do Pedido: {id_pedido}'
+        return catalogo_pb2.SuccessMessage(m=message, id_pedido=id_pedido)
     
+
+class GestaoPedidosServicer(gestao_pb2_grpc.GestaoPedidosServicer):
+    def __init__(self):
+        self.pedidos = [
+            {
+                "session":"abc345",
+                "id": "98hb",
+                "livros": [
+                    "1984",
+                    "Moby Dick"
+                ],
+                "preco": 75,
+            }
+        ]
+
+    # def AdicionarPedido(self, request, context):
+    #     self.pedidos.append()
+
+    def ConsultarPedido(self, request, context):
+        df = pd.DataFrame(self.pedidos)
+        id_pedido = request.id_pedido
+        session = request.session_cookie
+        print(f"ConsultarPedido Request Received {session} {id_pedido}\n")
+
+        matching_row = df[(df["id"] == id_pedido) & (df["session"] == session)]
+
+        if matching_row.empty:
+            print("Pedido não encontrado. Apenas o dono da sessão pode consultar.")
+            return gestao_pb2.StatusPedido(livros=[], preco_total=0)
+        else:
+            livros = matching_row["livros"].iloc[0]
+            preco_total = matching_row["preco"].iloc[0]
+            print(f"Pedido {id_pedido} preco {preco_total} livros {livros}")
+            
+            livros_message = [gestao_pb2.IdLivro(titulo=livro) for livro in livros]
+            return gestao_pb2.StatusPedido(livros=livros_message, preco_total=preco_total)
+
+
+    def ConsultarHistorico(self, request, context):
+        return super().ConsultarHistorico(request, context)
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     auth_pb2_grpc.add_UserAuthServicer_to_server(UserAuthServicer(), server)
     catalogo_pb2_grpc.add_ShowCatalogoServicer_to_server(ShowCatalogoServicer(), server)
+    gestao_pb2_grpc.add_GestaoPedidosServicer_to_server(GestaoPedidosServicer(), server)
     server.add_insecure_port('localhost:50051')
     server.start()
     print("DC's BookStore Server is up and running on port 50051")

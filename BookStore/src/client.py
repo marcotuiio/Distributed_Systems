@@ -1,10 +1,16 @@
 import pandas as pd
 import streamlit as st
 import grpc
+
 import catalogo.catalogo_pb2 as catalogo_pb2
 import catalogo.catalogo_pb2_grpc as catalogo_pb2_grpc
+
 import auth.auth_pb2 as auth_pb2
 import auth.auth_pb2_grpc as auth_pb2_grpc
+
+import gestao.gestao_pb2 as gestao_pb2
+import gestao.gestao_pb2_grpc as gestao_pb2_grpc
+
 
 def login(stub):
     st.title('Login na BookStore do DC')
@@ -40,7 +46,7 @@ def login(stub):
         else:
             st.error(response.message)
 
-def catalog(stub):
+def catalog(stub, gestao_stub):
     # Inicializar a lista de livros selecionados
     if 'carrinho' not in st.session_state:
         st.session_state.carrinho = []
@@ -84,21 +90,49 @@ def catalog(stub):
         st.success(response.m)
         print("\n* ShowCatalogo Response Received")
 
+    consultar_pedido(gestao_stub)
+
     # Remove o cookie da session e atualiza a pagina
     if st.button("SAIR", type="primary"):
         st.session_state.session_cookie = ""
         st.session_state.logged_in = False
         st.rerun()
 
+def consultar_pedido(stub):
+    with st.form(key='consultar_pedido'):
+        id_form = st.text_input("ID Pedido")
+        consultar_button = st.form_submit_button("Consultar Pedido")
+
+    if consultar_button:
+        # Preparando e enviando requisao de login com dados preenchidos no form
+        response = stub.ConsultarPedido(gestao_pb2.DadosConsulta(session_cookie=st.session_state.session_cookie, id_pedido=id_form))
+        
+        if response.livros:
+            st.success("Pedido encontrado!")
+            st.subheader("Detalhes do Pedido")
+            
+            # Exibir detalhes do pedido em um formato de tabela
+            livros_data = {
+                "Título": [livro.titulo for livro in response.livros],
+            }
+            df = pd.DataFrame(livros_data)
+            st.table(df)
+            
+            st.subheader("Preço Total")
+            st.metric(label="Preço Total (R$)", value=response.preco_total)
+        else:
+            st.error("Pedido não encontrado. Verifique o ID do pedido e tente novamente.")
+
 def run():
     with grpc.insecure_channel('localhost:50051') as channel:
         auth_stub = auth_pb2_grpc.UserAuthStub(channel)
         catalog_stub = catalogo_pb2_grpc.ShowCatalogoStub(channel)
+        gestao_stub = gestao_pb2_grpc.GestaoPedidosStub(channel)
 
         if 'logged_in' not in st.session_state or not st.session_state.logged_in:
             login(auth_stub)
         else:
-            catalog(catalog_stub)
+            catalog(catalog_stub, gestao_stub)
 
 if __name__ == "__main__":
     run()

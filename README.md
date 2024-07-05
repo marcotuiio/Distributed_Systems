@@ -21,3 +21,5 @@ que funcione devidamente
 python3 -m grpc_tools.protoc -I protos --python_out=src/catalogo/ --pyi_out=src/catalogo/ --grpc_python_out=src/catalogo/ protos/catalogo.proto
 
 python3 -m grpc_tools.protoc -I protos --python_out=src/auth/ --pyi_out=src/auth/ --grpc_python_out=src/auth/ protos/auth.proto
+
+python3 -m grpc_tools.protoc -I protos --python_out=src/gestao/ --pyi_out=src/gestao/ --grpc_python_out=src/gestao/ protos/gestao.proto

@@ -48,7 +48,9 @@ class FullCatalogo(_message.Message):
     def __init__(self, books: _Optional[_Iterable[_Union[Book, _Mapping]]] = ...) -> None: ...
 
 class SuccessMessage(_message.Message):
-    __slots__ = ("m",)
+    __slots__ = ("m", "id_pedido")
     M_FIELD_NUMBER: _ClassVar[int]
+    ID_PEDIDO_FIELD_NUMBER: _ClassVar[int]
     m: str
-    def __init__(self, m: _Optional[str] = ...) -> None: ...
+    id_pedido: str
+    def __init__(self, m: _Optional[str] = ..., id_pedido: _Optional[str] = ...) -> None: ...
