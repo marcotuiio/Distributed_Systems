@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package catalogo;
+
+// Definicao do servico do catalogo, com opcao de retornar todos os livros ou alterar livros comprados
+service ShowCatalogo {
+    // Funcao que deve retornar todos os livros disponiveis
+    rpc GetCatalogo (Session) returns (FullCatalogo);
+
+    // Funcao que deve alterar o estoque apos uma comprar e retorna mensagem de sucesso
+    rpc UpdateCatalogo (ListCarrinho) returns (SuccessMessage);
+}
+
+// Parametro da request correspondente a session do usuario
+message Session {
+    string session_cookie = 1;
+}
+
+// Auxiliar para fazer lista de titulos
+message IdLivro {
+    string titulo = 1;
+}
+
+// Parametro da request do livro comprado, reduzir estoque
+message ListCarrinho {
+    repeated IdLivro livros_carrinho = 1;
+}
+
+// Definicao da estrutura dos livros
+message Book {
+    bool carrinho = 1;
+    string titulo = 2;
+    string autor = 3;
+    int32 publicacao = 4;
+    int32 em_estoque = 5;
+    int32 preco = 6;
+    string descricao = 7;
+}
+
+// Parametro da request correspondente a todos os livros
+message FullCatalogo {
+    repeated Book books = 1;
+}
+
+// Resposta apos sucesso na operacao de compra
+message SuccessMessage {
+    string m = 1;
+}

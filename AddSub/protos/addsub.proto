@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package addsub;
+
+service AddSub {
+    rpc DoAdd (OpParam) returns (OpResults);
+
+    rpc DoSub (OpParam) returns (OpResults); 
+}
+
+message OpParam {
+    int32 val1 = 1;
+    int32 val2 = 2;
+}
+
+message OpResults {
+    int32 result = 1;
+}
