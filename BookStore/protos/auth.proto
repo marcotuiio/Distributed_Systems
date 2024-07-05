@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package auth;
+
+// Definicao do servico de criar e logar usuarios
+service UserAuth {
+    // Funcao que deve criar novo usuario
+    rpc CreateUser (UserData) returns (LoginResponse);
+
+    // Funcao que deve logar usuario
+    rpc LoginUser (UserData) returns (LoginResponse);
+}
+
+// Parametros de login do usuario
+message UserData {
+    string login_email = 1;
+    string login_senha = 2;
+}
+
+// Retorno do cookie da sessao apos login de usuario
+message LoginResponse {
+    bool response = 1;
+    string session_cookie = 2;
+    string message = 3;
+}

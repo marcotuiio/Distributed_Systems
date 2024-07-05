@@ -11,7 +11,13 @@ Trabalhar com as interfaces do modelo RPC, snedo que deverá ser um trabalho dev
 
 ### Rodando
 
+#### OBS
+Como os arquivos gerados estão em pastas separadas talvez seja preciso arrumar os imports para 
+que funcione devidamente 
+
 * 1º Rodar o comando: pip install -r requirements.txt
 * 2º Rodar o comando: sudo apt install protobuf-compiler
 
 python3 -m grpc_tools.protoc -I protos --python_out=src/catalogo/ --pyi_out=src/catalogo/ --grpc_python_out=src/catalogo/ protos/catalogo.proto
+
+python3 -m grpc_tools.protoc -I protos --python_out=src/auth/ --pyi_out=src/auth/ --grpc_python_out=src/auth/ protos/auth.proto
