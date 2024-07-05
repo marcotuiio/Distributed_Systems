@@ -14,23 +14,27 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cgestao.proto\x12\x06gestao\":\n\rDadosConsulta\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\x12\x11\n\tid_pedido\x18\x02 \x01(\t\"\x19\n\x07IdLivro\x12\x0e\n\x06titulo\x18\x01 \x01(\t\"Y\n\x0cStatusPedido\x12\x1f\n\x06livros\x18\x01 \x03(\x0b\x32\x0f.gestao.IdLivro\x12\x13\n\x0bpreco_total\x18\x02 \x01(\x05\x12\x13\n\x0b\x64ono_pedido\x18\x03 \x01(\t\"#\n\tDadosUser\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\"/\n\x0cHistorioUser\x12\x1f\n\x06livros\x18\x01 \x03(\x0b\x32\x0f.gestao.IdLivro2\x8e\x01\n\rGestaoPedidos\x12>\n\x0f\x43onsultarPedido\x12\x15.gestao.DadosConsulta\x1a\x14.gestao.StatusPedido\x12=\n\x12\x43onsultarHistorico\x12\x11.gestao.DadosUser\x1a\x14.gestao.HistorioUserb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cgestao.proto\x12\x06gestao\"n\n\x0b\x44\x61\x64osPedido\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\x12\x11\n\tid_pedido\x18\x02 \x01(\t\x12\x1f\n\x06livros\x18\x03 \x03(\x0b\x32\x0f.gestao.IdLivro\x12\x13\n\x0bpreco_total\x18\x04 \x01(\x05\"\x1a\n\x06Status\x12\x10\n\x08mensagem\x18\x01 \x01(\t\":\n\rDadosConsulta\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\x12\x11\n\tid_pedido\x18\x02 \x01(\t\"\x19\n\x07IdLivro\x12\x0e\n\x06titulo\x18\x01 \x01(\t\"D\n\x0cStatusPedido\x12\x1f\n\x06livros\x18\x01 \x03(\x0b\x32\x0f.gestao.IdLivro\x12\x13\n\x0bpreco_total\x18\x02 \x01(\x05\"#\n\tDadosUser\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\"/\n\x0cHistorioUser\x12\x1f\n\x06livros\x18\x01 \x03(\x0b\x32\x0f.gestao.IdLivro2\xc0\x01\n\rGestaoPedidos\x12\x30\n\tAddPedido\x12\x13.gestao.DadosPedido\x1a\x0e.gestao.Status\x12>\n\x0f\x43onsultarPedido\x12\x15.gestao.DadosConsulta\x1a\x14.gestao.StatusPedido\x12=\n\x12\x43onsultarHistorico\x12\x11.gestao.DadosUser\x1a\x14.gestao.HistorioUserb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'gestao_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_DADOSCONSULTA']._serialized_start=24
-  _globals['_DADOSCONSULTA']._serialized_end=82
-  _globals['_IDLIVRO']._serialized_start=84
-  _globals['_IDLIVRO']._serialized_end=109
-  _globals['_STATUSPEDIDO']._serialized_start=111
-  _globals['_STATUSPEDIDO']._serialized_end=200
-  _globals['_DADOSUSER']._serialized_start=202
-  _globals['_DADOSUSER']._serialized_end=237
-  _globals['_HISTORIOUSER']._serialized_start=239
-  _globals['_HISTORIOUSER']._serialized_end=286
-  _globals['_GESTAOPEDIDOS']._serialized_start=289
-  _globals['_GESTAOPEDIDOS']._serialized_end=431
+  _globals['_DADOSPEDIDO']._serialized_start=24
+  _globals['_DADOSPEDIDO']._serialized_end=134
+  _globals['_STATUS']._serialized_start=136
+  _globals['_STATUS']._serialized_end=162
+  _globals['_DADOSCONSULTA']._serialized_start=164
+  _globals['_DADOSCONSULTA']._serialized_end=222
+  _globals['_IDLIVRO']._serialized_start=224
+  _globals['_IDLIVRO']._serialized_end=249
+  _globals['_STATUSPEDIDO']._serialized_start=251
+  _globals['_STATUSPEDIDO']._serialized_end=319
+  _globals['_DADOSUSER']._serialized_start=321
+  _globals['_DADOSUSER']._serialized_end=356
+  _globals['_HISTORIOUSER']._serialized_start=358
+  _globals['_HISTORIOUSER']._serialized_end=405
+  _globals['_GESTAOPEDIDOS']._serialized_start=408
+  _globals['_GESTAOPEDIDOS']._serialized_end=600
 # @@protoc_insertion_point(module_scope)

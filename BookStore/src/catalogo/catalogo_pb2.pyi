@@ -48,9 +48,13 @@ class FullCatalogo(_message.Message):
     def __init__(self, books: _Optional[_Iterable[_Union[Book, _Mapping]]] = ...) -> None: ...
 
 class SuccessMessage(_message.Message):
-    __slots__ = ("m", "id_pedido")
+    __slots__ = ("m", "id_pedido", "livros", "preco")
     M_FIELD_NUMBER: _ClassVar[int]
     ID_PEDIDO_FIELD_NUMBER: _ClassVar[int]
+    LIVROS_FIELD_NUMBER: _ClassVar[int]
+    PRECO_FIELD_NUMBER: _ClassVar[int]
     m: str
     id_pedido: str
-    def __init__(self, m: _Optional[str] = ..., id_pedido: _Optional[str] = ...) -> None: ...
+    livros: _containers.RepeatedCompositeFieldContainer[IdLivro]
+    preco: int
+    def __init__(self, m: _Optional[str] = ..., id_pedido: _Optional[str] = ..., livros: _Optional[_Iterable[_Union[IdLivro, _Mapping]]] = ..., preco: _Optional[int] = ...) -> None: ...

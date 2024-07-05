@@ -4,11 +4,27 @@ package gestao;
 
 // Servico que permite gestao de pedidos no server
 service GestaoPedidos {
+    // Funcao que deve receber os pedidos para adicionar lista correta de pedidos para consultas
+    rpc AddPedido (DadosPedido) returns (Status);
+
     // Funcao que deve receber session e id do pedido para retornar dados dele
     rpc ConsultarPedido (DadosConsulta) returns (StatusPedido);
 
     // Funcao que deve receber session do user e retornar todos o pedidos daquela session
     rpc ConsultarHistorico (DadosUser) returns (HistorioUser);
+}
+
+// Parametros para append do novo pedido na lista de consultas
+message DadosPedido {
+    string session_cookie = 1;
+    string id_pedido = 2;
+    repeated IdLivro livros = 3;
+    int32 preco_total = 4;
+}
+
+// Mensagem de debug 
+message Status {
+    string mensagem = 1;
 }
 
 // Parametros da request com session e id do pedido a ser consultado

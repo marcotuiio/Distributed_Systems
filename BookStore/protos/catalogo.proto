@@ -46,4 +46,6 @@ message FullCatalogo {
 message SuccessMessage {
     string m = 1;
     string id_pedido = 2;
+    repeated IdLivro livros = 3;
+    int32 preco = 4;
 }

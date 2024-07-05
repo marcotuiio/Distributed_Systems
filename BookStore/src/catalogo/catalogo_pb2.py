@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x63\x61talogo.proto\x12\x08\x63\x61talogo\"!\n\x07Session\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\"\x19\n\x07IdLivro\x12\x0e\n\x06titulo\x18\x01 \x01(\t\":\n\x0cListCarrinho\x12*\n\x0flivros_carrinho\x18\x01 \x03(\x0b\x32\x11.catalogo.IdLivro\"\x81\x01\n\x04\x42ook\x12\x10\n\x08\x63\x61rrinho\x18\x01 \x01(\x08\x12\x0e\n\x06titulo\x18\x02 \x01(\t\x12\r\n\x05\x61utor\x18\x03 \x01(\t\x12\x12\n\npublicacao\x18\x04 \x01(\x05\x12\x12\n\nem_estoque\x18\x05 \x01(\x05\x12\r\n\x05preco\x18\x06 \x01(\x05\x12\x11\n\tdescricao\x18\x07 \x01(\t\"-\n\x0c\x46ullCatalogo\x12\x1d\n\x05\x62ooks\x18\x01 \x03(\x0b\x32\x0e.catalogo.Book\".\n\x0eSuccessMessage\x12\t\n\x01m\x18\x01 \x01(\t\x12\x11\n\tid_pedido\x18\x02 \x01(\t2\x8c\x01\n\x0cShowCatalogo\x12\x38\n\x0bGetCatalogo\x12\x11.catalogo.Session\x1a\x16.catalogo.FullCatalogo\x12\x42\n\x0eUpdateCatalogo\x12\x16.catalogo.ListCarrinho\x1a\x18.catalogo.SuccessMessageb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0e\x63\x61talogo.proto\x12\x08\x63\x61talogo\"!\n\x07Session\x12\x16\n\x0esession_cookie\x18\x01 \x01(\t\"\x19\n\x07IdLivro\x12\x0e\n\x06titulo\x18\x01 \x01(\t\":\n\x0cListCarrinho\x12*\n\x0flivros_carrinho\x18\x01 \x03(\x0b\x32\x11.catalogo.IdLivro\"\x81\x01\n\x04\x42ook\x12\x10\n\x08\x63\x61rrinho\x18\x01 \x01(\x08\x12\x0e\n\x06titulo\x18\x02 \x01(\t\x12\r\n\x05\x61utor\x18\x03 \x01(\t\x12\x12\n\npublicacao\x18\x04 \x01(\x05\x12\x12\n\nem_estoque\x18\x05 \x01(\x05\x12\r\n\x05preco\x18\x06 \x01(\x05\x12\x11\n\tdescricao\x18\x07 \x01(\t\"-\n\x0c\x46ullCatalogo\x12\x1d\n\x05\x62ooks\x18\x01 \x03(\x0b\x32\x0e.catalogo.Book\"`\n\x0eSuccessMessage\x12\t\n\x01m\x18\x01 \x01(\t\x12\x11\n\tid_pedido\x18\x02 \x01(\t\x12!\n\x06livros\x18\x03 \x03(\x0b\x32\x11.catalogo.IdLivro\x12\r\n\x05preco\x18\x04 \x01(\x05\x32\x8c\x01\n\x0cShowCatalogo\x12\x38\n\x0bGetCatalogo\x12\x11.catalogo.Session\x1a\x16.catalogo.FullCatalogo\x12\x42\n\x0eUpdateCatalogo\x12\x16.catalogo.ListCarrinho\x1a\x18.catalogo.SuccessMessageb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,7 +32,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FULLCATALOGO']._serialized_start=282
   _globals['_FULLCATALOGO']._serialized_end=327
   _globals['_SUCCESSMESSAGE']._serialized_start=329
-  _globals['_SUCCESSMESSAGE']._serialized_end=375
-  _globals['_SHOWCATALOGO']._serialized_start=378
-  _globals['_SHOWCATALOGO']._serialized_end=518
+  _globals['_SUCCESSMESSAGE']._serialized_end=425
+  _globals['_SHOWCATALOGO']._serialized_start=428
+  _globals['_SHOWCATALOGO']._serialized_end=568
 # @@protoc_insertion_point(module_scope)

@@ -5,6 +5,24 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class DadosPedido(_message.Message):
+    __slots__ = ("session_cookie", "id_pedido", "livros", "preco_total")
+    SESSION_COOKIE_FIELD_NUMBER: _ClassVar[int]
+    ID_PEDIDO_FIELD_NUMBER: _ClassVar[int]
+    LIVROS_FIELD_NUMBER: _ClassVar[int]
+    PRECO_TOTAL_FIELD_NUMBER: _ClassVar[int]
+    session_cookie: str
+    id_pedido: str
+    livros: _containers.RepeatedCompositeFieldContainer[IdLivro]
+    preco_total: int
+    def __init__(self, session_cookie: _Optional[str] = ..., id_pedido: _Optional[str] = ..., livros: _Optional[_Iterable[_Union[IdLivro, _Mapping]]] = ..., preco_total: _Optional[int] = ...) -> None: ...
+
+class Status(_message.Message):
+    __slots__ = ("mensagem",)
+    MENSAGEM_FIELD_NUMBER: _ClassVar[int]
+    mensagem: str
+    def __init__(self, mensagem: _Optional[str] = ...) -> None: ...
+
 class DadosConsulta(_message.Message):
     __slots__ = ("session_cookie", "id_pedido")
     SESSION_COOKIE_FIELD_NUMBER: _ClassVar[int]
@@ -20,14 +38,12 @@ class IdLivro(_message.Message):
     def __init__(self, titulo: _Optional[str] = ...) -> None: ...
 
 class StatusPedido(_message.Message):
-    __slots__ = ("livros", "preco_total", "dono_pedido")
+    __slots__ = ("livros", "preco_total")
     LIVROS_FIELD_NUMBER: _ClassVar[int]
     PRECO_TOTAL_FIELD_NUMBER: _ClassVar[int]
-    DONO_PEDIDO_FIELD_NUMBER: _ClassVar[int]
     livros: _containers.RepeatedCompositeFieldContainer[IdLivro]
     preco_total: int
-    dono_pedido: str
-    def __init__(self, livros: _Optional[_Iterable[_Union[IdLivro, _Mapping]]] = ..., preco_total: _Optional[int] = ..., dono_pedido: _Optional[str] = ...) -> None: ...
+    def __init__(self, livros: _Optional[_Iterable[_Union[IdLivro, _Mapping]]] = ..., preco_total: _Optional[int] = ...) -> None: ...
 
 class DadosUser(_message.Message):
     __slots__ = ("session_cookie",)

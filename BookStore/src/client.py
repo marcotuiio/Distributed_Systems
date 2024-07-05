@@ -87,10 +87,25 @@ def catalog(stub, gestao_stub):
         st.session_state.carrinho.extend(selected_books)
         list_carrinho = catalogo_pb2.ListCarrinho(livros_carrinho=selected_books)
         response = stub.UpdateCatalogo(list_carrinho)
+        
+        # print(f'\n\n** Id pedido {response.id_pedido}')
+        # print(f'\npreco {response.preco}')
+        # print(f'\nlivros {response.livros}')
+
         st.success(response.m)
         print("\n* ShowCatalogo Response Received")
 
-    consultar_pedido(gestao_stub)
+        # Agora tratar os dados recebidos do server e reenviar 
+        # para o modulo de gestao, para que o pedido seja devidamente
+        # incluido na lista de consultas
+        titulos = [gestao_pb2.IdLivro(titulo=livro.titulo) for livro in response.livros]
+
+        request = gestao_pb2.DadosPedido(session_cookie=st.session_state.session_cookie, id_pedido=response.id_pedido, livros=titulos, preco_total=response.preco)
+        response_add = gestao_stub.AddPedido(request)
+        print(response_add.mensagem)
+    
+
+    consultar_pedido_historico(gestao_stub)
 
     # Remove o cookie da session e atualiza a pagina
     if st.button("SAIR", type="primary"):
@@ -98,30 +113,48 @@ def catalog(stub, gestao_stub):
         st.session_state.logged_in = False
         st.rerun()
 
-def consultar_pedido(stub):
+def consultar_pedido_historico(stub):
+
+    if st.button("Consultar Histórico"):
+        response_historico = stub.ConsultarHistorico(gestao_pb2.DadosUser(session_cookie=st.session_state.session_cookie))
+
+        if response_historico.livros:
+            st.success("Pedidos encontrados!")
+            st.subheader("Livros no Histórico")
+            
+            livros_data = {
+                "Título": [livro.titulo for livro in response_historico.livros],
+            }
+            df = pd.DataFrame(livros_data)
+            st.table(df)
+        else:
+            st.error("Nenhum pedido encontrado para esta sessão.")
+
+
     with st.form(key='consultar_pedido'):
         id_form = st.text_input("ID Pedido")
         consultar_button = st.form_submit_button("Consultar Pedido")
 
     if consultar_button:
         # Preparando e enviando requisao de login com dados preenchidos no form
-        response = stub.ConsultarPedido(gestao_pb2.DadosConsulta(session_cookie=st.session_state.session_cookie, id_pedido=id_form))
+        response_pedido = stub.ConsultarPedido(gestao_pb2.DadosConsulta(session_cookie=st.session_state.session_cookie, id_pedido=id_form))
         
-        if response.livros:
+        if response_pedido.livros:
             st.success("Pedido encontrado!")
             st.subheader("Detalhes do Pedido")
             
             # Exibir detalhes do pedido em um formato de tabela
             livros_data = {
-                "Título": [livro.titulo for livro in response.livros],
+                "Título": [livro.titulo for livro in response_pedido.livros],
             }
             df = pd.DataFrame(livros_data)
             st.table(df)
             
             st.subheader("Preço Total")
-            st.metric(label="Preço Total (R$)", value=response.preco_total)
+            st.metric(label="Preço Total (R$)", value=response_pedido.preco_total)
         else:
             st.error("Pedido não encontrado. Verifique o ID do pedido e tente novamente.")
+
 
 def run():
     with grpc.insecure_channel('localhost:50051') as channel:

@@ -40,6 +40,11 @@ class GestaoPedidosStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.AddPedido = channel.unary_unary(
+                '/gestao.GestaoPedidos/AddPedido',
+                request_serializer=gestao__pb2.DadosPedido.SerializeToString,
+                response_deserializer=gestao__pb2.Status.FromString,
+                _registered_method=True)
         self.ConsultarPedido = channel.unary_unary(
                 '/gestao.GestaoPedidos/ConsultarPedido',
                 request_serializer=gestao__pb2.DadosConsulta.SerializeToString,
@@ -55,6 +60,13 @@ class GestaoPedidosStub(object):
 class GestaoPedidosServicer(object):
     """Servico que permite gestao de pedidos no server
     """
+
+    def AddPedido(self, request, context):
+        """Funcao que deve receber os pedidos para adicionar lista correta de pedidos para consultas
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def ConsultarPedido(self, request, context):
         """Funcao que deve receber session e id do pedido para retornar dados dele
@@ -73,6 +85,11 @@ class GestaoPedidosServicer(object):
 
 def add_GestaoPedidosServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'AddPedido': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddPedido,
+                    request_deserializer=gestao__pb2.DadosPedido.FromString,
+                    response_serializer=gestao__pb2.Status.SerializeToString,
+            ),
             'ConsultarPedido': grpc.unary_unary_rpc_method_handler(
                     servicer.ConsultarPedido,
                     request_deserializer=gestao__pb2.DadosConsulta.FromString,
@@ -94,6 +111,33 @@ def add_GestaoPedidosServicer_to_server(servicer, server):
 class GestaoPedidos(object):
     """Servico que permite gestao de pedidos no server
     """
+
+    @staticmethod
+    def AddPedido(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/gestao.GestaoPedidos/AddPedido',
+            gestao__pb2.DadosPedido.SerializeToString,
+            gestao__pb2.Status.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ConsultarPedido(request,

@@ -18,7 +18,7 @@ class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
     def __init__(self):
         self.users = [
             {
-                "user": "robert@gmail",
+                "user": "tester@uel",
                 "password": "1234",
                 "cookies": "abc345"
             }
@@ -160,7 +160,7 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
                 if b.em_estoque > 0:
                     b.em_estoque -= 1;
                     message += f"{b.titulo} comprado com sucesso! :D \t\t"
-                    livros.append(b.titulo)
+                    livros.append(catalogo_pb2.IdLivro(titulo=b.titulo))
                     preco_compra += b.preco
                 else:
                     message += f"{b.titulo} sem estoque. :D \t\t"
@@ -170,7 +170,7 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
         
         id_pedido = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
         message += f'ID do Pedido: {id_pedido}'
-        return catalogo_pb2.SuccessMessage(m=message, id_pedido=id_pedido)
+        return catalogo_pb2.SuccessMessage(m=message, id_pedido=id_pedido, livros=livros, preco=preco_compra)
     
 
 class GestaoPedidosServicer(gestao_pb2_grpc.GestaoPedidosServicer):
@@ -184,11 +184,33 @@ class GestaoPedidosServicer(gestao_pb2_grpc.GestaoPedidosServicer):
                     "Moby Dick"
                 ],
                 "preco": 75,
+            },
+            {
+                "session":"abc345",
+                "id": "msax2",
+                "livros": [
+                    "O Senhor dos Anéis - Edição Especial"
+                ],
+                "preco": 200,
             }
         ]
 
-    # def AdicionarPedido(self, request, context):
-    #     self.pedidos.append()
+    def AddPedido(self, request, context):
+        print(f'* Request to AddPedido Received {request.session_cookie} {request.id_pedido}')
+
+        new_pedido = {
+            "session": request.session_cookie,
+            "id": request.id_pedido,
+            "livros": [livro.titulo for livro in request.livros],
+            "preco": request.preco_total,
+        }
+        # print(f'{new_pedido} \n-----------------\n')
+        self.pedidos.append(new_pedido)
+        # print(self.pedidos)
+        
+        print("\nNovo pedido adicionado com sucesso a lista de consultas!")
+
+        return gestao_pb2.Status(mensagem="\nSucesso!")
 
     def ConsultarPedido(self, request, context):
         df = pd.DataFrame(self.pedidos)
@@ -196,8 +218,10 @@ class GestaoPedidosServicer(gestao_pb2_grpc.GestaoPedidosServicer):
         session = request.session_cookie
         print(f"ConsultarPedido Request Received {session} {id_pedido}\n")
 
+        # Retorna a linha que condiz com o id e a session passadas no request
         matching_row = df[(df["id"] == id_pedido) & (df["session"] == session)]
 
+        # Nao existe match
         if matching_row.empty:
             print("Pedido não encontrado. Apenas o dono da sessão pode consultar.")
             return gestao_pb2.StatusPedido(livros=[], preco_total=0)
@@ -206,12 +230,32 @@ class GestaoPedidosServicer(gestao_pb2_grpc.GestaoPedidosServicer):
             preco_total = matching_row["preco"].iloc[0]
             print(f"Pedido {id_pedido} preco {preco_total} livros {livros}")
             
+            # Retorna de response uma lista apenas com o titulo dos livros no pedidos e o preco total dele
             livros_message = [gestao_pb2.IdLivro(titulo=livro) for livro in livros]
             return gestao_pb2.StatusPedido(livros=livros_message, preco_total=preco_total)
 
 
     def ConsultarHistorico(self, request, context):
-        return super().ConsultarHistorico(request, context)
+        session = request.session_cookie
+        print(f"ConsultarHistorico Request Received {session}\n")
+
+        # Retorna todas as linhas que correspondem a session daquele user 
+        matching_pedidos = [pedido for pedido in self.pedidos if pedido["session"] == session]
+        
+        if not matching_pedidos:
+            print("Nenhum pedido encontrado para esta sessão.")
+            return gestao_pb2.HistorioUser(livros=[])  
+
+        # Montando uma lista, seguindo padrao definido na interface, apenas com  
+        # os titulos do pedido e então preparando para enviar com response
+        all_livros = []
+        all_livros = []
+        for pedido in matching_pedidos:
+            for titulo in pedido["livros"]:
+                all_livros.append(gestao_pb2.IdLivro(titulo=titulo))
+        
+        print(f'livrosss {all_livros}')
+        return gestao_pb2.HistorioUser(livros=all_livros)
 
 
 def serve():

@@ -18,8 +18,16 @@ que funcione devidamente
 * 1º Rodar o comando: pip install -r requirements.txt
 * 2º Rodar o comando: sudo apt install protobuf-compiler
 
-python3 -m grpc_tools.protoc -I protos --python_out=src/catalogo/ --pyi_out=src/catalogo/ --grpc_python_out=src/catalogo/ protos/catalogo.proto
+* 3º No diretorio BookStore/ rodar para gerar os arqs novamente (atenção com a observação):
 
-python3 -m grpc_tools.protoc -I protos --python_out=src/auth/ --pyi_out=src/auth/ --grpc_python_out=src/auth/ protos/auth.proto
+- python3 -m grpc_tools.protoc -I protos --python_out=src/catalogo/ --pyi_out=src/catalogo/ --grpc_python_out=src/catalogo/ protos/catalogo.proto
 
-python3 -m grpc_tools.protoc -I protos --python_out=src/gestao/ --pyi_out=src/gestao/ --grpc_python_out=src/gestao/ protos/gestao.proto
+- python3 -m grpc_tools.protoc -I protos --python_out=src/auth/ --pyi_out=src/auth/ --grpc_python_out=src/auth/ protos/auth.proto
+
+- python3 -m grpc_tools.protoc -I protos --python_out=src/gestao/ --pyi_out=src/gestao/ --grpc_python_out=src/gestao/ protos/gestao.proto
+
+* 4º No diretorio BookStore/src rodar (em dois terminais separados)
+
+- python3 server.py
+
+- streamlit run client.py
