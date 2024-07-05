@@ -25,6 +25,7 @@ class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
         df = pd.DataFrame(self.users)
         matching_row = df.loc[df["user"] == request.login_email]
 
+        # Verifica existencia do email e se possivel cria um novo usuario com os valores recebidos do request
         if not matching_row.empty:
             return auth_pb2.LoginResponse(response=False, session_cookie=None, message="Esse usuário já existe, tente novamente.")
         else:
@@ -38,6 +39,7 @@ class UserAuthServicer(auth_pb2_grpc.UserAuthServicer):
         df = pd.DataFrame(self.users)
         matching_row = df.loc[df["user"] == request.login_email]
         
+        # Verifica existencia e se possivel verifica se as credenciais estao corretas, para enfim liberar o cookie e acesso ao catalogo
         if matching_row.empty:
             return auth_pb2.LoginResponse(response=False, session_cookie=None, message="Usuário não encontrado, tente novamente.")
         else:
@@ -129,6 +131,8 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
         print("+ GetCatalogo Request Made:")
         print(request)
 
+        # Como na interface foi definido que esse metodo deve passar livros, no formato especificado, repetidas vezes
+        # aqui é feito esse preparo e envio de resposta ao client
         reply = catalogo_pb2.FullCatalogo(books=self.books)
 
         return reply
@@ -137,9 +141,12 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
         print("+ UpdateCatalogo Request Made:")
         message = ""
 
+        # Pegando apenas o canto de valor, descartando a chave, para agilizar a busca posterior
         titulos = [no_carrinho.titulo for no_carrinho in request.livros_carrinho]
         # print(titulos)
 
+        # Percorre a lista completa de livros, verificando se aquele livro esta presente no carrinho
+        # caso esteja e tenha estoque, faz o necessario e retorna a mensagem com os resultados de cada um
         for b in self.books:
             if b.titulo in titulos:
                 if b.em_estoque > 0:
@@ -150,6 +157,9 @@ class ShowCatalogoServicer(catalogo_pb2_grpc.ShowCatalogoServicer):
 
         message += f"Operação concluída! :D \t\t"
         # print(message)
+        
+        ######## GERAR E RETORNAR PEDIDO
+
         return catalogo_pb2.SuccessMessage(m=message)
     
 
