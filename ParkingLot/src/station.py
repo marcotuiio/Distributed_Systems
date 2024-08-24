@@ -1,7 +1,10 @@
 import zmq
 import threading
 import time
+from queue import Queue, Empty
 
+RESPONSE_TIMEOUT = 5
+PING_INTERVAL = 10
 class Station:
     def __init__(self, station_id, ipaddr, port, manager_ip, manager_port, other_stations=[]):
         self.station_id = station_id
@@ -9,13 +12,17 @@ class Station:
         self.port = port
         self.status = 0
 
+        self.lock = threading.Lock()
+        # ?? Dicionario que guarda as conexões com as outras estações via BROADCAST
+        # self.connections = {} 
+
         self.nspots = 0
         # Lista do tipo (spot, car_id)
         self.local_spots = []
 
-        # ?? Dicionario que guarda as conexões com as outras estações via BROADCAST
-        self.connections = {} 
-
+        # Fila para guardar as respostas dos pings e nao embaralhar com as ordens de execução
+        self.ping_responses = Queue()
+        
         self.context = zmq.Context()
         self.manager_socket = self.context.socket(zmq.REQ)
         self.manager_socket.connect(f"tcp://{manager_ip}:{manager_port}")
@@ -24,11 +31,10 @@ class Station:
         self.broadcast_socket.bind(f"tcp://{self.ipaddr}:{self.port}")
 
         self.subscriber_socket = self.context.socket(zmq.SUB)
-        self.subscriber_socket.setsockopt_string(zmq.SUBSCRIBE, "")
-        
         for other_ip, other_port in other_stations:
             if other_ip != self.ipaddr or other_port != self.port:
                 self.subscriber_socket.connect(f"tcp://{other_ip}:{other_port}")
+        self.subscriber_socket.setsockopt_string(zmq.SUBSCRIBE, "")
 
 
     def activate_station(self):
@@ -50,7 +56,7 @@ class Station:
             except zmq.Again:
                 break
 
-        print(f"<<< Active stations: {active_stations}")
+        print(f"<<< Active stations before: {active_stations}")
 
         # Primeira estação a ser ativada
         if active_stations == 0:
@@ -74,11 +80,11 @@ class Station:
             for i in range(total_spots):
                 self.local_spots.append((i, None)) 
 
-            print(self.local_spots)
-
             # Informar o manager que a estação foi ativada
             self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
             response = self.manager_socket.recv_json()
+
+            self.manager_socket.send_json({"type": "print_stations"})
 
         elif active_stations > 0:
             # Da estação que mais tiver vagas, requisitar sua lista de vagas
@@ -146,9 +152,66 @@ class Station:
 
                     self.manager_socket.send_json({"type": "print_stations"})
 
+        print(f"<<< Active stations after: {active_stations + 1}\n")
 
+
+    def ping(self):
+        # Talvez nao seja a melhor maneira, mas servira por agora
+        # A ideia é que a estação que falhar, não responderá ao ping
+        # Ai tendo a lista de estações ativas com o manager, se uma estação não responder ao ping
+        # O processo de eleição é disparado, visto que a estação ja foi artificialmente desativada
+        if self.status == 0:
+            return
+        
+        try:
+            # self.manager_socket.send_json({"type": "request_active_stations"})
+            # active_stations = []
+            # while True:
+            #     try:
+            #         message = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
+            #         if message["type"] == "response_active_stations":
+            #             active_stations = message["active_stations"]
+            #             break
+            #     except zmq.Again:
+            #         time.sleep(0.1)
+
+            # print(f"<<< Ping Active stations: {active_stations}")
+            # if len(active_stations) == 1:
+            #     print(f"Only one station active. No need to ping.")
+            #     return
+
+            # Mandar ping para todas as estações ativas
+            self.broadcast_socket.send_json({"type": "ping", "station_id": self.station_id})
+            time.sleep(0.5) # Dando um alivio para as outras estações responderem
+
+            # Receber respostas dos pings
+            responses = []
+            start_time = time.time()
+            while time.time() - start_time < RESPONSE_TIMEOUT:
+                try:
+                    message = self.ping_responses.get_nowait()
+                    if message["type"] == "ping_response":
+                        # print(f"Received ping response from {message['station_id']} in station {self.station_id}")
+                        responses.append(message["station_id"])
+                except Empty:
+                    time.sleep(0.1)
+
+            print(f"<<< Ping responses ({self.station_id}): {responses}")
+        
+        except zmq.ZMQError as e:
+            print(f"ZMQError in ping: {e}")
+            time.sleep(1)  # Espera antes de tentar novamente
+
+
+    # Apenas muda o status da estação para inativa
     def deactivate_station(self):
-        dead_station_id = "Station2"
+        self.status = 0
+        self.local_spots = []
+
+
+    # Implementa o sistema de eleição, é uma simulação pois isso ocorre apoós um ping falhar mas 
+    # antes a estação foi desativada manualmente
+    def election(self, dead_station_id):
         print(f"\nDeactivating station {dead_station_id} - detected by station {self.station_id}")
 
         # Requisitando quantas estações estão ativas
@@ -229,9 +292,10 @@ class Station:
 
                     remaining_spots = spots_list + dead_station_spots
                 
-                    # Remover a nova lista de vagas para a estação que falhou
-                    self.broadcast_socket.send_json({"type": "update_spots", "station_id": dead_station_id, "spots_list": []})
-                    response = self.subscriber_socket.recv_json()
+                    # Remover a nova lista de vagas para a estação que falhou - Testar se precisa disso aqui, ou pode ser antes
+                    # self.broadcast_socket.send_json({"type": "update_spots", "station_id": dead_station_id, "spots_list": []})
+                    # response = self.subscriber_socket.recv_json()
+
                     self.broadcast_socket.send_json({"type": "update_spots", "station_id": min_spots_station["station_id"], "spots_list": remaining_spots})
                     response = self.subscriber_socket.recv_json()
                     # print(f">> Station {min_spots_station['station_id']} response: {response}")
@@ -252,45 +316,57 @@ class Station:
     # - request_spots: Requisição do número de vagas da estação
     # - request_spots_list: Requisição da lista de vagas da estação
     # - update_spots: Atualização da lista de vagas da estação
-    
+    # - ping: Requisição de ping
     def handle_requests(self):
-        while True:
-            
-                try:
-                    message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
-                    
-                    if message["type"] == "request_spots" and self.status == 1:
-                        # print(f"Request spots from {message['station_id']} - received here {self.station_id} = {self.nspots}")
-                        self.broadcast_socket.send_json({"type": "response_spots", "station_id": self.station_id, "nspots": self.nspots})
-                    
-                    if message["type"] == "request_spots_list" and self.status == 1:
-                        if message["target_station_id"] == self.station_id:
-                            # print(f"Request spots list from {message['station_id']} - received here {self.station_id}\nlist: {self.local_spots}")
-                            self.broadcast_socket.send_json({"type": "response_spots_list", "station_id": self.station_id, "spots_list": self.local_spots})
-                    
-                    elif message["type"] == "update_spots":
-                        if message["station_id"] == self.station_id:  # Preciso permitir que estações inativas tambem recebam para que eu possa zerar a lista de vagas
-                            # print(f"Update spots received here {self.station_id}")
-                            self.local_spots = message["spots_list"]
-                            self.nspots = len(self.local_spots)
-                            self.broadcast_socket.send_json({"type": "response_update_spots", "station_id": self.station_id, "status": "success"})
+        while self.status == 1:  # Enquanto a estação estiver ativa
+            try:
+                message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
                 
-                except zmq.Again:
-                    time.sleep(0.3)
+                if message["type"] == "request_spots" :
+                    # print(f"Request spots from {message['station_id']} - received here {self.station_id} = {self.nspots}")
+                    with self.lock:
+                        self.broadcast_socket.send_json({"type": "response_spots", "station_id": self.station_id, "nspots": self.nspots})
+                
+                if message["type"] == "request_spots_list" :
+                    if message["target_station_id"] == self.station_id:
+                        # print(f"Request spots list from {message['station_id']} - received here {self.station_id}\nlist: {self.local_spots}")
+                        with self.lock:
+                            self.broadcast_socket.send_json({"type": "response_spots_list", "station_id": self.station_id, "spots_list": self.local_spots})
+                
+                elif message["type"] == "update_spots":
+                    if message["station_id"] == self.station_id: 
+                        # print(f"Update spots received here {self.station_id}")
+                        self.local_spots = message["spots_list"]
+                        self.nspots = len(self.local_spots)
+                        with self.lock:
+                            self.broadcast_socket.send_json({"type": "response_update_spots", "station_id": self.station_id, "status": "success"})
+            
+                elif message["type"] == "ping" and message["station_id"] != self.station_id:
+                    # print(f"Received ping from {message['station_id']} in station {self.station_id}")
+                    with self.lock:
+                        self.broadcast_socket.send_json({"type": "ping_response", "station_id": self.station_id})
+                
+                elif message["type"] == "ping_response":
+                    self.ping_responses.put(message)
+                    time.sleep(0.2)                         
+
+
+
+            except zmq.Again:
+                time.sleep(0.1) # Descanso para não sobrecarregar o processador
 
 
     def run(self):
         self.activate_station()
-        threading.Thread(target=self.handle_requests).start()
+        request_thread = threading.Thread(target=self.handle_requests)
+        request_thread.daemon = True
+        request_thread.start()
+
+        time.sleep(5) # Permitindo que tudo ative e funcione antes de começar a pingar
+
         while True:
-            # Handle local requests and communication with other stations
-            pass
-    
-    def election(self):
-        self.deactivate_station()
-        while True:
-            # Handle local requests and communication with other stations
-            pass
+            self.ping()
+            time.sleep(PING_INTERVAL)
 
 
 if __name__ == "__main__":
@@ -306,34 +382,32 @@ if __name__ == "__main__":
     station_thread2 = threading.Thread(target=station2.run)
     station_thread2.start()
     
-    time.sleep(3)
+    # time.sleep(3)
 
-    station3 = Station(station_id="Station3", ipaddr="127.0.0.3", port=5030, manager_ip="127.0.0.3", manager_port=5555,
-                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5040)])
-    station_thread3 = threading.Thread(target=station3.run)
-    station_thread3.start()
+    # station3 = Station(station_id="Station3", ipaddr="127.0.0.3", port=5030, manager_ip="127.0.0.3", manager_port=5555,
+    #                    other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5040)])
+    # station_thread3 = threading.Thread(target=station3.run)
+    # station_thread3.start()
 
-    time.sleep(3)
+    # time.sleep(3)
 
-    station4 = Station(station_id="Station4", ipaddr="127.0.0.3", port=5040, manager_ip="127.0.0.3", manager_port=5555,
-                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5030)])
-    station_thread4 = threading.Thread(target=station4.run)
-    station_thread4.start()
+    # station4 = Station(station_id="Station4", ipaddr="127.0.0.3", port=5040, manager_ip="127.0.0.3", manager_port=5555,
+    #                    other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5030)])
+    # station_thread4 = threading.Thread(target=station4.run)
+    # station_thread4.start()
 
 
     time.sleep(5)
-    print(f'\nStation1: {station1.local_spots}')
-    print(f'Station2: {station2.local_spots}')
-    print(f'Station3: {station3.local_spots}')
-    print(f'Station4: {station4.local_spots}')
+    # print(f'\nStation1: {station1.local_spots}')
+    # print(f'Station2: {station2.local_spots}')
+    # print(f'Station3: {station3.local_spots}')
+    # print(f'Station4: {station4.local_spots}')
     
-    time.sleep(5)
-    station1.deactivate_station()
-    # test_thread = threading.Thread(target=station1.election)
-    # test_thread.start()
+    # time.sleep(5)
+    # station1.deactivate_station()
 
-    time.sleep(5)
-    print(f'\nStation1: {station1.local_spots}')
-    print(f'Station2: {station2.local_spots}')
-    print(f'Station3: {station3.local_spots}')
-    print(f'Station4: {station4.local_spots}')
+    # time.sleep(5)
+    # print(f'\nStation1: {station1.local_spots}')
+    # print(f'Station2: {station2.local_spots}')
+    # print(f'Station3: {station3.local_spots}')
+    # print(f'Station4: {station4.local_spots}')
