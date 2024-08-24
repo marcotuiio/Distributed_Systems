@@ -11,9 +11,13 @@ Trabalhar com as interfaces do modelo RPC, snedo que deverá ser um trabalho dev
 
 ### Rodando
 
-#### OBS
+#### OBS !!!
 Como os arquivos gerados estão em pastas separadas talvez seja preciso arrumar os imports para 
-que funcione devidamente 
+que funcione devidamente :
+
+Em auth_pb2_grpc.py: import auth_pb2 as auth__pb2 para import auth.auth_pb2 as auth__pb2
+Em catalogo_pb2_grpc: import catalogo_pb2 as catalogo__pb2 para import catalogo.catalogo_pb2 as catalogo__pb2
+Em gestao_pb2_grpc: import gestao_pb2 as gestao__pb2 para import gestao.gestao_pb2 as gestao__pb2
 
 * 1º Rodar o comando: pip install -r requirements.txt
 * 2º Rodar o comando: sudo apt install protobuf-compiler
