@@ -14,7 +14,7 @@ class Station:
 
         self.lock = threading.Lock()
         # ?? Dicionario que guarda as conexões com as outras estações via BROADCAST
-        # self.connections = {} 
+        self.connections = []
 
         self.nspots = 0
         # Lista do tipo (spot, car_id)
@@ -83,6 +83,9 @@ class Station:
             # Informar o manager que a estação foi ativada
             self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
             response = self.manager_socket.recv_json()
+            # print(f">> Manager response firts_station: {response}")
+
+            self.connections = response["active_stations"]
 
             self.manager_socket.send_json({"type": "print_stations"})
 
@@ -150,10 +153,17 @@ class Station:
                     response = self.manager_socket.recv_json()
                     # print(f">> Manager response new_station: {response}")
 
+                    self.connections = response["active_stations"]
+
                     self.manager_socket.send_json({"type": "print_stations"})
 
-        print(f"<<< Active stations after: {active_stations + 1}\n")
+        print(f"<<< Active stations after: {active_stations + 1}")
+       
+        # Ja que nao consegui fazer o manager funcionar no ping
+        # Vou enviar uma mensagem a todos assim que ativar a estação 
+        # e manter a lista de estações ativas na propria estação
 
+        print(f"<<< Station {self.station_id} known connections: {self.connections}\n")
 
     def ping(self):
         # Talvez nao seja a melhor maneira, mas servira por agora
@@ -164,7 +174,11 @@ class Station:
             return
         
         try:
+            # print(f"\ntrying to connect to manager in ping {self.station_id}")
             # self.manager_socket.send_json({"type": "request_active_stations"})
+            # time.sleep(0.3)
+            # print(f"\nconnected to manager in ping {self.station_id}")
+
             # active_stations = []
             # while True:
             #     try:
@@ -173,7 +187,7 @@ class Station:
             #             active_stations = message["active_stations"]
             #             break
             #     except zmq.Again:
-            #         time.sleep(0.1)
+            #         break
 
             # print(f"<<< Ping Active stations: {active_stations}")
             # if len(active_stations) == 1:
@@ -341,6 +355,12 @@ class Station:
                         with self.lock:
                             self.broadcast_socket.send_json({"type": "response_update_spots", "station_id": self.station_id, "status": "success"})
             
+                elif message["type"] == "register_new_station" and message["station_id"] != self.station_id:
+                    print(f"Register new station {message['station_id']} - received here {self.station_id}")
+                    with self.lock:
+                        self.connections.append(message["station_id"])
+                        self.broadcast_socket.send_json({"type": "response_register_new_station", "station_id": self.station_id, "status": "success"})
+
                 elif message["type"] == "ping" and message["station_id"] != self.station_id:
                     # print(f"Received ping from {message['station_id']} in station {self.station_id}")
                     with self.lock:
@@ -349,8 +369,6 @@ class Station:
                 elif message["type"] == "ping_response":
                     self.ping_responses.put(message)
                     time.sleep(0.2)                         
-
-
 
             except zmq.Again:
                 time.sleep(0.1) # Descanso para não sobrecarregar o processador
@@ -365,9 +383,9 @@ class Station:
         time.sleep(5) # Permitindo que tudo ative e funcione antes de começar a pingar
 
         while True:
-            self.ping()
-            time.sleep(PING_INTERVAL)
-
+            pass
+            # self.ping()
+            # time.sleep(PING_INTERVAL)
 
 if __name__ == "__main__":
     station1 = Station(station_id="Station1", ipaddr="127.0.0.3", port=5010, manager_ip="127.0.0.3", manager_port=5555, 
@@ -382,26 +400,26 @@ if __name__ == "__main__":
     station_thread2 = threading.Thread(target=station2.run)
     station_thread2.start()
     
-    # time.sleep(3)
+    time.sleep(3)
 
-    # station3 = Station(station_id="Station3", ipaddr="127.0.0.3", port=5030, manager_ip="127.0.0.3", manager_port=5555,
-    #                    other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5040)])
-    # station_thread3 = threading.Thread(target=station3.run)
-    # station_thread3.start()
+    station3 = Station(station_id="Station3", ipaddr="127.0.0.3", port=5030, manager_ip="127.0.0.3", manager_port=5555,
+                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5040)])
+    station_thread3 = threading.Thread(target=station3.run)
+    station_thread3.start()
 
-    # time.sleep(3)
+    time.sleep(3)
 
-    # station4 = Station(station_id="Station4", ipaddr="127.0.0.3", port=5040, manager_ip="127.0.0.3", manager_port=5555,
-    #                    other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5030)])
-    # station_thread4 = threading.Thread(target=station4.run)
-    # station_thread4.start()
+    station4 = Station(station_id="Station4", ipaddr="127.0.0.3", port=5040, manager_ip="127.0.0.3", manager_port=5555,
+                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5030)])
+    station_thread4 = threading.Thread(target=station4.run)
+    station_thread4.start()
 
 
     time.sleep(5)
-    # print(f'\nStation1: {station1.local_spots}')
-    # print(f'Station2: {station2.local_spots}')
-    # print(f'Station3: {station3.local_spots}')
-    # print(f'Station4: {station4.local_spots}')
+    print(f'\nStation1: {station1.local_spots}')
+    print(f'Station2: {station2.local_spots}')
+    print(f'Station3: {station3.local_spots}')
+    print(f'Station4: {station4.local_spots}')
     
     # time.sleep(5)
     # station1.deactivate_station()

@@ -5,6 +5,7 @@ import time
 class Manager:
     def __init__(self, total_spots):
         self.total_spots = total_spots
+        self.lock = threading.Lock()
         self.stations = {
             "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
             "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 0, "spots": []},
@@ -54,7 +55,8 @@ class Manager:
                 message = self.socket.recv_json(flags=zmq.NOBLOCK)
                 print(f">>> Received message: {message}")
                 if message["type"] == "request_active_stations":
-                    self.socket.send_json({"type": "response_active_stations", "active_stations": self.active_stations})
+                    with self.lock:
+                        self.socket.send_json({"type": "response_active_stations", "active_stations": self.active_stations})
 
                 elif message["type"] == "request_total_spots":
                     self.socket.send_json({"type": "response_total_spots", "total_spots": self.total_spots})
@@ -72,7 +74,7 @@ class Manager:
                         self.stations[station_id]["status"] = 0
 
                     self.stations[station_id]["spots"] = spots
-                    self.socket.send_json({"type": "response_update_station_spots", "status": "success"})
+                    self.socket.send_json({"type": "response_update_station_spots", "status": "success", "active_stations": self.active_stations})
 
                 elif message["type"] == "request_spots_from_station":
                     station_id = message["station_id"]
@@ -82,6 +84,10 @@ class Manager:
                 elif message["type"] == "print_stations":
                     self.print_stations()
                     self.socket.send_json({"type": "response_print_stations", "status": "success"})
+                
+                elif message["type"] == "test_connection":
+                    print("Connection test successful")
+                    self.socket.send_json({"type": "response_test_connection", "status": "success"})
 
             except zmq.Again:
                 time.sleep(0.1)
@@ -90,6 +96,8 @@ class Manager:
     def run(self):
         print("Manager is running...\n")
         self.manager_handle_requests()
+        while True:
+            pass
 
 
 if __name__ == "__main__":
