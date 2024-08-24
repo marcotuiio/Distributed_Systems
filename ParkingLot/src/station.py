@@ -2,6 +2,8 @@ import zmq
 import threading
 import time
 from queue import Queue, Empty
+import uuid
+
 
 RESPONSE_TIMEOUT = 5
 PING_INTERVAL = 10
@@ -159,11 +161,14 @@ class Station:
 
         print(f"<<< Active stations after: {active_stations + 1}")
        
-        # Ja que nao consegui fazer o manager funcionar no ping
-        # Vou enviar uma mensagem a todos assim que ativar a estação 
-        # e manter a lista de estações ativas na propria estação
+        # Ja que nao consegui fazer o manager funcionar so no ping
+        # Vou enviar uma mensagem a todos assim que ativar a estação com a nova lista de conexões
+        # Essa lista é recebida do manager sempre que uma estação é ativada ou desativada
+        self.broadcast_socket.send_json({"type": "update_connections", "station_id": self.station_id, "connections": self.connections})
+        time.sleep(0.3)
 
         print(f"<<< Station {self.station_id} known connections: {self.connections}\n")
+
 
     def ping(self):
         # Talvez nao seja a melhor maneira, mas servira por agora
@@ -172,30 +177,24 @@ class Station:
         # O processo de eleição é disparado, visto que a estação ja foi artificialmente desativada
         if self.status == 0:
             return
-        
+ 
         try:
-            # print(f"\ntrying to connect to manager in ping {self.station_id}")
-            # self.manager_socket.send_json({"type": "request_active_stations"})
-            # time.sleep(0.3)
-            # print(f"\nconnected to manager in ping {self.station_id}")
+            ## Inicialmente a ideia era de que aqui tivesse uma comunicação com o manager pra saber 
+            ## quais estações estão ativas, mas como não consegui fazer funcionar, vou manter a lista 
+            ## de estações ativas na própria estação e fazer broadcast para todas as estações ativas
 
-            # active_stations = []
-            # while True:
-            #     try:
-            #         message = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
-            #         if message["type"] == "response_active_stations":
-            #             active_stations = message["active_stations"]
-            #             break
-            #     except zmq.Again:
-            #         break
+            # Limpar a fila de respostas antes de enviar um novo ping
+            # e gerar um identificador único para o ping
+            # Sem esses passos, como existem varias thread e requisicoes iguais 
+            # em estações diferentes ocorre appends duplicados na fila de respostas 
+            # e estava quebrando todo o sistema
+            while not self.ping_responses.empty():
+                self.ping_responses.get()
 
-            # print(f"<<< Ping Active stations: {active_stations}")
-            # if len(active_stations) == 1:
-            #     print(f"Only one station active. No need to ping.")
-            #     return
+            ping_id = str(uuid.uuid4())
 
             # Mandar ping para todas as estações ativas
-            self.broadcast_socket.send_json({"type": "ping", "station_id": self.station_id})
+            self.broadcast_socket.send_json({"type": "ping", "station_id": self.station_id, "ping_id": ping_id})
             time.sleep(0.5) # Dando um alivio para as outras estações responderem
 
             # Receber respostas dos pings
@@ -204,13 +203,20 @@ class Station:
             while time.time() - start_time < RESPONSE_TIMEOUT:
                 try:
                     message = self.ping_responses.get_nowait()
-                    if message["type"] == "ping_response":
+                    if message["type"] == "ping_response" and message["ping_id"] == ping_id:
                         # print(f"Received ping response from {message['station_id']} in station {self.station_id}")
                         responses.append(message["station_id"])
                 except Empty:
                     time.sleep(0.1)
 
             print(f"<<< Ping responses ({self.station_id}): {responses}")
+            print(f"<<< Known connections ({self.station_id}): {self.connections}\n")
+            if len(self.connections) - 1 > len(responses):
+                # vendo qual estação falhou, 
+                # poderia simplesmente adicionar a propria estação na lista de respostas
+                dead_station = set(self.connections) - set(responses) - set([self.station_id])
+                print(f"\t@@@@ {self.station_id} Detected dead station: {dead_station}\n")
+
         
         except zmq.ZMQError as e:
             print(f"ZMQError in ping: {e}")
@@ -355,20 +361,20 @@ class Station:
                         with self.lock:
                             self.broadcast_socket.send_json({"type": "response_update_spots", "station_id": self.station_id, "status": "success"})
             
-                elif message["type"] == "register_new_station" and message["station_id"] != self.station_id:
-                    print(f"Register new station {message['station_id']} - received here {self.station_id}")
+                elif message["type"] == "update_connections":
+                    print(f"Updating connections {message['station_id']} - received here {self.station_id}")
                     with self.lock:
-                        self.connections.append(message["station_id"])
-                        self.broadcast_socket.send_json({"type": "response_register_new_station", "station_id": self.station_id, "status": "success"})
+                        self.connections = message["connections"]
+                        self.broadcast_socket.send_json({"type": "responseupdate_connections", "station_id": self.station_id, "status": "success"})
 
                 elif message["type"] == "ping" and message["station_id"] != self.station_id:
                     # print(f"Received ping from {message['station_id']} in station {self.station_id}")
                     with self.lock:
-                        self.broadcast_socket.send_json({"type": "ping_response", "station_id": self.station_id})
+                        self.broadcast_socket.send_json({"type": "ping_response", "station_id": self.station_id, "ping_id": message["ping_id"]})
                 
                 elif message["type"] == "ping_response":
                     self.ping_responses.put(message)
-                    time.sleep(0.2)                         
+                    # time.sleep(0.2)                         
 
             except zmq.Again:
                 time.sleep(0.1) # Descanso para não sobrecarregar o processador
@@ -380,12 +386,12 @@ class Station:
         request_thread.daemon = True
         request_thread.start()
 
-        time.sleep(5) # Permitindo que tudo ative e funcione antes de começar a pingar
-
+        time.sleep(10) # Permitindo que tudo ative e funcione antes de começar a pingar
+        ## Percebi que o primeiro ping considera um momento que talvez nao condiza com o atual
+        ## mas que com certeza condiz com o momento da thread de requisições
         while True:
-            pass
-            # self.ping()
-            # time.sleep(PING_INTERVAL)
+            self.ping()
+            time.sleep(PING_INTERVAL)
 
 if __name__ == "__main__":
     station1 = Station(station_id="Station1", ipaddr="127.0.0.3", port=5010, manager_ip="127.0.0.3", manager_port=5555, 
@@ -414,15 +420,14 @@ if __name__ == "__main__":
     station_thread4 = threading.Thread(target=station4.run)
     station_thread4.start()
 
-
-    time.sleep(5)
-    print(f'\nStation1: {station1.local_spots}')
-    print(f'Station2: {station2.local_spots}')
-    print(f'Station3: {station3.local_spots}')
-    print(f'Station4: {station4.local_spots}')
-    
     # time.sleep(5)
-    # station1.deactivate_station()
+    # print(f'\nStation1: {station1.local_spots}')
+    # print(f'Station2: {station2.local_spots}')
+    # print(f'Station3: {station3.local_spots}')
+    # print(f'Station4: {station4.local_spots}\n')
+    
+    time.sleep(20)
+    station1.deactivate_station()
 
     # time.sleep(5)
     # print(f'\nStation1: {station1.local_spots}')

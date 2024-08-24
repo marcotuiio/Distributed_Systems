@@ -64,19 +64,19 @@
 
 # print(empty_slots)
 
-total = 10
-station_id = 5
-spot = {}
+# total = 10
+# station_id = 5
+# spot = {}
 
-spots = {i: station_id for i in range(total)}
+# spots = {i: station_id for i in range(total)}
 
-print(spots)
+# print(spots)
 
-# test_list = list(spots.keys())
-# print(test_list)
+# # test_list = list(spots.keys())
+# # print(test_list)
 
-spots_station5 = [spot for spot, station in spots.items() if station == station_id]
-print(spots_station5)
+# spots_station5 = [spot for spot, station in spots.items() if station == station_id]
+# print(spots_station5)
 
 # stations = {
 #     0: {"name": "Station A", "id": 0, "nspots": 5},
@@ -87,3 +87,8 @@ print(spots_station5)
 
 # max_station_id = max(stations, key=lambda x: stations[x]["nspots"])
 # print(f"Estação com o maior número de vagas: {max_station_id}")
+
+stations = ['Station A', 'Station B', 'Station C', 'Station D']
+response = ['Station A', 'Station C']
+
+print(set(stations) - set(response) - set(['Station D']))
