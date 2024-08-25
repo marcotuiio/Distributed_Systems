@@ -52,6 +52,9 @@ class Station:
 
     def activate_station(self):
         with self.lock:
+            while GLOBAL_LOCK_IN_ELECTION.locked():
+                continue
+
             print(f"\nActivating station {self.station_id}")
 
             # Requisitando quantas estações estão ativas
@@ -437,6 +440,10 @@ class Station:
                     # print(f"Received election termination in station {self.station_id}")
                     self.broadcast_socket.send_json({"type": "response_terminate_election", "station_id": self.station_id, "status": "success"})
 
+                elif message["type"] == "reactivate_station" and self.status == 0 and self.station_id == message["station_id"]:
+                    self.activate_station()
+                    self.broadcast_socket.send_json({"type": "response_reactivate_station", "station_id": self.station_id, "status": "success"})
+
             except zmq.Again:
                 time.sleep(0.1) # Descanso para não sobrecarregar o processador
 
@@ -489,6 +496,15 @@ if __name__ == "__main__":
     
     time.sleep(4)
     station1.deactivate_station()
+
+    ## TESTANDO REATIVAR A ESTAÇÃO - dependencia esquisita dos tempos de thread
+    # time.sleep(30)
+    # while GLOBAL_LOCK_IN_ELECTION.locked():
+    #     continue
+    # station2.broadcast_socket.send_json({"type": "reactivate_station", "station_id": "Station1"})
+    # time.sleep(0.3)
+    # # response = station2.subscriber_socket.recv_json()
+    # print(f"Station2 response: {response}")
 
     # time.sleep(5)
     # print(f'\nStation1: {station1.local_spots}')
