@@ -16,6 +16,12 @@ RESPONSE_TIMEOUT = 5
 PING_INTERVAL = 10
 PING_RETRY = 3
 
+# Fila global de carros em espera, será atualiza por mensagens de broadcast quando um carro chegar e não tiver vaga
+# Entao de tempos em tempos as estações vão verificar se tem carro na fila e tentar alocar uma vaga
+# Essa é a estrategia para tratar starvation e eventuais filas de espera
+
+global_car_queue = Queue()
+
 class Station:
     def __init__(self, station_id, ipaddr, port, manager_ip, manager_port, other_stations=[]):
         self.station_id = station_id
@@ -23,6 +29,8 @@ class Station:
         self.port = port
         self.status = 0
         self.last_ping = time.time()
+
+        self.success_lent = None
 
         self.lock = threading.Condition()
         
@@ -401,6 +409,7 @@ class Station:
                 if tuple[1] is None: # Vaga vazia
                     return True, spot_index
             return False, None
+    
 
     # Aloca uma vaga para um carro
     # Se houver vaga disponível, aloca a vaga e comunica ao manager sua nova lista de vagas
@@ -416,25 +425,46 @@ class Station:
             if sucess:
                 spot = self.local_spots[spot_index][0] 
                 self.local_spots[spot_index] = (spot, car_id)
-                print(f"Station {self.station_id} allocated spot {spot} to car {car_id}")
-                print(f"Station {self.station_id} spots: {self.local_spots}")
+                print(f"$$$ Station {self.station_id} allocated spot {spot} to car {car_id}")
+                print(f"$$$ Station {self.station_id} spots: {self.local_spots}\n")
 
                 # Informa manager da vaga com carro alocado
                 self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
                 response = self.manager_socket.recv_json()
 
             elif not sucess:
-                print(f"Station {self.station_id} has no spots available")
                 # A Estrategia adotada é requisitar vagas para as estações conhecidas até conseguir uma vaga
+                print(f"\n:( Station {self.station_id} has no spots available")
+                borrowed = False
                 for con in self.connections:
-                    print(f"Requesting spot from station {con}")
-                    self.broadcast_socket.send_json({"type": "car_borrow_spot", "in_need_station_id": self.station_id, "target_station_id": con, "car_id": car_id})
-                    time.sleep(0.1)
-                    response = self.subscriber_socket.recv_json()
-                    if response["status"] == "success":
-                        print(f"Station {self.station_id} borrowed spot from station {con}")
+                    if borrowed:
                         break
-
+                    if con == self.station_id:
+                        continue
+                    print(f"### Requesting spot from station {con}")
+                    self.broadcast_socket.send_json({"type": "car_borrow_spot", "in_need_station_id": self.station_id, "target_station_id": con, "car_id": car_id})
+                    time.sleep(1) # Tempo que leva pra estação processar a requisição de emprestimo
+                    ## Talvez precise aumentar aqui, adicionar um verificador se a resposta foi processada e é falsa ou sequer foi processada
+                    start_time = time.time()
+                    while time.time() - start_time < (3 * RESPONSE_TIMEOUT) or not borrowed:
+                        try:
+                            message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
+                            if message["type"] == "response_car_borrow_spot" and message["in_need_station_id"] == self.station_id:
+                                if message["status"] == "success":
+                                    print(f":D Station {self.station_id} borrowed spot from station {con}\n")
+                                    borrowed = True
+                                    break
+                                elif message["status"] == "fail":
+                                    break
+                        except zmq.Again:
+                            time.sleep(0.1)
+                            continue
+                
+                if not borrowed:
+                    print(f";-; No stations could lend a spot to station {self.station_id} - car {car_id}")
+                    global_car_queue.put(car_id)
+                    print(f";-; Car {car_id} is in queue\n")
+                
 
     # Requisita uma vaga de outra estação
     # Se a estação requisitada tiver vaga disponível, aloca a vaga e comunica ao manager sua nova lista de vagas
@@ -452,8 +482,8 @@ class Station:
             if sucess:
                 spot = self.local_spots[spot_index][0] 
                 self.local_spots[spot_index] = (spot, car_id)
-                print(f"Station {self.station_id} borrowed spot {spot} from station {station_id} to car {car_id}")
-                print(f"Station {self.station_id} spots: {self.local_spots}")
+                print(f"%%% Station {self.station_id} lent spot {spot} to car {car_id} | Station {station_id} asked")
+                print(f"%%% Station {self.station_id} spots: {self.local_spots}")
                 
                 # Informa manager da vaga com carro alocado
                 self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
@@ -462,17 +492,57 @@ class Station:
 
             elif not sucess:
                 return False
+        
+    # Verifica se há um carro estacionado na estação
+    # Se houver, sinaliza verdadeiro e retorna o índice da vaga
+    # Se não houver, sinaliza falso e retorna None
+    def look_for_car(self, car_id):
+        with self.lock:
+            while GLOBAL_LOCK_IN_ELECTION.locked():
+                print(f"<<< Looking - Station {self.station_id} is in election")
+                time.sleep(1)
+                continue
+
+            for spot_index, tuple in enumerate(self.local_spots):
+                if tuple[1] == car_id:
+                    self.local_spots[spot_index] = (self.local_spots[spot_index][0], None)
+                    print(f"*** Station {self.station_id} released spot {self.local_spots[spot_index][0]} from car {car_id}")
+                    print(f"*** Station {self.station_id} spots: {self.local_spots}\n")
+                    self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
+                    response = self.manager_socket.recv_json()
+                    return True, spot_index
+            return False, None
+
+
+    # Libera uma vaga de estacionamento
+    # Broadcast para todas as estações para que elas busquem pelo carro e ja liberem a vaga
+    def release_car(self, car_id):
+        with self.lock:
+            while GLOBAL_LOCK_IN_ELECTION.locked():
+                print(f"<<< Releasing - Station {self.station_id} is in election")
+                time.sleep(1)
+                continue
+
+            self.broadcast_socket.send_json({"type": "release_car", "station_id": self.station_id, "car_id": car_id})
+            time.sleep(0.5) # Tempo para as estações processarem a requisição
+
+            self.manager_socket.send_json({"type": "print_stations"})
+            response = self.manager_socket.recv_json()
 
 
     # Lida com as requisições de outras estações e é uma thread separada
     # Requisições possíveis:
-    # - request_spots: Requisição do número de vagas da estação
-    # - request_spots_list: Requisição da lista de vagas da estação
-    # - update_spots: Atualização da lista de vagas da estação
-    # - ping: Requisição de ping
+    # - request_spots: Requisição do número de vagas da estação, apenas responde com o número de vagas
+    # - request_spots_list: Requisição da lista de vagas da estação, apenas responde com a lista de vagas
+    # - update_spots: Atualização da lista de vagas da estação, apenas atualiza a lista de vagas
+    # - ping: Requisição de ping, checa se a estação está ativa e responde com um ping_response
     # - ping_response: Resposta ao ping apenas para garantir a ordem da fila de respostas
     # - trigger_election: Disparo de eleição nao esta sendo usada mas é uma mensagem de broadcast
     # - terminate_election: Terminar eleição nao esta sendo usada mas é uma mensagem de broadcast
+    # - reactivate_station: Teste para reativar a estação
+    # - car_request_spot: Aloca de vaga da estação para um carro, apenas chama o método allocate_spot (ela entra pela estação que chama o metodo)
+    # - car_borrow_spot:  Emprestimo de vaga em outra estaçao para um carro, se sucesso confirma com a estação requisitante
+    # - release_car: Liberação de vaga, todas as estações buscam pelo carro mas apenas a que o encontrar o libera e informa ao manager
     def handle_requests(self):
         while self.status == 1:  # Enquanto a estação estiver ativa
             try:
@@ -525,12 +595,16 @@ class Station:
                     self.allocate_spot(message["car_id"])
 
                 elif message["type"] == "car_borrow_spot" and message["target_station_id"] == self.station_id:
-                    print(f"Received car borrow spot from {message['in_need_station_id']} in station {self.station_id}")
-                    success = self.borrow_spot(message["car_id"])
+                    print(f"\nReceived car borrow spot from {message['in_need_station_id']} here in station {self.station_id} = car {message['car_id']}")
+                    success = self.borrow_spot(message["in_need_station_id"], message["car_id"])
+                    self.broadcast_socket.send_json({"type": "response_car_borrow_spot", "in_need_station_id": message["in_need_station_id"], "station_id": self.station_id, "status": "success" if success else "fail"})
+
+                elif message["type"] == "release_car":
+                    print(f"Received release car from {message['car_id']} in station {self.station_id}")
+                    success, spot_index = self.look_for_car(message["car_id"])
                     if success:
-                        self.broadcast_socket.send_json({"type": "response_car_borrow_spot", "station_id": self.station_id, "status": "success"})
-                    else:
-                        self.broadcast_socket.send_json({"type": "response_car_borrow_spot", "station_id": self.station_id, "status": "fail"})
+                        print(f"*** Car left on station {message['leaving_station_id']}")
+                    self.broadcast_socket.send_json({"type": "response_release_car", "station_id": self.station_id, "status": "success" if success else "fail"})
 
             except zmq.Again:
                 time.sleep(0.1) # Descanso para não sobrecarregar o processador
@@ -582,8 +656,8 @@ if __name__ == "__main__":
     # print(f'Station3: {station3.local_spots}')
     # print(f'Station4: {station4.local_spots}\n')
     
-    time.sleep(4)
-    station1.deactivate_station()
+    # time.sleep(4)
+    # station1.deactivate_station()
 
     ## TESTANDO REATIVAR A ESTAÇÃO - dependencia esquisita dos tempos de thread
     # time.sleep(30)
@@ -602,3 +676,22 @@ if __name__ == "__main__":
 
     time.sleep(10)
     
+
+    # Testando alocar vaga - carros sao threads
+    # car1 = threading.Thread(target=station1.allocate_spot, args=("Car1",))
+    # time.sleep(1)
+    # car1.daemon = True
+    # car1.start()
+
+    ## Esse teste assim faz com eventualmente a estacao 1 trave nessa thread mas ok depois resolvo
+    for i in range(5):
+        time.sleep(5)
+        print(f"\n -->> Car{i}")
+        car = threading.Thread(target=station1.allocate_spot, args=(f"Car{i}",))
+        car.daemon = True
+        car.start()
+        car.join()
+        # if i == 4:
+        #     time.sleep(10)
+        #     station2.release_car("Car2")
+
