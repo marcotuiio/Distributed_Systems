@@ -88,7 +88,14 @@
 # max_station_id = max(stations, key=lambda x: stations[x]["nspots"])
 # print(f"Estação com o maior número de vagas: {max_station_id}")
 
-stations = ['Station A', 'Station B', 'Station C', 'Station D']
-response = ['Station A', 'Station C']
+# stations = ['Station A', 'Station B', 'Station C', 'Station D']
+# response = ['Station A', 'Station C']
 
-print(set(stations) - set(response) - set(['Station D']))
+# print(set(stations) - set(response) - set(['Station D']))
+
+spots = [('Station A', None), ('Station B', 1), ('Station C', 2), ('Station D', 3)]
+
+for i, tup in enumerate(spots):
+    if tup[1] is None:
+        print(i, tup)
+        break
