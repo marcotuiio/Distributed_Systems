@@ -1,13 +1,38 @@
-from manager import Manager
-from station import Station
+# from manager import Manager
 import threading
+import socket
 
-manager = Manager(total_spots=10)
-manager_thread = threading.Thread(target=manager.run)
-manager_thread.start()
+class App:
+    def __init__(self, ip, port, station):
+        self.external_ip = ip
+        self.external_port = port
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket.bind((self.external_ip, self.external_port))
+        self.station = station
 
-manager.print_stations_to_file()
 
-station = Station(station_id="Station1", ipaddr="127.0.0.1", port=5001, manager_ip="127.0.0.1", manager_port=15555)
-station_thread = threading.Thread(target=station.run)
-station_thread.start()
+    def run(self):
+        self.socket.listen(1)
+        print(f"Listening on {self.external_ip}:{self.external_port}")
+
+        while True:
+            connection, client_address = self.socket.accept()
+            try:
+                print(f"Connection from {client_address}")
+
+                # Receive the data in small chunks and retransmit it
+                while True:
+                    data = connection.recv(1024)
+                    if data:
+                        data = data.decode()    
+                        if data == "AE":
+                            response = self.station.activate_station()
+                            connection.sendall(response.encode())
+                        # Send a response back to the client
+                    else:
+                        break
+            finally:
+                connection.close()
+
+
+

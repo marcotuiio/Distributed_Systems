@@ -4,6 +4,8 @@ import time
 import os
 
 STATIONS_FILE = "stations.txt"
+manager_ip="127.0.0.1"
+manager_port=5555
 
 class Manager:
     def __init__(self, total_spots):
@@ -23,7 +25,7 @@ class Manager:
         }
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.REP)
-        self.socket.bind("tcp://*:5555")
+        self.socket.bind(f"tcp://{manager_ip}:{manager_port}")
 
         self.active_stations = []
 

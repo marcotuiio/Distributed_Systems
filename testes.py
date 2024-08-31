@@ -93,9 +93,85 @@
 
 # print(set(stations) - set(response) - set(['Station D']))
 
-spots = [('Station A', None), ('Station B', 1), ('Station C', 2), ('Station D', 3)]
+# spots = [('Station A', None), ('Station B', 1), ('Station C', 2), ('Station D', 3)]
 
-for i, tup in enumerate(spots):
-    if tup[1] is None:
-        print(i, tup)
-        break
+# for i, tup in enumerate(spots):
+#     if tup[1] is None:
+#         print(i, tup)
+#         break
+
+
+### Comunicações via socket TCP simples como originalmente no codigo
+
+# import socket
+
+# server_ip = '127.0.0.1'
+# server_port = 5555
+
+# # Create a TCP/IP socket
+# sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# sock.bind((server_ip, server_port))
+# sock.listen(1)
+
+# print(f"Listening on {server_ip}:{server_port}")
+
+# while True:
+#     connection, client_address = sock.accept()
+#     try:
+#         print(f"Connection from {client_address}")
+
+#         # Receive the data in small chunks and retransmit it
+#         while True:
+#             data = connection.recv(1024)
+#             if data:
+#                 print(f"Received: {data.decode()}")
+#                 # Send a response back to the client
+#                 connection.sendall(b"Message received")
+#             else:
+#                 break
+#     finally:
+#         connection.close()
+
+
+### Testando zmq + json com codigo do sakuray -> tem mais algumas facilidade e abstrações uteis
+
+# import zmq
+# import time
+# import json
+
+# context = zmq.Context()
+# socket = context.socket(zmq.REP)
+# socket.bind("tcp://localhost:5555")
+
+# while True:
+#     try:
+#         response = socket.recv(flags=zmq.NOBLOCK)
+#         if not response:
+#             print("Received empty message")
+#             continue
+        
+#         decoded = response.decode('utf-8')
+#         print(f"Recebi da Estação de Controle {response} x {decoded}")
+
+#         message = json.loads(response.decode('utf-8'))
+#         print(f"Decoded JSON message: {message}")
+
+#         # Send a reply
+#         socket.send_string("Message received from Manager")
+#         time.sleep(1)
+#     except zmq.Again:
+#         print("No response")
+#         time.sleep(1)
+#         continue
+#     except json.JSONDecodeError as e:
+#         print(f"JSON decode error: {e}")
+#         continue
+
+
+vagas = [1]
+half = len(vagas) // 2
+vags2 = vagas[half:]
+vags3 = vagas[:half]
+
+print(vags2)
+print(vags3)

@@ -56,3 +56,8 @@
   - Se uma estação falhar (tolerancia a falhas), a estação com menos vagas deve assumir as vagas da estação falha (se possível).
   - Se uma nova estação for adicionada, pegar as duas estações com mais vagas e dividir igualmente entre as três.
   - Ex: o sistema inicia com 10 vagas e 3 estações inativas. Quando a primeira estação ativa, passa a controlar as 10 vagas. Quando a segunda estação ativa, a primeira estação passa a controlar 5 vagas e a segunda 5 também. Quando a terceira ativa, como quem cede é quem tem mais e nesse caso há empate, a primeira estação que for encontrada cede N // 2 vagas para a nova estação.
+
+## Problemas
+- Sincronização entre as estações de forna geral: como é simular um SD, ter tantas threads está complicando coisas simples. As vezes preciso limpar a fila de mensagens porque uma requisição anterior ja tratada teve uma resposta que ficou largada, ai a proxima requisição que chega é tratada como se fosse a resposta da anterior.
+- Estou usando 1 comunicação zmq do tipo REP para ser a comunicação EXTERNA com o Controle C++, 1 comunicação zmq do tipo PUB para ser a comunicação INTERNA entre as estações e 1 comunicação zmq do tipo REQ para ser a comunicação INTERNA entre as estações e o gerente.
+- O problema é que cada porta zmq é um socket e cada socket é uma thread. Então, estou com 3 threads por estação e isso faz com que mensagens sejam perdidas. Esse problema é da simulação, entao para tentar concertar, situações em que eu consigo garantir que deve jhaver uma mensagem, eu forço que ela seja recebida (enviar novamente e so continua com a confirmação desejada). Em situações normais do SD eu busco por minimizar tanto qntd de mensagens quanto o tamanho delas.

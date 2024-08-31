@@ -7,7 +7,7 @@ int main() {
 
 
     CentralControl MainControl;
-    MainControl.readfile("file.txt");
+    MainControl.readfile("/home/marcotuiio/Distributed_Systems/ParkingLot/stations.txt");
     MainControl.printParkingTickets();
     MainControl.readCommandFromFile("commands.txt");
 
