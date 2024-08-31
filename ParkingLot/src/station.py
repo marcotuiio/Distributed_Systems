@@ -1,8 +1,11 @@
 import zmq
 import threading
 import time
+import os
 from queue import Queue, Empty
 import uuid
+
+from manager import STATIONS_FILE
 
 ####### TRAPACEANDO - Nao estou conseguind travar a eleição nas multiplas threads
 ####### Detectar a eleiçõ funciona bem, o problema esta sendo tratar da eleição, pois
@@ -28,7 +31,7 @@ class Station:
         self.ipaddr = ipaddr
         self.port = port
         self.status = 0
-        self.last_ping = time.time()
+        self.last_ping = -1
 
         self.lock = threading.Condition()
         
@@ -558,7 +561,7 @@ class Station:
                 
                 elif message["type"] == "update_spots":
                     if message["station_id"] == self.station_id: 
-                        # print(f"Update spots received here {self.station_id}")
+                        # print(f"Update spots received here {self.station_id} - list: {self.local_spots} x new list: {message['spots_list']}")
                         self.local_spots = message["spots_list"]
                         self.nspots = len(self.local_spots)
                         self.broadcast_socket.send_json({"type": "response_update_spots", "station_id": self.station_id, "status": "success"})
@@ -627,6 +630,7 @@ class Station:
 
     def run(self):
         self.activate_station()
+        self.last_ping = time.time()
         request_thread = threading.Thread(target=self.handle_requests)
         request_thread.start()
 
@@ -634,44 +638,44 @@ class Station:
         ping_thread.start()
 
         return request_thread, ping_thread
-
+    
 
 if __name__ == "__main__":
-    t = []
-    station1 = Station(station_id="Station1", ipaddr="127.0.0.3", port=5010, manager_ip="127.0.0.3", manager_port=5555, 
-                   other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5030), ("127.0.0.3", 5040)])
-    t1, t2 = station1.run()
+    manager_ip="127.0.0.1"
+    manager_port=5555
+
+    ### Atualmente as estações nao passam pelo estado de hibernação
+    ### assim que o arquivos do manager é lido elas sao ativas -> ver como corrigir isso
+    ### por algum motivo se as estações nao sao ativadas no momento da criação 
+    ### da um bug sinistro que clona as variavel no estado inicial e nao deixa atualizar
+
+    path = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(path, "..")
+    stations_file = os.path.join(path, STATIONS_FILE)
+    stations = []
+    with open(stations_file, "r") as file:
+        for line in file:
+            station_id, ipaddr, port = line.strip().split(" ")
+            stations.append((station_id, ipaddr, int(port)))
     
-    time.sleep(3)
-
-    station2 = Station(station_id="Station2", ipaddr="127.0.0.3", port=5020, manager_ip="127.0.0.3", manager_port=5555,
-                       other_stations=[("127.0.0.3", 5010), ("127.0.0.3", 5030), ("127.0.0.3", 5040)])
-    t3, t4 = station2.run()
-    
-    time.sleep(3)
-
-    station3 = Station(station_id="Station3", ipaddr="127.0.0.3", port=5030, manager_ip="127.0.0.3", manager_port=5555,
-                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5040)])
-    t5, t6 = station3.run()
-
-    time.sleep(3)
-
-    station4 = Station(station_id="Station4", ipaddr="127.0.0.3", port=5040, manager_ip="127.0.0.3", manager_port=5555,
-                       other_stations=[("127.0.0.3", 5020), ("127.0.0.3", 5010), ("127.0.0.3", 5030)])  
-    t7, t8 = station4.run()
-
-    # t.extend([t1, t2, t3, t4, t5, t6, t7, t8])
-    # for thread in t:
-    #     thread.join()
+    stations_obj = []
+    for station_id, ipaddr, port in stations:
+        other_stations = [(s[1], s[2]) for s in stations if s[0] != station_id]
+        # print(f"Station {station_id} - IP: {ipaddr} - Port: {port} - Other stations: {other_stations}")
+        s = Station(
+            station_id=station_id,
+            ipaddr=ipaddr,
+            port=port,
+            manager_ip=manager_ip,
+            manager_port=manager_port,
+            other_stations=other_stations
+        )
+        s.run()
+        stations_obj.append(s)
+        # time.sleep(1)
 
 
-    # time.sleep(5)
-    # print(f'\nStation1: {station1.local_spots}')
-    # print(f'Station2: {station2.local_spots}')
-    # print(f'Station3: {station3.local_spots}')
-    # print(f'Station4: {station4.local_spots}\n')
-    
-    # time.sleep(4)
+    # time.sleep(10)
     # station1.deactivate_station()
 
     ## TESTANDO REATIVAR A ESTAÇÃO - dependencia esquisita dos tempos de thread
@@ -683,13 +687,7 @@ if __name__ == "__main__":
     # # response = station2.subscriber_socket.recv_json()
     # print(f"Station2 response: {response}")
 
-    # time.sleep(5)
-    # print(f'\nStation1: {station1.local_spots}')
-    # print(f'Station2: {station2.local_spots}')
-    # print(f'Station3: {station3.local_spots}')
-    # print(f'Station4: {station4.local_spots}')
-
-    time.sleep(8)
+    # time.sleep(8)
     
 
     # Testando alocar vaga - carros sao threads
@@ -699,15 +697,14 @@ if __name__ == "__main__":
     # car1.start()
 
     ## Esse teste assim faz com eventualmente a estacao 1 trave nessa thread mas ok depois resolvo
-    for i in range(5):
-        time.sleep(5)
-        print(f"\n -->> Car{i}")
-        car = threading.Thread(target=station1.allocate_spot, args=(f"Car{i}",))
-        car.daemon = True
-        car.start()
-        car.join()
+    # for i in range(5):
+    #     time.sleep(5)
+    #     print(f"\n -->> Car{i}")
+    #     car = threading.Thread(target=station1.allocate_spot, args=(f"Car{i}",))
+    #     car.daemon = True
+    #     car.start()
+    #     car.join()
 
-    print("\n\nPUTA QUE PARIU SAIU DO FOR\n\n")
-    time.sleep(6)
-    print("\n==== Going to release car\n")
-    station2.release_car("Car2")
+    # time.sleep(6)
+    # print("\n==== Going to release car\n")
+    # station2.release_car("Car2")

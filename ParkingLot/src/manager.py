@@ -1,6 +1,9 @@
 import zmq
 import threading
 import time
+import os
+
+STATIONS_FILE = "stations.txt"
 
 class Manager:
     def __init__(self, total_spots):
@@ -15,7 +18,7 @@ class Manager:
             "Station5": {"id": "Station5", "ipaddr": "127.0.0.1", "port": 5050, "status": 0, "spots": []},
             "Station6": {"id": "Station6", "ipaddr": "127.0.0.1", "port": 5060, "status": 0, "spots": []},
             "Station7": {"id": "Station7", "ipaddr": "127.0.0.1", "port": 5070, "status": 0, "spots": []},
-            "Station8": {"id": "Station8", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
+            "Station8": {"id": "Station8", "ipaddr": "127.0.0.1", "port": 5080, "status": 0, "spots": []},
             "Station9": {"id": "Station9", "ipaddr": "127.0.0.1", "port": 5090, "status": 0, "spots": []}
         }
         self.context = zmq.Context()
@@ -26,8 +29,11 @@ class Manager:
 
     # Escreve as informações das estações no arquivo file.txt
     def print_stations_to_file(self):
-        with open("../file.txt", "w") as f:
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        stations_path = os.path.join(path, STATIONS_FILE)
+        with open(stations_path, "w") as f:
             for station_id, station in self.stations.items():
+                # print(f"{station['id']} {station['ipaddr']} {station['port']}")
                 f.write(f"{station['id']} {station['ipaddr']} {station['port']}\n")
 
 

@@ -11,6 +11,7 @@
   - Registrar as estações ativas e suas vagas (recebe informações das estações).
   - Quando uma estação falha, envia mensagem para quem disparou a eleição contendo as vagas da estação falha.
   - Definir como zmq vai funcionar para comunicação entre as estações.
+  - Recebe informações de todas as estações para 1. informar as estações das vagas de quem falho e 2. printar um relatorio atualizado
 
 **Middleware (Estação):**
 - **Função:** Gerenciar vagas locais e atender solicitações de carros.
@@ -20,12 +21,13 @@
   - Registrar vagas locais, se necessario, informar quais vagas sobraram para a estação que solicitou e atualizar o gerente.
   - Realizar ping constante para entre si e em caso de falha, disparar eleição.
   - Na eleição:
+    - travo o sistema todo para nao ter inconsistencias
     - a estação com menos vagas deve assumir as vagas da estação falha
   - Alocar vagas para carros (threads)
-    - Se possui vagas disponiveis locais, alocar para o carro. (será um dicionario com id do carro e vaga alocada)
+    - Se possui vagas disponiveis locais, alocar para o carro. (será uma lista com id do carro e vaga alocada)
     - Se não possui vagas disponiveis, solicitar vagas adicionais para as outras estações (informar a outra estação que a vaga foi alocada).
     - Quando a vaga é liberada, informar a estação que a vaga foi liberada. 
-  - Implementar comunicação eficiente entre estações (usar zmq ?).
+  - Implementar comunicação eficiente entre estações (usar zmq).
 
 ## Fluxo do Sistema
 
@@ -49,7 +51,7 @@
 ### Balanceamento de Carga (Eleição) 
 - O gerente é um mero observador e não interfere na alocação de vagas
 - Existe um sistema de ping constante feito por broadcast para verificar se as estações estão ativas.
-  - Definir o Tempo de tolarancia e quem dispara a eleição.
+  - Definir o Tempo de tolarancia e quem dispara a eleição. Estou usando timeout de 5 e 3 tentativas toleradas.
 - O balanceamento deve ser feito baseado em eleições.
   - Se uma estação falhar (tolerancia a falhas), a estação com menos vagas deve assumir as vagas da estação falha (se possível).
   - Se uma nova estação for adicionada, pegar as duas estações com mais vagas e dividir igualmente entre as três.
