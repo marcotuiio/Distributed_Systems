@@ -17,9 +17,15 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 
 GLOBAL_LOCK_IN_ELECTION = threading.Lock()
 
+## Aumentar esse tempos pode atrasar o sistema mas evitar dalsas detecções de falha
+## Aumentar o retry auumenta consideravelmete o fluxo de mensagens, porem apenas o response_timeout
+## pode nao ser o suficiente para sync das threads e dar pra todas responderem
 RESPONSE_TIMEOUT = 5
+PING_RETRY = 4
+
+## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
+## ja que foi adotado um heartbeat distribuido de 15 UT, isto é, todas as estações perguntam a todas
 PING_INTERVAL = 15
-PING_RETRY = 3
 
 # Fila global de carros em espera, será atualiza por mensagens de broadcast quando um carro chegar e não tiver vaga
 # Entao de tempos em tempos as estações vão verificar se tem carro na fila e tentar alocar uma vaga
@@ -155,7 +161,7 @@ class Station:
                             print(f"(1) Timeout reached. {len(spots_info)} responded. Retrying...")
                             self.broadcast_socket.send_json({"type": "request_spots", "station_id": self.station_id})
                             start_time = time.time()
-                            time.sleep(0.1)
+                            time.sleep(0.2)
                 
                 if not spots_info:
                     print("ERORRR No other stations responded to broadcast activation.\n")
@@ -295,7 +301,7 @@ class Station:
                     if len(self.connections) - 1 > len(responses):
                         # Parar todos os pings e executar a eleição - estrategia trapaceira global, mas é a unica que nao quebra as threads
                         if GLOBAL_LOCK_IN_ELECTION.locked():
-                            print("<<< Election already in progress")
+                            print(f"<<< {self.station_id} Election already in progress")
                             continue
 
                         print("\nSome station is inactive")
@@ -360,10 +366,10 @@ class Station:
                             spots_info.append((message['station_id'], message['nspots']))
                     except zmq.Again:
                         if time.time() - start_time > timeout and len(spots_info) < len(active_stations):
-                            print(f"Timeout reached. {spots_info} responded. Retrying...")
+                            print(f"(2) Timeout reached. {len(spots_info)} responded. Retrying...")
                             self.broadcast_socket.send_json({"type": "request_spots", "station_id": self.station_id})
                             start_time = time.time()
-                            time.sleep(0.1)
+                            time.sleep(0.2)
 
                 # print(f"<<< Information about spots: {spots_info}\n")
                 if not spots_info:
@@ -371,23 +377,31 @@ class Station:
                     exit(1)
                 else:
                     min_spots_station = min(spots_info, key=lambda x: x[1])
-                    print(f"Station with least spots (that answerd first): {min_spots_station[0]} = {min_spots_station[1]}")
-                    self.broadcast_socket.send_json({"type": "request_spots_list", "station_id": self.station_id, "target_station_id": min_spots_station[0]})
-                    time.sleep(0.1) 
-
-                    # Receber a lista de vagas da estação com menos vagas
                     spots_list = []
-                    while True:
-                        try:
-                            message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
-                            if message["type"] == "response_spots_list" and message["station_id"] == min_spots_station[0]:
-                                spots_list = message["spots_list"]
-                                break
-                        except zmq.Again:
-                            self.broadcast_socket.send_json({"type": "request_spots_list", "station_id": self.station_id, "target_station_id": min_spots_station[0]})
-                            time.sleep(0.1)
 
-                    # print(f"~~~~ Spots list: {spots_list}")
+                    print(f"Station with least spots (that answerd first): {min_spots_station[0]} = {min_spots_station[1]}")
+                    
+                    # Se a propria estação for a que tem menos vagas, ela herda as vagas da estação que falhou e nem precisa enviar requests
+                    if min_spots_station[0] == self.station_id:
+                        spots_list = self.local_spots
+                    
+                    else:
+                        self.broadcast_socket.send_json({"type": "request_spots_list", "station_id": self.station_id, "target_station_id": min_spots_station[0]})
+                        time.sleep(0.2) 
+                        # Receber a lista de vagas da estação com menos vagas
+                        while True:
+                            try:
+                                message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
+                                if message["type"] == "response_spots_list" and message["station_id"] == min_spots_station[0]:
+                                    spots_list = message["spots_list"]
+                                    break
+                            except zmq.Again:
+                                print(f"<<< (3) Timeout retrying request spots list from station {min_spots_station[0]} to continue election")
+                                self.broadcast_socket.send_json({"type": "request_spots_list", "station_id": self.station_id, "target_station_id": min_spots_station[0]})
+                                time.sleep(0.2)
+                                continue
+
+                    # print(f"= Spots list: {spots_list}\n")
 
                     # Distribuir as vagas seguindo a logica de divisão
                     # A estacao com menos vagas herda as vagas da estacao que falhou
@@ -441,6 +455,10 @@ class Station:
                                 print(f"Failed to communicate with manager: {e}")
                                 retry += 1
                                 time.sleep(1)
+                    else:
+                        print("ERROR - No spots list received from station with least spots\n")
+                        exit(1)
+
 
     # Verifica se há vagas disponíveis na estação
     # Se houver, sinaliza verdadeiro e retorna o índice da vaga
@@ -578,6 +596,12 @@ class Station:
             response = self.manager_socket.recv_json()
 
 
+    ## Lida com requisições externas - simula a camada de APP do projeto
+    ## AE - Ativar estação
+    ## FE - Falha na estação
+    ## VD - Vagas disponíveis em todas as estações
+    ## RV - Requisitar vaga
+    ## LV - Liberar vaga
     def handle_app_requests(self):
         while True:
             try:
@@ -588,6 +612,23 @@ class Station:
                     if  external_message == "AE":
                         response = self.activate_station()
                         self.app_socket.send(response.encode())
+                    
+                    if external_message == "FE":
+                        time.sleep(10)     # Taaalvez sem esse sleep quebre :/
+                        self.deactivate_station()
+                        self.app_socket.send(b"Station deactivated with success - election not triggered yet\n")
+                    
+                    elif external_message == "VD":
+                        self.manager_socket.send_json({"type": "request_format_active_stations"})
+                        time.sleep(1)
+                        try:
+                            response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
+                            # print(f"\t????? Active stations: {response['active_stations']}\n")
+                            self.app_socket.send(str(response["active_stations"]).encode())
+                        except zmq.Again as e:
+                            print("No response received from manager socket in non-blocking mode.")
+                            self.app_socket.send(b"No response received from manager.")
+
                     time.sleep(1)
 
             except zmq.Again:
@@ -622,9 +663,9 @@ class Station:
                     # print(f"Request spots from {message['station_id']} - received here {self.station_id} = {self.nspots} x {len(self.local_spots)}")
                     self.broadcast_socket.send_json({"type": "response_spots", "station_id": self.station_id, "nspots": self.nspots})
             
-                elif message["type"] == "request_spots_list" :
+                elif message["type"] == "request_spots_list":
                     if message["target_station_id"] == self.station_id:
-                        # print(f"Request spots list from {message['station_id']} - received here {self.station_id} => list: {self.local_spots}")
+                        # print(f"ççç Request spots list from {message['station_id']} - received here {self.station_id} => list: {self.local_spots}")
                         self.broadcast_socket.send_json({"type": "response_spots_list", "station_id": self.station_id, "spots_list": self.local_spots})
                 
                 elif message["type"] == "update_spots":

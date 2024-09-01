@@ -168,10 +168,24 @@
 #         continue
 
 
-vagas = [1]
-half = len(vagas) // 2
-vags2 = vagas[half:]
-vags3 = vagas[:half]
+# vagas = [1]
+# half = len(vagas) // 2
+# vags2 = vagas[half:]
+# vags3 = vagas[:half]
 
-print(vags2)
-print(vags3)
+# print(vags2)
+# print(vags3)
+
+stations ={ 
+            "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
+            "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 1, "spots": [(12, None), (10, 'carro1'), (11, 'carro2'), (13, 'carro3'), (14, 'carro5')]}
+        }
+
+active_stations = []
+for station in stations:
+    if stations[station]["status"] == 1:
+        ocupadas = len([spot for spot in stations[station]["spots"] if spot[1] is not None])
+        total = len(stations[station]["spots"])
+        vazias = total - ocupadas
+        active_stations.append((station, total, ocupadas, vazias))
+print(active_stations)

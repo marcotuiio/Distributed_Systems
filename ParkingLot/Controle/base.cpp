@@ -13,8 +13,7 @@
 using namespace std;
 
 #include <zmq.hpp>
-// #include <nlohmann/json.hpp>
-// using json = nlohmann::json;
+
 
 string Communication::sendMessage(const std::string& server_ip, int server_port, const std::string& request_msg) {
     zmq::context_t context(1);
@@ -22,13 +21,6 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
 
     std::string address = "tcp://" + server_ip + ":" + std::to_string(server_port);
     socket.connect(address);
-
-    // Create a JSON object
-    // json message_json;
-    // message_json["type"] = "AE";
-
-    // Convert JSON object to string
-    // std::string message_str = message_json.dump();
 
     std::string message_str = request_msg;
 
@@ -94,6 +86,6 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
 string Communication::actFunction( string dest_IP, int dest_Port, string cmd){
     string response;
     response = Communication::sendMessage(dest_IP, dest_Port, cmd);
-    sleep(10);
+    sleep(5);
     return (response);
 }

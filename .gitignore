@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 
 *.o
+ParkingLot/src/__pycache__/
+ParkingLot/Controle/main

@@ -43,7 +43,7 @@ void CentralControl::handleCommand(string cmd, string dest_IP, int dest_Port){
         string exit_ipaddr;
         int exit_port;
         selectExit(exit_name, exit_ipaddr, &exit_port);
-        newThread.emplace_back(&Car::carThread,this, dest_IP, dest_Port, exit_ipaddr, exit_port);
+        newThread.emplace_back(&Car::carThread,this, dest_IP, dest_Port, exit_ipaddr, exit_port,setCarID(6));
 
         //criar a thread carro o "LV" será enviado pelo carro
         
@@ -115,6 +115,17 @@ void CentralControl::selectExit(string& station, string&  addr, int * p){
 
 
 }
+
+
+string CentralControl::setCarID(int n){
+    string res = "";
+    for (int i = 0; i < n; i++)
+        res = res + alphabet[rand() % 36];
+
+    return res;
+
+}
+
 
 string CentralControl::getName(int ind){
     return name[ind-1];

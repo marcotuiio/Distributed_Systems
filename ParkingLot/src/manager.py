@@ -89,6 +89,17 @@ class Manager:
                     spots = self.stations[station_id]["spots"]
                     self.socket.send_json({"type": "response_spots_from_station", "spots": spots})
 
+                elif message["type"] == "request_format_active_stations":
+                    active_stations = []
+                    for station in self.stations:
+                        if self.stations[station]["status"] == 1:
+                            ocupadas = len([spot for spot in self.stations[station]["spots"] if spot[1] is not None])
+                            total = len(self.stations[station]["spots"])
+                            vazias = total - ocupadas
+                            active_stations.append((station, total, ocupadas, vazias))
+                            
+                    self.socket.send_json({"type": "response_format_active_stations", "active_stations": active_stations})
+
                 elif message["type"] == "print_stations":
                     self.print_stations()
                     self.socket.send_json({"type": "response_print_stations", "status": "success"})
