@@ -1,19 +1,20 @@
 
-#include <string>
-#include <fstream> // file stream
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <random>      // For random number generation
-#include <chrono>      // For time functions
+#include "base.h"
+
+#include <arpa/inet.h>
 #include <sys/socket.h>
 #include <unistd.h>
-#include <arpa/inet.h>
-#include "base.h"
+
+#include <chrono>  // For time functions
+#include <cstdlib>
+#include <fstream>  // file stream
+#include <iomanip>
+#include <iostream>
+#include <random>  // For random number generation
+#include <string>
 using namespace std;
 
 #include <zmq.hpp>
-
 
 string Communication::sendMessage(const std::string& server_ip, int server_port, const std::string& request_msg) {
     zmq::context_t context(1);
@@ -38,7 +39,7 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
         return "";
     }
     std::string response(static_cast<char*>(reply.data()), reply.size());
-    std::cout << "Received: " << response << std::endl;
+    std::cout << "Received: " << response << "\n" << std::endl;
 
     return response;
 }
@@ -83,9 +84,9 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
 //     return (std::string(buffer, valread));
 // }
 
-string Communication::actFunction( string dest_IP, int dest_Port, string cmd){
+string Communication::actFunction(string dest_IP, int dest_Port, string cmd) {
     string response;
     response = Communication::sendMessage(dest_IP, dest_Port, cmd);
-    sleep(5);
+    // sleep(5);
     return (response);
 }

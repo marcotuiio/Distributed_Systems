@@ -33,6 +33,8 @@ PING_INTERVAL = 15
 
 global_car_queue = Queue()
 
+# Estudar a possibilidade de adicionar uma fila de requisições por estação, talvez isso corrija os timeouts e sleeps?
+
 class Station:
     def __init__(self, station_id, ipaddr, port, manager_ip, manager_port, other_stations=[]):
         self.station_id = station_id
@@ -52,6 +54,8 @@ class Station:
 
         # Fila para guardar as respostas dos pings e nao embaralhar com as ordens de execução
         self.ping_responses = Queue()
+
+        self.cars_threads = []  
         
         self.context = zmq.Context()
         self.manager_socket = self.context.socket(zmq.REQ)
@@ -618,6 +622,27 @@ class Station:
                         self.deactivate_station()
                         self.app_socket.send(b"Station deactivated with success - election not triggered yet\n")
                     
+                    elif external_message[0:2] == "RV":
+                        car_id = external_message[3:]
+                        print(f'\nRequisição de vaga em {self.station_id} = {car_id}')
+                        self.app_socket.send(b"Request allocate received\n")
+                        car = threading.Thread(target=self.allocate_spot, args=(car_id,))
+                        car.daemon = True
+                        car.start()
+                        car.join()
+                        time.sleep(2)
+
+                    elif external_message[0:2] == "LV":
+                        car_id = external_message[3:]
+                        print(f'\nLiberar vaga em {self.station_id} = {car_id}')
+                        self.app_socket.send(b"Request release received\n")
+                        time.sleep(4)
+                        car = threading.Thread(target=self.release_car, args=(car_id,))
+                        car.daemon = True
+                        car.start()
+                        car.join()
+                        time.sleep(2)
+
                     elif external_message == "VD":
                         self.manager_socket.send_json({"type": "request_format_active_stations"})
                         time.sleep(1)

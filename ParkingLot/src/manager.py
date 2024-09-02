@@ -4,8 +4,10 @@ import time
 import os
 
 STATIONS_FILE = "stations.txt"
-manager_ip="127.0.0.1"
-manager_port=5555
+TOTAL_SPOTS = 4
+
+manager_ip = "127.0.0.1"
+manager_port = 5555
 
 class Manager:
     def __init__(self, total_spots):
@@ -120,7 +122,7 @@ class Manager:
 
 
 if __name__ == "__main__":
-    manager = Manager(total_spots=10)
+    manager = Manager(total_spots=TOTAL_SPOTS)
     manager_thread = threading.Thread(target=manager.run)
     manager_thread.start()
 
