@@ -21,7 +21,7 @@ void CentralControl::readCommandFromFile(string cmdFile) {
     // display each record in file
     while (inCommandFile >> command >> destination) {
         std::cout << "Processing command: " << command << " station: " << destination << std::endl;
-        this->handleCommand(command, CentralControl::getIpAddress(destination), CentralControl::getPort(destination));
+        this->handleCommand(command, destination, CentralControl::getIpAddress(destination), CentralControl::getPort(destination));
     }
     // Join the threads with the main thread
     for (auto& thread : newThread) {
@@ -31,15 +31,16 @@ void CentralControl::readCommandFromFile(string cmdFile) {
     }
 }
 
-void CentralControl::handleCommand(string cmd, string dest_IP, int dest_Port) {
+void CentralControl::handleCommand(string cmd, int dest_index, string dest_IP, int dest_Port) {
     string response;
     if (cmd == "RV") {
         carNumber++;
-        std::cout << "Starting the car: " << carNumber << std::endl;
+        // std::cout << "Starting the car: " << carNumber << std::endl;
         string exit_name;
         string exit_ipaddr;
         int exit_port;
         selectExit(exit_name, exit_ipaddr, &exit_port);
+
         newThread.emplace_back(&Car::carThread, this, dest_IP, dest_Port, exit_ipaddr, exit_port, setCarID(6));
         sleep(5);
         // criar a thread carro o "LV" será enviado pelo carro
@@ -52,7 +53,14 @@ void CentralControl::handleCommand(string cmd, string dest_IP, int dest_Port) {
         if (cmd == "VD") {
             writeToFile(response);
         }
-        std::cout << "Resuming the process...\n" << std::endl;
+        if (cmd == "AE") {
+            status[dest_index - 1] = '1';
+        }
+        if (cmd == "FE") {
+            status[dest_index - 1] = '0';
+        }
+        std::cout << "Resuming the process...\n"
+                  << std::endl;
         sleep(5);
     } else {
         std::cout << "Unknown command!" << std::endl;
@@ -94,18 +102,42 @@ void CentralControl::printParkingTickets() {
 
 void CentralControl::selectExit(string& station, string& addr, int* p) {
     // Create a random number generator
-    std::random_device rd;                       // Seed for the random number engine
-    std::mt19937 gen(rd());                      // Mersenne Twister engine
-    std::uniform_int_distribution<> dist(1, 9);  // Range from 5 to 10 microseconds
-
+    std::random_device rd;   // Seed for the random number engine
+    std::mt19937 gen(rd());  // Mersenne Twister engine
+    std::uniform_int_distribution<> dist(0, 8);
+    std::cout << "\nSelecting exit station...\n"
+              << std::endl;
+    // printParkingTickets();
+    std::cout << "\n"
+              << std::endl;
     // Generate a index
     int ind = dist(gen);
-    while (status[ind] == 0) {
-        ind = dist(gen);
+    if (status[ind] == '1') {
+        std::cout << "Initial selection success >>> " << name[ind] << "  " << status[ind] << std::endl;
+        name[ind];
+        addr = ipaddress[ind];
+        *p = port[ind];
+
+    } else {
+        int attempts = 0;
+        const int max_attempts = 10;  // Adjust as needed
+
+        while (status[ind] == '0' && attempts < max_attempts) {
+            ind = dist(gen);
+            // std::cout << ">> Retrying selection >>> " << name[ind] << "  " << status[ind] << std::endl;
+            attempts++;
+        }
+
+        if (status[ind] == '0') {
+            std::cerr << "<< Error: No active stations found after " << max_attempts << " attempts." << std::endl;
+            exit(-1);
+        }
+        std::cout << "Final selection success >>> " << name[ind] << "  " << status[ind] << std::endl;
+        name[ind];
+        addr = ipaddress[ind];
+        *p = port[ind];
     }
-    station = name[ind];
-    addr = ipaddress[ind];
-    *p = port[ind];
+
 }
 
 string CentralControl::setCarID(int n) {
