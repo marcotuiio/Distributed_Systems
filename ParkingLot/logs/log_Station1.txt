@@ -1,0 +1,38 @@
+Station Station1 - IP: 127.0.0.1 - Port: 5011
+Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
+ 	-----------
+
+Station Station1 is active but hibernating in 5011
+Received external message: AE in station Station1
+
+Activating station Station1
+<<< Active stations before: 1
+Station with most spots: Station0 = 10
+ = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None], [7, None], [8, None], [9, None]]
+
+>>>>>>> Confirmation received from station Station0
+<<< Active stations after: 2
+<<< Station Station1 known connections: ['Station0', 'Station1']
+
+Received external message: RV.9ip700 in station Station1
+$$$ Station Station1 allocated spot 4 to car 9ip700
+$$$ Station Station1 spots: [(4, '9ip700')]
+
+Received release car from 9ip700 in station Station1
+*** Station Station1 released spot 4 from car 9ip700
+*** Station Station1 spots: [(4, None)]
+*** Car left on station Station4
+Received release car from fss4fd in station Station1
+Received release car from 7jjl6n in station Station1
+
+Received car borrow spot from Station4 here in station Station1 = car 7jjl6n
+%%% Station Station1 lent spot 4 to car 7jjl6n | Station Station4 asked
+%%% Station Station1 spots: [(4, '7jjl6n')]
+Received release car from 3ktiij in station Station1
+Received release car from en7j6p in station Station1
+
+Received car borrow spot from Station4 here in station Station1 = car en7j6p
+Received release car from 8vn3a1 in station Station1
+
+Received car borrow spot from Station4 here in station Station1 = car 8vn3a1
+Shutting down...

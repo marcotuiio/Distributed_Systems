@@ -4,7 +4,7 @@ import time
 import os
 
 STATIONS_FILE = "stations.txt"
-TOTAL_SPOTS = 4
+TOTAL_SPOTS = 10
 
 manager_ip = "127.0.0.1"
 manager_port = 5555
@@ -80,8 +80,9 @@ class Manager:
                             self.active_stations.append(station_id)
                         self.stations[station_id]["status"] = 1
                     elif message["status"] == 0:
-                        self.active_stations.remove(station_id)
-                        self.stations[station_id]["status"] = 0
+                        if self.active_stations.count(station_id) > 0:
+                            self.active_stations.remove(station_id)
+                            self.stations[station_id]["status"] = 0
 
                     self.stations[station_id]["spots"] = spots
                     self.socket.send_json({"type": "response_update_station_spots", "status": "success", "active_stations": self.active_stations})

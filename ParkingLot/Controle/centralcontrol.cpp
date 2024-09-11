@@ -20,7 +20,7 @@ void CentralControl::readCommandFromFile(string cmdFile) {
     }
     // display each record in file
     while (inCommandFile >> command >> destination) {
-        std::cout << "Processing command: " << command << " station: " << destination << std::endl;
+        std::cout << "\nProcessing command: " << command << " station: " << destination << std::endl;
         this->handleCommand(command, destination, CentralControl::getIpAddress(destination), CentralControl::getPort(destination));
     }
     // Join the threads with the main thread
@@ -105,11 +105,11 @@ void CentralControl::selectExit(string& station, string& addr, int* p) {
     std::random_device rd;   // Seed for the random number engine
     std::mt19937 gen(rd());  // Mersenne Twister engine
     std::uniform_int_distribution<> dist(0, 8);
-    std::cout << "\nSelecting exit station...\n"
-              << std::endl;
+    // std::cout << "\nSelecting exit station...\n"
+            //   << std::endl;
     // printParkingTickets();
-    std::cout << "\n"
-              << std::endl;
+    // std::cout << "\n"
+    //           << std::endl;
     // Generate a index
     int ind = dist(gen);
     if (status[ind] == '1') {

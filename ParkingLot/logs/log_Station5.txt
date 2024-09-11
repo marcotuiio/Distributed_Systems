@@ -1,0 +1,24 @@
+Station Station5 - IP: 127.0.0.1 - Port: 5051
+Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
+ 	-----------
+
+Station Station5 is active but hibernating in 5051
+Received external message: AE in station Station5
+
+Activating station Station5
+<<< Active stations before: 5
+(1) Timeout reached. 4 responded. Retrying...
+Station with most spots: Station1 = 3
+ = Spots list: [[2, None], [3, None], [4, None]]
+
+>>>>>>> Confirmation received from station Station1
+<<< Active stations after: 6
+<<< Station Station5 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']
+
+Received release car from 9ip700 in station Station5
+Received release car from fss4fd in station Station5
+Received release car from 7jjl6n in station Station5
+Received release car from 3ktiij in station Station5
+Received release car from en7j6p in station Station5
+Received release car from 8vn3a1 in station Station5
+Shutting down...

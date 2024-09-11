@@ -1,0 +1,40 @@
+Station Station0 - IP: 127.0.0.1 - Port: 5001
+Other stations: [('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
+ 	-----------
+
+Station Station0 is active but hibernating in 5001
+Received external message: AE in station Station0
+
+Activating station Station0
+<<< Active stations before: 0
+<<< Active stations after: 1
+<<< Station Station0 known connections: ['Station0']
+
+Received release car from 9ip700 in station Station0
+
+Received car borrow spot from Station4 here in station Station0 = car 7jjl6n
+%%% Station Station0 lent spot 9 to car 7jjl6n | Station Station4 asked
+%%% Station Station0 spots: [(9, '7jjl6n')]
+Received release car from fss4fd in station Station0
+Received release car from 7jjl6n in station Station0
+*** Station Station0 released spot 9 from car 7jjl6n
+*** Station Station0 spots: [(9, None)]
+*** Car left on station Station2
+
+Received car borrow spot from Station4 here in station Station0 = car en7j6p
+%%% Station Station0 lent spot 9 to car en7j6p | Station Station4 asked
+%%% Station Station0 spots: [(9, 'en7j6p')]
+Received release car from 3ktiij in station Station0
+Received release car from en7j6p in station Station0
+*** Station Station0 released spot 9 from car en7j6p
+*** Station Station0 spots: [(9, None)]
+*** Car left on station Station8
+
+Received car borrow spot from Station4 here in station Station0 = car 8vn3a1
+%%% Station Station0 lent spot 9 to car 8vn3a1 | Station Station4 asked
+%%% Station Station0 spots: [(9, '8vn3a1')]
+Received release car from 8vn3a1 in station Station0
+*** Station Station0 released spot 9 from car 8vn3a1
+*** Station Station0 spots: [(9, None)]
+*** Car left on station Station3
+Shutting down...

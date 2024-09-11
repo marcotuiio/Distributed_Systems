@@ -1,0 +1,57 @@
+Station Station4 - IP: 127.0.0.1 - Port: 5041
+Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
+ 	-----------
+
+Station Station4 is active but hibernating in 5041
+Received external message: AE in station Station4
+
+Activating station Station4
+<<< Active stations before: 4
+Station with most spots: Station0 = 3
+ = Spots list: [[7, None], [8, None], [9, None]]
+
+>>>>>>> Confirmation received from station Station0
+<<< Active stations after: 5
+<<< Station Station4 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
+
+Received external message: LV.9ip700 in station Station4
+Received external message: RV.fss4fd in station Station4
+$$$ Station Station4 allocated spot 7 to car fss4fd
+$$$ Station Station4 spots: [(7, 'fss4fd')]
+
+Received external message: RV.7jjl6n in station Station4
+
+:( Station Station4 has no spots available
+### Requesting spot from station Station0
+Received release car from fss4fd in station Station4
+### Requesting spot from station Station1
+:D Station Station4 borrowed spot from station Station1
+
+*** Station Station4 released spot 7 from car fss4fd
+*** Station Station4 spots: [(7, None)]
+*** Car left on station Station6
+Received external message: RV.3ktiij in station Station4
+$$$ Station Station4 allocated spot 7 to car 3ktiij
+$$$ Station Station4 spots: [(7, '3ktiij')]
+
+Received external message: RV.en7j6p in station Station4
+
+:( Station Station4 has no spots available
+### Requesting spot from station Station0
+Received release car from en7j6p in station Station4
+### Requesting spot from station Station1
+### Requesting spot from station Station2
+:D Station Station4 borrowed spot from station Station2
+
+Received external message: RV.8vn3a1 in station Station4
+
+:( Station Station4 has no spots available
+### Requesting spot from station Station0
+Received release car from 8vn3a1 in station Station4
+### Requesting spot from station Station1
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+:D Station Station4 borrowed spot from station Station3
+
+Received external message: VD in station Station4
+Shutting down...

@@ -29,7 +29,7 @@ void Car::carThread(string dest_IP, int dest_Port, string exit_IP, int exit_Port
     // Create a random number generator
     std::random_device rd;                         // Seed for the random number engine
     std::mt19937 gen(rd());                        // Mersenne Twister engine
-    std::uniform_int_distribution<> dist(20, 30);  // Range from 5 to 10 microseconds
+    std::uniform_int_distribution<> dist(700, 1000);  
 
     // Generate a random sleep duration
     int sleepTime = dist(gen);
