@@ -4,7 +4,7 @@ import time
 import os
 
 STATIONS_FILE = "stations.txt"
-TOTAL_SPOTS = 10
+TOTAL_SPOTS = 15
 
 manager_ip = "127.0.0.1"
 manager_port = 5555
@@ -118,9 +118,11 @@ class Manager:
     def run(self):
         print("Manager is running...\n")
         self.manager_handle_requests()
-        while True:
-            pass
-
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            print("Manager stopped")
 
 if __name__ == "__main__":
     manager = Manager(total_spots=TOTAL_SPOTS)

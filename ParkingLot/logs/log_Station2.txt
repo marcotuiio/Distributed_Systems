@@ -7,52 +7,28 @@ Station Station2 is active but hibernating in 5021
 
 Activating station Station2
 <<< Active stations before: 2
-Station with most spots: Station1 = 5
- = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None]]
-	>>>>> Confirmation received from station Station1
+Station with most spots: Station0 = 8
+ = Spots list: [[7, None], [8, None], [9, None], [10, None], [11, None], [12, None], [13, None], [14, None]]
+	>>>>> Confirmation received from station Station0
 <<< Active stations after: 3
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
-
-<<< (0) Ping Retry - Station Station2 got 4 responses expected 5
-Received release car from p70005 in station Station2
-
-;;; Received election trigger from Station4 in station Station2 = True
-
-Received release car from s4fdbq in station Station2
-(EXTERNAL) Received message: LV.tiijoo in station Station2
-(EXTERNAL) Received message: LV.6pur8v in station Station2
-Received release car from sjcpc6 in station Station2
-Received release car from y06mpl in station Station2
-Received release car from fvgfwl in station Station2
-Received release car from urdlsa in station Station2
-Received release car from ylobcp in station Station2
-Received release car from i6bobe in station Station2
-Received release car from xip19n in station Station2
-Received release car from r2xl4z in station Station2
-Received release car from dzoudp in station Station2
-(EXTERNAL) Received message: LV.hhrcoq in station Station2
-Received release car from 7j3aud in station Station2
-(EXTERNAL) Received message: VD in station Station2
-<<< (0) Ping Retry - Station Station2 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station2 got 7 responses expected 8
-<<< (2) Ping Retry - Station Station2 got 7 responses expected 8
-<<< (3) Ping Retry - Station Station2 got 7 responses expected 8
-
-;;; Received election trigger from Station9 in station Station2 = True
-
-
-;;; Received election trigger from Station0 in station Station2 = True
 
 
 ;;; Received election trigger from Station7 in station Station2 = True
 
 
-;;; Received election trigger from Station6 in station Station2 = True
+Received car borrow spot from Station0 here in station Station2 = car oul43k
+%%% Station Station2 lent spot 9 to car oul43k | Station Station0 asked
+%%% Station Station2 spots: [(9, 'oul43k'), [10, None]]
 
+Received car borrow spot from Station3 here in station Station2 = car 6pur8v
+%%% Station Station2 lent spot 10 to car 6pur8v | Station Station3 asked
+%%% Station Station2 spots: [(9, 'oul43k'), (10, '6pur8v')]
 
-;;; Received election trigger from Station4 in station Station2 = True
-
-
-;;; Received election trigger from Station8 in station Station2 = True
-
+Received car borrow spot from Station0 here in station Station2 = car a1sjcp
+(EXTERNAL) Received message: LV.p70005 in station Station2
+(EXTERNAL) Received message: LV.8s4l1k in station Station2
+(EXTERNAL) Received message: VD in station Station2
+(EXTERNAL) Received message: LV.hyy06m in station Station2
+(EXTERNAL) Received message: LV.xip19n in station Station2
 Shutting down...

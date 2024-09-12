@@ -60,8 +60,10 @@ class Station:
         self.ping_responses = Queue()
 
         self.in_election = False
+        self.election_time = 0
+        self.election_proposals = None
 
-        self.cars_threads = []  
+        # self.cars_threads = []  
         
         self.context = zmq.Context()
         self.manager_socket = self.context.socket(zmq.REQ)
@@ -156,7 +158,6 @@ class Station:
                 self.broadcast_socket.send_json({"type": "request_spots", "station_id": self.station_id})
                 # time.sleep(0.5)
                 start_time = time.time()
-                timeout = 1.0
 
                 # Receber respostas das estações
                 spots_info = []
@@ -171,7 +172,8 @@ class Station:
                             spots_info.append(message)
                             received_set.add(message["station_id"])
                     except zmq.Again:
-                        if time.time() - start_time > timeout and len(spots_info) < active_stations:
+                        if time.time() - start_time > DEFAULT_TIMEOUT and len(spots_info) < active_stations:
+                            time.sleep(0.5)
                             print(f"(1) Timeout reached. {len(spots_info)} responded. Retrying...")
                             self.broadcast_socket.send_json({"type": "request_spots", "station_id": self.station_id})
                             start_time = time.time()
@@ -312,6 +314,7 @@ class Station:
 
                         self.last_ping = time.time()
                         if len(responses) == 0: ### PROBLEMAO, depois que alguem sai da vaga, as estações demoram pra responder
+                            time.sleep(1)
                             break
                         if len(self.connections) - 1 == len(responses):
                             # print("\nAll stations are active")
@@ -320,9 +323,7 @@ class Station:
                             break
                         print(f'<<< ({i}) Ping Retry - Station {self.station_id} got {len(responses)} responses expected {len(self.connections) - 1}')
                     
-                    if len(responses) == 0:
-                        print("\nProblema que nao sei resolver!!! Ninguem respondeu no ping sei la porque\n")
-                        continue
+
                     # if len(self.connections) - 1 > len(responses):
                     if len(self.connections) - 1 - len(responses) == 1: ## SO CONSIGO DETECTAR E DISPARAR ELEIÇÃO SE UMA ESTAÇÃO FALHAR
                         # Parar todos os pings e executar a eleição - estrategia trapaceira global, mas é a unica que nao quebra as threads
@@ -330,22 +331,40 @@ class Station:
                         if self.in_election:
                             print(f"<<< {self.station_id} Election already in progress")
                             continue
-
+                        
                         print("\nSome station is inactive")
                         print(f"<<< ({i}) Ping responses ({self.station_id}): {responses}")
                         print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
-                        if self.status == 1:
-                            self.broadcast_socket.send_json({"type": "trigger_election", "station_id": self.station_id})
+                        ## Alternativa: quando mais de uma estaçao tentar fazer a eleição, posso marcar o tempo que cada uma tentou
+                        ## pegar o lock, a que pegar primeiro, faz a eleição, as outras esperam um tempo e tentam novamente
+                        if self.status == 1 and not self.in_election:
+                            self.election_time = time.time()
+                            self.election_proposals = {self.station_id: self.election_time}
+                            self.broadcast_socket.send_json({"type": "trigger_election", "station_id": self.station_id, "time": self.election_time})
+                            start = time.time()
+                            while time.time() - start < 3:
+                                try:
+                                    message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
+                                    if message["type"] == "response_trigger_election":
+                                        self.election_proposals[message["station_id"]] = message["time"]
+                                except zmq.Again:
+                                    continue
+
                         else:
                             continue
                         # time.sleep(0.5)
 
-                        responses.append(self.station_id)
-                        dead_station_id = list(set(self.connections) - set(responses))[0]
-                        print(f'!!!! Triggering election in station {self.station_id} - dead station {dead_station_id}')
-                        if not self.in_election :
-                            self.in_election = True
-                            self.election(dead_station_id, responses)
+                        ## Decidir quem faz a eleição
+                        winner = min(self.election_proposals, key=self.election_proposals.get)
+                        print(f">>> Detected failure first: {winner}")
+                        if winner == self.station_id:
+                            responses.append(self.station_id)
+                            dead_station_id = list(set(self.connections) - set(responses))[0]
+                            print(f'!!!! Triggering election in station {self.station_id} - dead station {dead_station_id}')
+                            if not self.in_election :
+                                self.in_election = True
+                                self.election(dead_station_id, responses)
+
 
                 except zmq.ZMQError as e:
                     print(f"ZMQError in ping: {e}")
@@ -486,6 +505,8 @@ class Station:
 
                                 # GLOBAL_LOCK_IN_ELECTION.release()
                                 self.in_election = False
+                                self.election_time = 0
+                                self.election_proposals = {}
                                 break
 
                             except zmq.ZMQError as e:
@@ -683,7 +704,7 @@ class Station:
                         response = self.activate_station()
                         self.app_socket.send(response.encode())
                     
-                    if external_message == "FE":
+                    elif external_message == "FE":
                         # time.sleep(10)     
                         self.app_socket.send(b"Station deactivated with success - election not triggered yet\n")
                         self.deactivate_station()
@@ -713,7 +734,7 @@ class Station:
                         car.daemon = True
                         car.start()
                         car.join()
-                        time.sleep(3)
+                        # time.sleep(3)
 
                     elif external_message == "VD":
                         if self.status == 0:
@@ -730,6 +751,8 @@ class Station:
                             self.app_socket.send(b"No response received from manager.")
 
                     # time.sleep(1)
+                    else:
+                        self.app_socket.send(b"Invalid request\n")
 
             except zmq.Again:
                 time.sleep(1)
@@ -793,12 +816,16 @@ class Station:
 
                 elif message["type"] == "trigger_election":
                     self.in_election = True
+                    self.election_time = time.time()
+                    
                     print(f"\n;;; Received election trigger from {message['station_id']} in station {self.station_id} = {self.in_election}\n")
-                    self.broadcast_socket.send_json({"type": "response_trigger_election", "station_id": self.station_id, "status": "success"})
+                    self.broadcast_socket.send_json({"type": "response_trigger_election", "station_id": self.station_id, "time": self.election_time})
 
                 elif message["type"] == "terminate_election":
                     # print(f"Received election termination in station {self.station_id}")
                     self.in_election = False
+                    self.election_time = 0
+                    self.election_proposals = {}
                     self.broadcast_socket.send_json({"type": "response_terminate_election", "station_id": self.station_id, "status": "success"})
 
                 # elif message["type"] == "reactivate_station" and self.status == 0 and self.station_id == message["station_id"]: ### Arrumar self.status aqui
@@ -852,6 +879,13 @@ class Station:
                 time.sleep(0.1) # Descanso para não sobrecarregar o processador
 
 
+    def clean_up(self):
+        self.broadcast_socket.close()
+        self.subscriber_socket.close()
+        self.manager_socket.close()
+        self.app_socket.close()
+        self.context.term()
+
     def run(self):
         # self.activate_station()
         print(f"Station {self.station_id} is active but hibernating in {self.port}")
@@ -867,6 +901,10 @@ class Station:
         ping_thread = threading.Thread(target=self.ping)
         ping_thread.daemon = True
         ping_thread.start()
+
+        # external_thread.join()
+        # request_thread.join()
+        # # ping_thread.join()
 
         # return request_thread, ping_thread
     
@@ -921,6 +959,7 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         print("Shutting down...")
+        # s.clean_up()
 
 
 

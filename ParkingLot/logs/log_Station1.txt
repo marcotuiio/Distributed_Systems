@@ -7,12 +7,13 @@ Station Station1 is active but hibernating in 5011
 
 Activating station Station1
 <<< Active stations before: 1
-Station with most spots: Station0 = 10
- = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None], [7, None], [8, None], [9, None]]
+Station with most spots: Station0 = 15
+ = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None], [7, None], [8, None], [9, None], [10, None], [11, None], [12, None], [13, None], [14, None]]
 	>>>>> Confirmation received from station Station0
 <<< Active stations after: 2
 <<< Station Station1 known connections: ['Station0', 'Station1']
 
 <<< (0) Ping Retry - Station Station1 got 3 responses expected 4
+<<< (0) Ping Retry - Station Station1 got 8 responses expected 9
 (EXTERNAL) Received message: FE in station Station1
 Shutting down...

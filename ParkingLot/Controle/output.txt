@@ -1,1 +1,1 @@
-[['Station0', 2, 0, 2], ['Station2', 2, 0, 2], ['Station3', 1, 0, 1], ['Station4', 2, 0, 2], ['Station6', 2, 0, 2], ['Station7', 2, 0, 2], ['Station8', 2, 0, 2], ['Station9', 2, 0, 2]]
+[['Station0', 2, 2, 0], ['Station2', 2, 2, 0], ['Station3', 1, 1, 0], ['Station4', 2, 2, 0], ['Station5', 1, 1, 0], ['Station6', 2, 1, 1], ['Station7', 3, 2, 1], ['Station8', 1, 1, 0], ['Station9', 1, 1, 0]]

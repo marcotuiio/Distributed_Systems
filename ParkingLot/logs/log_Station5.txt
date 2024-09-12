@@ -7,30 +7,24 @@ Station Station5 is active but hibernating in 5051
 
 Activating station Station5
 <<< Active stations before: 5
-Station with most spots: Station0 = 3
- = Spots list: [[7, None], [8, None], [9, None]]
-	>>>>> Confirmation received from station Station0
+(1) Timeout reached. 4 responded. Retrying...
+Station with most spots: Station1 = 4
+ = Spots list: [[3, None], [4, None], [5, None], [6, None]]
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 6
 <<< Station Station5 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']
 
-<<< (0) Ping Retry - Station Station5 got 7 responses expected 8
-Received release car from p70005 in station Station5
+<<< (0) Ping Retry - Station Station5 got 5 responses expected 6
+<<< (0) Ping Retry - Station Station5 got 8 responses expected 9
 
-;;; Received election trigger from Station4 in station Station5 = True
+;;; Received election trigger from Station7 in station Station5 = True
 
-Received release car from s4fdbq in station Station5
-Received release car from tiijoo in station Station5
-Received release car from 6pur8v in station Station5
-Received release car from sjcpc6 in station Station5
-Received release car from y06mpl in station Station5
-Received release car from fvgfwl in station Station5
-Received release car from urdlsa in station Station5
-Received release car from ylobcp in station Station5
-Received release car from i6bobe in station Station5
-Received release car from xip19n in station Station5
-Received release car from r2xl4z in station Station5
-Received release car from dzoudp in station Station5
-Received release car from hhrcoq in station Station5
-Received release car from 7j3aud in station Station5
-(EXTERNAL) Received message: FE in station Station5
+<<< (1) Ping Retry - Station Station5 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station5 got 7 responses expected 9
+Received release car from 587jjl in station Station5
+
+Received car borrow spot from Station0 here in station Station5 = car hyy06m
+%%% Station Station5 lent spot 4 to car hyy06m | Station Station0 asked
+%%% Station Station5 spots: [(4, 'hyy06m')]
+(EXTERNAL) Received message: LV.0tyyia in station Station5
 Shutting down...

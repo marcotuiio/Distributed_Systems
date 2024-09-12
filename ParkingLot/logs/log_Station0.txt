@@ -10,160 +10,115 @@ Activating station Station0
 <<< Active stations after: 1
 <<< Station Station0 known connections: ['Station0']
 
+
+;;; Received election trigger from Station7 in station Station0 = True
+
 (EXTERNAL) Received message: RV.p70005 in station Station0
-$$$ Station Station0 allocated spot 9 to car p70005
-$$$ Station Station0 spots: [(9, 'p70005')]
+$$$ Station Station0 allocated spot 13 to car p70005
+$$$ Station Station0 spots: [(13, 'p70005'), [14, None]]
 
-Received release car from p70005 in station Station0
-*** Station Station0 released spot 9 from car p70005
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station8
+(EXTERNAL) Received message: RV.fss4fd in station Station0
+$$$ Station Station0 allocated spot 14 to car fss4fd
+$$$ Station Station0 spots: [(13, 'p70005'), (14, 'fss4fd')]
+
+(EXTERNAL) Received message: RV.oul43k in station Station0
+
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+:D Station Station0 borrowed spot from station Station2
 
 
-;;; Received election trigger from Station4 in station Station0 = True
+Received car borrow spot from Station3 here in station Station0 = car 6pur8v
+(EXTERNAL) Received message: RV.a1sjcp in station Station0
 
-(EXTERNAL) Received message: RV.s4fdbq in station Station0
-$$$ Station Station0 allocated spot 9 to car s4fdbq
-$$$ Station Station0 spots: [(9, 's4fdbq')]
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+### Requesting spot from station Station4
+:D Station Station0 borrowed spot from station Station4
 
-Received release car from s4fdbq in station Station0
-*** Station Station0 released spot 9 from car s4fdbq
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station8
+(EXTERNAL) Received message: LV.587jjl in station Station0
+(EXTERNAL) Received message: RV.hyy06m in station Station0
 
-(EXTERNAL) Received message: RV.tiijoo in station Station0
-$$$ Station Station0 allocated spot 9 to car tiijoo
-$$$ Station Station0 spots: [(9, 'tiijoo')]
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+### Requesting spot from station Station4
+### Requesting spot from station Station5
+### Requesting spot from station Station6
+### Requesting spot from station Station7
+### Requesting spot from station Station8
+### Requesting spot from station Station9
+;-; No stations could lend a spot to station Station0 - car hyy06m
+;-; Car hyy06m is in queue
 
-Received release car from tiijoo in station Station0
-*** Station Station0 released spot 9 from car tiijoo
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station2
+(EXTERNAL) Received message: RV.8s4l1k in station Station0
 
-Received release car from 6pur8v in station Station0
-Received release car from sjcpc6 in station Station0
-(EXTERNAL) Received message: RV.y06mpl in station Station0
-$$$ Station Station0 allocated spot 9 to car y06mpl
-$$$ Station Station0 spots: [(9, 'y06mpl')]
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+### Requesting spot from station Station4
+:D Station Station0 borrowed spot from station Station4
 
-Received release car from y06mpl in station Station0
-*** Station Station0 released spot 9 from car y06mpl
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station8
+(EXTERNAL) Received message: RV.7aquzu in station Station0
 
-(EXTERNAL) Received message: RV.iat28s in station Station0
-$$$ Station Station0 allocated spot 9 to car iat28s
-$$$ Station Station0 spots: [(9, 'iat28s')]
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+:D Station Station0 borrowed spot from station Station2
 
-(EXTERNAL) Received message: LV.iat28s in station Station0
-*** Station Station0 released spot 9 from car iat28s
-*** Station Station0 spots: [(9, None)]
-$$$ Car iat28s left on same station that entered Station0
-(EXTERNAL) Received message: RV.zu0b7f in station Station0
-$$$ Station Station0 allocated spot 9 to car zu0b7f
-$$$ Station Station0 spots: [(9, 'zu0b7f')]
+(EXTERNAL) Received message: RV.7f2xe7 in station Station0
 
-(EXTERNAL) Received message: LV.zu0b7f in station Station0
-*** Station Station0 released spot 9 from car zu0b7f
-*** Station Station0 spots: [(9, None)]
-$$$ Car zu0b7f left on same station that entered Station0
-(EXTERNAL) Received message: RV.1n7lvl in station Station0
-$$$ Station Station0 allocated spot 9 to car 1n7lvl
-$$$ Station Station0 spots: [(9, '1n7lvl')]
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+:D Station Station0 borrowed spot from station Station2
 
-(EXTERNAL) Received message: LV.1n7lvl in station Station0
-*** Station Station0 released spot 9 from car 1n7lvl
-*** Station Station0 spots: [(9, None)]
-$$$ Car 1n7lvl left on same station that entered Station0
-(EXTERNAL) Received message: RV.fvgfwl in station Station0
-$$$ Station Station0 allocated spot 9 to car fvgfwl
-$$$ Station Station0 spots: [(9, 'fvgfwl')]
+(EXTERNAL) Received message: RV.gfwlxu in station Station0
 
-Received release car from fvgfwl in station Station0
-*** Station Station0 released spot 9 from car fvgfwl
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station6
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+:D Station Station0 borrowed spot from station Station2
 
-Received release car from urdlsa in station Station0
-(EXTERNAL) Received message: RV.ylobcp in station Station0
-$$$ Station Station0 allocated spot 9 to car ylobcp
-$$$ Station Station0 spots: [(9, 'ylobcp')]
+(EXTERNAL) Received message: RV.urdlsa in station Station0
 
-Received release car from ylobcp in station Station0
-*** Station Station0 released spot 9 from car ylobcp
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station8
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+:D Station Station0 borrowed spot from station Station2
 
-(EXTERNAL) Received message: RV.i6bobe in station Station0
-$$$ Station Station0 allocated spot 9 to car i6bobe
-$$$ Station Station0 spots: [(9, 'i6bobe')]
+(EXTERNAL) Received message: RV.obcpnl in station Station0
 
-Received release car from i6bobe in station Station0
-*** Station Station0 released spot 9 from car i6bobe
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station3
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+:D Station Station0 borrowed spot from station Station3
+
+(EXTERNAL) Received message: RV.bobe0e in station Station0
+
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+:D Station Station0 borrowed spot from station Station3
 
 (EXTERNAL) Received message: RV.xip19n in station Station0
-$$$ Station Station0 allocated spot 9 to car xip19n
-$$$ Station Station0 spots: [(9, 'xip19n')]
 
-Received release car from xip19n in station Station0
-*** Station Station0 released spot 9 from car xip19n
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station3
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+:D Station Station0 borrowed spot from station Station3
 
-(EXTERNAL) Received message: RV.r2xl4z in station Station0
-$$$ Station Station0 allocated spot 9 to car r2xl4z
-$$$ Station Station0 spots: [(9, 'r2xl4z')]
+(EXTERNAL) Received message: RV.elr2xl in station Station0
 
-Received release car from r2xl4z in station Station0
-*** Station Station0 released spot 9 from car r2xl4z
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station8
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+:D Station Station0 borrowed spot from station Station3
 
 (EXTERNAL) Received message: RV.dzoudp in station Station0
-$$$ Station Station0 allocated spot 9 to car dzoudp
-$$$ Station Station0 spots: [(9, 'dzoudp')]
 
-Received release car from dzoudp in station Station0
-*** Station Station0 released spot 9 from car dzoudp
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station4
+:( Station Station0 has no spots available
+### Requesting spot from station Station2
+### Requesting spot from station Station3
+### Requesting spot from station Station4
+:D Station Station0 borrowed spot from station Station4
 
-(EXTERNAL) Received message: RV.hhrcoq in station Station0
-$$$ Station Station0 allocated spot 9 to car hhrcoq
-$$$ Station Station0 spots: [(9, 'hhrcoq')]
-
-Received release car from hhrcoq in station Station0
-*** Station Station0 released spot 9 from car hhrcoq
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station2
-
-(EXTERNAL) Received message: RV.7j3aud in station Station0
-$$$ Station Station0 allocated spot 9 to car 7j3aud
-$$$ Station Station0 spots: [(9, '7j3aud')]
-
-Received release car from 7j3aud in station Station0
-*** Station Station0 released spot 9 from car 7j3aud
-*** Station Station0 spots: [(9, None)]
-*** Car left on station Station3
-
-<<< (0) Ping Retry - Station Station0 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station0 got 7 responses expected 8
-<<< (2) Ping Retry - Station Station0 got 7 responses expected 8
-<<< (3) Ping Retry - Station Station0 got 7 responses expected 8
-<<< (4) Ping Retry - Station Station0 got 7 responses expected 8
-
-Some station is inactive
-<<< (4) Ping responses (Station0): ['Station9', 'Station7', 'Station6', 'Station4', 'Station8', 'Station3', 'Station2']
-<<< (4) Known connections (Station0): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-
-!!!! Triggering election in station Station0 - dead station Station5
-<<< Deactivating station Station5 - detected by station Station0
-Station with least spots (that answerd first): Station0 = 1
----- Dead station spots (Station5): [[7, None]]
-<<< Active stations after deactivation: 8
-<<< Station Station0 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station6', 'Station7', 'Station8', 'Station9']
-!!!! Election finished in station Station0 - dead station Station5
-
+(EXTERNAL) Received message: LV.7lvlj5 in station Station0
 Shutting down...

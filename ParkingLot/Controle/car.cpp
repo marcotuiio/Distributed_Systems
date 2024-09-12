@@ -29,13 +29,13 @@ void Car::carThread(string dest_IP, int dest_Port, string exit_IP, int exit_Port
     // Create a random number generator
     std::random_device rd;                         // Seed for the random number engine
     std::mt19937 gen(rd());                        // Mersenne Twister engine
-    std::uniform_int_distribution<> dist(700, 1000);  
+    std::uniform_int_distribution<> dist(10, 80);  
 
     // Generate a random sleep duration
     int sleepTime = dist(gen);
 
     // Sleep for the generated duration
-    std::this_thread::sleep_for(std::chrono::microseconds(sleepTime));
+    std::this_thread::sleep_for(std::chrono::seconds(sleepTime));
 
     // select a station to leave
     Communication::sendMessage(exit_IP, exit_Port, "LV." + carID);
