@@ -3,21 +3,51 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station8 is active but hibernating in 5081
-Received external message: AE in station Station8
+(EXTERNAL) Received message: AE in station Station8
 
 Activating station Station8
 <<< Active stations before: 8
-Station with most spots: Station3 = 2
- = Spots list: [[5, None], [6, None]]
-
->>>>>>> Confirmation received from station Station3
+Station with most spots: Station0 = 2
+ = Spots list: [[8, None], [9, None]]
+	>>>>> Confirmation received from station Station0
 <<< Active stations after: 9
 <<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
 
-Received release car from 9ip700 in station Station8
-Received release car from fss4fd in station Station8
-Received release car from 7jjl6n in station Station8
-Received external message: LV.3ktiij in station Station8
-Received external message: LV.en7j6p in station Station8
-Received release car from 8vn3a1 in station Station8
+(EXTERNAL) Received message: LV.p70005 in station Station8
+
+;;; Received election trigger from Station4 in station Station8 = True
+
+(EXTERNAL) Received message: LV.s4fdbq in station Station8
+Received release car from tiijoo in station Station8
+Received release car from 6pur8v in station Station8
+(EXTERNAL) Received message: LV.sjcpc6 in station Station8
+(EXTERNAL) Received message: LV.y06mpl in station Station8
+Received release car from fvgfwl in station Station8
+(EXTERNAL) Received message: LV.urdlsa in station Station8
+(EXTERNAL) Received message: LV.ylobcp in station Station8
+Received release car from i6bobe in station Station8
+Received release car from xip19n in station Station8
+(EXTERNAL) Received message: LV.r2xl4z in station Station8
+Received release car from dzoudp in station Station8
+Received release car from hhrcoq in station Station8
+Received release car from 7j3aud in station Station8
+<<< (0) Ping Retry - Station Station8 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station8 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station8 got 7 responses expected 8
+<<< (3) Ping Retry - Station Station8 got 7 responses expected 8
+<<< (4) Ping Retry - Station Station8 got 7 responses expected 8
+
+Some station is inactive
+<<< (4) Ping responses (Station8): ['Station9', 'Station4', 'Station6', 'Station7', 'Station0', 'Station2', 'Station3']
+<<< (4) Known connections (Station8): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+
+!!!! Triggering election in station Station8 - dead station Station5
+<<< Deactivating station Station5 - detected by station Station8
+Station with least spots (that answerd first): Station8 = 1
+---- Dead station spots (Station5): [[7, None]]
+<<< Active stations after deactivation: 8
+<<< Station Station8 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station6', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station8 - dead station Station5
+
+(EXTERNAL) Received message: VD in station Station8
 Shutting down...

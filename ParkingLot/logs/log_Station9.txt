@@ -3,21 +3,57 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station9 is active but hibernating in 5091
-Received external message: AE in station Station9
+(EXTERNAL) Received message: AE in station Station9
 
 Activating station Station9
 <<< Active stations before: 9
-Station with most spots: Station0 = 2
- = Spots list: [[8, None], [9, None]]
-
->>>>>>> Confirmation received from station Station0
+(1) Timeout reached. 8 responded. Retrying...
+Station with most spots: Station3 = 2
+ = Spots list: [[5, None], [6, None]]
+	>>>>> Confirmation received from station Station3
 <<< Active stations after: 10
 <<< Station Station9 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
 
-Received release car from 9ip700 in station Station9
-Received release car from fss4fd in station Station9
-Received release car from 7jjl6n in station Station9
-Received release car from 3ktiij in station Station9
-Received release car from en7j6p in station Station9
-Received release car from 8vn3a1 in station Station9
+<<< (0) Ping Retry - Station Station9 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station9 got 8 responses expected 9
+Received release car from p70005 in station Station9
+<<< (2) Ping Retry - Station Station9 got 8 responses expected 9
+
+Problema que nao sei resolver!!! Ninguem respondeu no ping sei la porque
+
+
+;;; Received election trigger from Station4 in station Station9 = True
+
+Received release car from s4fdbq in station Station9
+Received release car from tiijoo in station Station9
+Received release car from 6pur8v in station Station9
+Received release car from sjcpc6 in station Station9
+Received release car from y06mpl in station Station9
+Received release car from fvgfwl in station Station9
+Received release car from urdlsa in station Station9
+Received release car from ylobcp in station Station9
+Received release car from i6bobe in station Station9
+Received release car from xip19n in station Station9
+Received release car from r2xl4z in station Station9
+Received release car from dzoudp in station Station9
+Received release car from hhrcoq in station Station9
+Received release car from 7j3aud in station Station9
+<<< (0) Ping Retry - Station Station9 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station9 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station9 got 7 responses expected 8
+<<< (3) Ping Retry - Station Station9 got 7 responses expected 8
+<<< (4) Ping Retry - Station Station9 got 7 responses expected 8
+
+Some station is inactive
+<<< (4) Ping responses (Station9): ['Station4', 'Station7', 'Station6', 'Station8', 'Station0', 'Station3', 'Station2']
+<<< (4) Known connections (Station9): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+
+!!!! Triggering election in station Station9 - dead station Station5
+<<< Deactivating station Station5 - detected by station Station9
+Station with least spots (that answerd first): Station9 = 1
+---- Dead station spots (Station5): [[7, None]]
+<<< Active stations after deactivation: 8
+<<< Station Station9 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station6', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station9 - dead station Station5
+
 Shutting down...

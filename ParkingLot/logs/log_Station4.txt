@@ -3,55 +3,75 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station4 is active but hibernating in 5041
-Received external message: AE in station Station4
+(EXTERNAL) Received message: AE in station Station4
 
 Activating station Station4
 <<< Active stations before: 4
-Station with most spots: Station0 = 3
- = Spots list: [[7, None], [8, None], [9, None]]
-
->>>>>>> Confirmation received from station Station0
+Station with most spots: Station1 = 3
+ = Spots list: [[2, None], [3, None], [4, None]]
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 5
 <<< Station Station4 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
 
-Received external message: LV.9ip700 in station Station4
-Received external message: RV.fss4fd in station Station4
-$$$ Station Station4 allocated spot 7 to car fss4fd
-$$$ Station Station4 spots: [(7, 'fss4fd')]
+<<< (0) Ping Retry - Station Station4 got 6 responses expected 7
+<<< (0) Ping Retry - Station Station4 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station4 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station4 got 8 responses expected 9
+<<< (3) Ping Retry - Station Station4 got 8 responses expected 9
+Received release car from p70005 in station Station4
+<<< (4) Ping Retry - Station Station4 got 8 responses expected 9
 
-Received external message: RV.7jjl6n in station Station4
+Some station is inactive
+<<< (4) Ping responses (Station4): ['Station6', 'Station0', 'Station2', 'Station3', 'Station7', 'Station5', 'Station9', 'Station8']
+<<< (4) Known connections (Station4): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
 
-:( Station Station4 has no spots available
-### Requesting spot from station Station0
-Received release car from fss4fd in station Station4
-### Requesting spot from station Station1
-:D Station Station4 borrowed spot from station Station1
+!!!! Triggering election in station Station4 - dead station Station1
+<<< Deactivating station Station1 - detected by station Station4
+(2) Timeout reached. 7 responded. Retrying...
+Station with least spots (that answerd first): Station4 = 1
+---- Dead station spots (Station1): [[4, None]]
+<<< Active stations after deactivation: 9
+<<< Station Station4 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station4 - dead station Station1
 
-*** Station Station4 released spot 7 from car fss4fd
-*** Station Station4 spots: [(7, None)]
-*** Car left on station Station6
-Received external message: RV.3ktiij in station Station4
-$$$ Station Station4 allocated spot 7 to car 3ktiij
-$$$ Station Station4 spots: [(7, '3ktiij')]
+Received release car from s4fdbq in station Station4
+Received release car from tiijoo in station Station4
+(EXTERNAL) Received message: RV.6pur8v in station Station4
+$$$ Station Station4 allocated spot 2 to car 6pur8v
+$$$ Station Station4 spots: [(2, '6pur8v'), [4, None]]
 
-Received external message: RV.en7j6p in station Station4
+Received release car from 6pur8v in station Station4
+*** Station Station4 released spot 2 from car 6pur8v
+*** Station Station4 spots: [(2, None), [4, None]]
+*** Car left on station Station2
 
-:( Station Station4 has no spots available
-### Requesting spot from station Station0
-Received release car from en7j6p in station Station4
-### Requesting spot from station Station1
-### Requesting spot from station Station2
-:D Station Station4 borrowed spot from station Station2
+Received release car from sjcpc6 in station Station4
+Received release car from y06mpl in station Station4
+Received release car from fvgfwl in station Station4
+Received release car from urdlsa in station Station4
+Received release car from ylobcp in station Station4
+Received release car from i6bobe in station Station4
+Received release car from xip19n in station Station4
+Received release car from r2xl4z in station Station4
+(EXTERNAL) Received message: LV.dzoudp in station Station4
+Received release car from hhrcoq in station Station4
+Received release car from 7j3aud in station Station4
+<<< (0) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (3) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (4) Ping Retry - Station Station4 got 7 responses expected 8
 
-Received external message: RV.8vn3a1 in station Station4
+Some station is inactive
+<<< (4) Ping responses (Station4): ['Station7', 'Station6', 'Station9', 'Station0', 'Station8', 'Station3', 'Station2']
+<<< (4) Known connections (Station4): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
 
-:( Station Station4 has no spots available
-### Requesting spot from station Station0
-Received release car from 8vn3a1 in station Station4
-### Requesting spot from station Station1
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-:D Station Station4 borrowed spot from station Station3
+!!!! Triggering election in station Station4 - dead station Station5
+<<< Deactivating station Station5 - detected by station Station4
+Station with least spots (that answerd first): Station2 = 1
+---- Dead station spots (Station5): [[7, None]]
+<<< Active stations after deactivation: 8
+<<< Station Station4 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station6', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station4 - dead station Station5
 
-Received external message: VD in station Station4
 Shutting down...

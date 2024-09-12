@@ -23,7 +23,7 @@ void Car::carThread(string dest_IP, int dest_Port, string exit_IP, int exit_Port
 
     auto start = std::chrono::high_resolution_clock::now();
     std::cout << "Dest_IP: " << dest_IP << " Dest_port: " << dest_Port << std::endl;
-    std::cout << "Exit station Port: " << exit_Port << std::endl;
+    std::cout << "Exit station Port: " << exit_Port << "\n" << std::endl;
     Communication::sendMessage(dest_IP, dest_Port, "RV." + carID);
     // wait
     // Create a random number generator

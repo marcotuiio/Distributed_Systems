@@ -3,27 +3,56 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5031), 
  	-----------
 
 Station Station2 is active but hibernating in 5021
-Received external message: AE in station Station2
+(EXTERNAL) Received message: AE in station Station2
 
 Activating station Station2
 <<< Active stations before: 2
 Station with most spots: Station1 = 5
  = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None]]
-
->>>>>>> Confirmation received from station Station1
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 3
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
 
-Received release car from 9ip700 in station Station2
-Received external message: LV.7jjl6n in station Station2
-Received release car from fss4fd in station Station2
-Received release car from 3ktiij in station Station2
-Received release car from en7j6p in station Station2
+<<< (0) Ping Retry - Station Station2 got 4 responses expected 5
+Received release car from p70005 in station Station2
 
-Received car borrow spot from Station4 here in station Station2 = car en7j6p
-%%% Station Station2 lent spot 1 to car en7j6p | Station Station4 asked
-%%% Station Station2 spots: [(1, 'en7j6p')]
-Received release car from 8vn3a1 in station Station2
+;;; Received election trigger from Station4 in station Station2 = True
 
-Received car borrow spot from Station4 here in station Station2 = car 8vn3a1
+Received release car from s4fdbq in station Station2
+(EXTERNAL) Received message: LV.tiijoo in station Station2
+(EXTERNAL) Received message: LV.6pur8v in station Station2
+Received release car from sjcpc6 in station Station2
+Received release car from y06mpl in station Station2
+Received release car from fvgfwl in station Station2
+Received release car from urdlsa in station Station2
+Received release car from ylobcp in station Station2
+Received release car from i6bobe in station Station2
+Received release car from xip19n in station Station2
+Received release car from r2xl4z in station Station2
+Received release car from dzoudp in station Station2
+(EXTERNAL) Received message: LV.hhrcoq in station Station2
+Received release car from 7j3aud in station Station2
+(EXTERNAL) Received message: VD in station Station2
+<<< (0) Ping Retry - Station Station2 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station2 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station2 got 7 responses expected 8
+<<< (3) Ping Retry - Station Station2 got 7 responses expected 8
+
+;;; Received election trigger from Station9 in station Station2 = True
+
+
+;;; Received election trigger from Station0 in station Station2 = True
+
+
+;;; Received election trigger from Station7 in station Station2 = True
+
+
+;;; Received election trigger from Station6 in station Station2 = True
+
+
+;;; Received election trigger from Station4 in station Station2 = True
+
+
+;;; Received election trigger from Station8 in station Station2 = True
+
 Shutting down...

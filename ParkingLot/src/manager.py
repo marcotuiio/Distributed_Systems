@@ -12,7 +12,7 @@ manager_port = 5555
 class Manager:
     def __init__(self, total_spots):
         self.total_spots = total_spots
-        self.lock = threading.Lock()
+        # self.lock = threading.Lock()
         self.stations = {
             "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
             "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 0, "spots": []},
@@ -65,8 +65,8 @@ class Manager:
                 message = self.socket.recv_json(flags=zmq.NOBLOCK)
                 print(f">>> Received message: {message}")
                 if message["type"] == "request_active_stations":
-                    with self.lock:
-                        self.socket.send_json({"type": "response_active_stations", "active_stations": self.active_stations})
+                    # with self.lock:
+                    self.socket.send_json({"type": "response_active_stations", "active_stations": self.active_stations})
 
                 elif message["type"] == "request_total_spots":
                     self.socket.send_json({"type": "response_total_spots", "total_spots": self.total_spots})

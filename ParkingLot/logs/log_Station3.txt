@@ -3,25 +3,79 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station3 is active but hibernating in 5031
-Received external message: AE in station Station3
+(EXTERNAL) Received message: AE in station Station3
 
 Activating station Station3
 <<< Active stations before: 3
 Station with most spots: Station0 = 5
  = Spots list: [[5, None], [6, None], [7, None], [8, None], [9, None]]
-
->>>>>>> Confirmation received from station Station0
+	>>>>> Confirmation received from station Station0
 <<< Active stations after: 4
 <<< Station Station3 known connections: ['Station0', 'Station1', 'Station2', 'Station3']
 
-Received release car from 9ip700 in station Station3
-Received release car from fss4fd in station Station3
-Received release car from 7jjl6n in station Station3
-Received release car from 3ktiij in station Station3
-Received release car from en7j6p in station Station3
-Received external message: LV.8vn3a1 in station Station3
+<<< (0) Ping Retry - Station Station3 got 5 responses expected 6
+Received release car from p70005 in station Station3
+<<< (0) Ping Retry - Station Station3 got 8 responses expected 9
 
-Received car borrow spot from Station4 here in station Station3 = car 8vn3a1
-%%% Station Station3 lent spot 6 to car 8vn3a1 | Station Station4 asked
-%%% Station Station3 spots: [(6, '8vn3a1')]
+Problema que nao sei resolver!!! Ninguem respondeu no ping sei la porque
+
+
+;;; Received election trigger from Station4 in station Station3 = True
+
+Received release car from s4fdbq in station Station3
+(EXTERNAL) Received message: RV.jl6nou in station Station3
+$$$ Station Station3 allocated spot 6 to car jl6nou
+$$$ Station Station3 spots: [(6, 'jl6nou')]
+
+(EXTERNAL) Received message: LV.jl6nou in station Station3
+*** Station Station3 released spot 6 from car jl6nou
+*** Station Station3 spots: [(6, None)]
+$$$ Car jl6nou left on same station that entered Station3
+Received release car from tiijoo in station Station3
+Received release car from 6pur8v in station Station3
+(EXTERNAL) Received message: RV.sjcpc6 in station Station3
+$$$ Station Station3 allocated spot 6 to car sjcpc6
+$$$ Station Station3 spots: [(6, 'sjcpc6')]
+
+Received release car from sjcpc6 in station Station3
+*** Station Station3 released spot 6 from car sjcpc6
+*** Station Station3 spots: [(6, None)]
+*** Car left on station Station8
+
+Received release car from y06mpl in station Station3
+Received release car from fvgfwl in station Station3
+(EXTERNAL) Received message: RV.urdlsa in station Station3
+$$$ Station Station3 allocated spot 6 to car urdlsa
+$$$ Station Station3 spots: [(6, 'urdlsa')]
+
+Received release car from urdlsa in station Station3
+*** Station Station3 released spot 6 from car urdlsa
+*** Station Station3 spots: [(6, None)]
+*** Car left on station Station8
+
+Received release car from ylobcp in station Station3
+(EXTERNAL) Received message: LV.i6bobe in station Station3
+(EXTERNAL) Received message: LV.xip19n in station Station3
+Received release car from r2xl4z in station Station3
+Received release car from dzoudp in station Station3
+Received release car from hhrcoq in station Station3
+(EXTERNAL) Received message: LV.7j3aud in station Station3
+
+;;; Received election trigger from Station9 in station Station3 = True
+
+
+;;; Received election trigger from Station0 in station Station3 = True
+
+
+;;; Received election trigger from Station7 in station Station3 = True
+
+
+;;; Received election trigger from Station6 in station Station3 = True
+
+
+;;; Received election trigger from Station4 in station Station3 = True
+
+
+;;; Received election trigger from Station8 in station Station3 = True
+
 Shutting down...
