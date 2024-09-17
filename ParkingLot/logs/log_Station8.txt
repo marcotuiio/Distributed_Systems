@@ -7,20 +7,15 @@ Station Station8 is active but hibernating in 5081
 
 Activating station Station8
 <<< Active stations before: 8
-Station with most spots: Station5 = 2
- = Spots list: [[3, None], [4, None]]
-	>>>>> Confirmation received from station Station5
+(1) Timeout reached. 7 responded. Retrying...
+Station with most spots: Station0 = 2
+ = Spots list: [[13, None], [14, None]]
+	>>>>> Confirmation received from station Station0
 <<< Active stations after: 9
 <<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
 
 
-;;; Received election trigger from Station7 in station Station8 = True
+;;; Received election trigger from Station6 in station Station8 = True
 
-Received release car from 587jjl in station Station8
-
-Received car borrow spot from Station0 here in station Station8 = car hyy06m
-%%% Station Station8 lent spot 3 to car hyy06m | Station Station0 asked
-%%% Station Station8 spots: [(3, 'hyy06m')]
-(EXTERNAL) Received message: LV.7f2xe7 in station Station8
-(EXTERNAL) Received message: VD in station Station8
+(EXTERNAL) Received message: FE in station Station8
 Shutting down...

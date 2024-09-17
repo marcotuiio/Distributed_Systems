@@ -13,22 +13,22 @@ Station with most spots: Station0 = 8
 <<< Active stations after: 3
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
 
+<<< (0) Ping Retry - Station Station2 got 3 responses expected 4
+<<< (0) Ping Retry - Station Station2 got 8 responses expected 9
 
-;;; Received election trigger from Station7 in station Station2 = True
+;;; Received election trigger from Station6 in station Station2 = True
 
+<<< (1) Ping Retry - Station Station2 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station2 got 7 responses expected 9
+<<< (3) Ping Retry - Station Station2 got 7 responses expected 9
+<<< (0) Ping Retry - Station Station2 got 7 responses expected 8
 
-Received car borrow spot from Station0 here in station Station2 = car oul43k
-%%% Station Station2 lent spot 9 to car oul43k | Station Station0 asked
-%%% Station Station2 spots: [(9, 'oul43k'), [10, None]]
+;;; Received election trigger from Station6 in station Station2 = True
 
-Received car borrow spot from Station3 here in station Station2 = car 6pur8v
-%%% Station Station2 lent spot 10 to car 6pur8v | Station Station3 asked
-%%% Station Station2 spots: [(9, 'oul43k'), (10, '6pur8v')]
+<<< (1) Ping Retry - Station Station2 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station2 got 6 responses expected 8
+<<< (3) Ping Retry - Station Station2 got 6 responses expected 8
 
-Received car borrow spot from Station0 here in station Station2 = car a1sjcp
-(EXTERNAL) Received message: LV.p70005 in station Station2
-(EXTERNAL) Received message: LV.8s4l1k in station Station2
-(EXTERNAL) Received message: VD in station Station2
-(EXTERNAL) Received message: LV.hyy06m in station Station2
-(EXTERNAL) Received message: LV.xip19n in station Station2
+;;; Received election trigger from Station0 in station Station2 = True
+
 Shutting down...

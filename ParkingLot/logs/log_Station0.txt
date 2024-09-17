@@ -10,115 +10,40 @@ Activating station Station0
 <<< Active stations after: 1
 <<< Station Station0 known connections: ['Station0']
 
+<<< (0) Ping Retry - Station Station0 got 1 responses expected 2
 
-;;; Received election trigger from Station7 in station Station0 = True
+;;; Received election trigger from Station6 in station Station0 = True
 
-(EXTERNAL) Received message: RV.p70005 in station Station0
-$$$ Station Station0 allocated spot 13 to car p70005
-$$$ Station Station0 spots: [(13, 'p70005'), [14, None]]
-
-(EXTERNAL) Received message: RV.fss4fd in station Station0
-$$$ Station Station0 allocated spot 14 to car fss4fd
-$$$ Station Station0 spots: [(13, 'p70005'), (14, 'fss4fd')]
-
-(EXTERNAL) Received message: RV.oul43k in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-:D Station Station0 borrowed spot from station Station2
+<<< (0) Ping Retry - Station Station0 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station0 got 7 responses expected 9
+<<< (2) Ping Retry - Station Station0 got 7 responses expected 9
+<<< (3) Ping Retry - Station Station0 got 7 responses expected 9
+(EXTERNAL) Received message: VD in station Station0
 
 
-Received car borrow spot from Station3 here in station Station0 = car 6pur8v
-(EXTERNAL) Received message: RV.a1sjcp in station Station0
 
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-### Requesting spot from station Station4
-:D Station Station0 borrowed spot from station Station4
+;;; Received election trigger from Station6 in station Station0 = True
 
-(EXTERNAL) Received message: LV.587jjl in station Station0
-(EXTERNAL) Received message: RV.hyy06m in station Station0
+<<< (0) Ping Retry - Station Station0 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station0 got 6 responses expected 8
+<<< (2) Ping Retry - Station Station0 got 6 responses expected 8
+<<< (3) Ping Retry - Station Station0 got 6 responses expected 8
+<<< (0) Ping Retry - Station Station0 got 6 responses expected 7
+<<< (1) Ping Retry - Station Station0 got 6 responses expected 7
+<<< (2) Ping Retry - Station Station0 got 6 responses expected 7
+<<< (3) Ping Retry - Station Station0 got 6 responses expected 7
 
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-### Requesting spot from station Station4
-### Requesting spot from station Station5
-### Requesting spot from station Station6
-### Requesting spot from station Station7
-### Requesting spot from station Station8
-### Requesting spot from station Station9
-;-; No stations could lend a spot to station Station0 - car hyy06m
-;-; Car hyy06m is in queue
+Some station is inactive
+<<< (3) Ping responses (Station0): ['Station9', 'Station5', 'Station4', 'Station2', 'Station7', 'Station6']
+<<< (3) Known connections (Station0): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station9']
 
-(EXTERNAL) Received message: RV.8s4l1k in station Station0
+>>> Detected failure first: Station0
+!!!! Triggering election in station Station0 - dead station Station3
+<<< Deactivating station Station3 - detected by station Station0
+Station with least spots (that answerd first): Station0 = 1
+---- Dead station spots (Station3): [[1, None], [2, None]]
+<<< Active stations after deactivation: 7
+<<< Station Station0 known connections: ['Station0', 'Station2', 'Station4', 'Station5', 'Station6', 'Station7', 'Station9']
+!!!! Election finished in station Station0 - dead station Station3
 
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-### Requesting spot from station Station4
-:D Station Station0 borrowed spot from station Station4
-
-(EXTERNAL) Received message: RV.7aquzu in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-:D Station Station0 borrowed spot from station Station2
-
-(EXTERNAL) Received message: RV.7f2xe7 in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-:D Station Station0 borrowed spot from station Station2
-
-(EXTERNAL) Received message: RV.gfwlxu in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-:D Station Station0 borrowed spot from station Station2
-
-(EXTERNAL) Received message: RV.urdlsa in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-:D Station Station0 borrowed spot from station Station2
-
-(EXTERNAL) Received message: RV.obcpnl in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-:D Station Station0 borrowed spot from station Station3
-
-(EXTERNAL) Received message: RV.bobe0e in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-:D Station Station0 borrowed spot from station Station3
-
-(EXTERNAL) Received message: RV.xip19n in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-:D Station Station0 borrowed spot from station Station3
-
-(EXTERNAL) Received message: RV.elr2xl in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-:D Station Station0 borrowed spot from station Station3
-
-(EXTERNAL) Received message: RV.dzoudp in station Station0
-
-:( Station Station0 has no spots available
-### Requesting spot from station Station2
-### Requesting spot from station Station3
-### Requesting spot from station Station4
-:D Station Station0 borrowed spot from station Station4
-
-(EXTERNAL) Received message: LV.7lvlj5 in station Station0
 Shutting down...

@@ -13,37 +13,12 @@ Station with most spots: Station1 = 7
 <<< Active stations after: 4
 <<< Station Station3 known connections: ['Station0', 'Station1', 'Station2', 'Station3']
 
+<<< (0) Ping Retry - Station Station3 got 4 responses expected 5
 
-;;; Received election trigger from Station7 in station Station3 = True
-
-(EXTERNAL) Received message: RV.587jjl in station Station3
-$$$ Station Station3 allocated spot 2 to car 587jjl
-$$$ Station Station3 spots: [(2, '587jjl')]
-
-(EXTERNAL) Received message: RV.6pur8v in station Station3
-
-:( Station Station3 has no spots available
-### Requesting spot from station Station0
-### Requesting spot from station Station2
-:D Station Station3 borrowed spot from station Station2
+;;; Received election trigger from Station6 in station Station3 = True
 
 
-Received car borrow spot from Station0 here in station Station3 = car a1sjcp
-(EXTERNAL) Received message: RV.7lvlj5 in station Station3
+;;; Received election trigger from Station6 in station Station3 = True
 
-:( Station Station3 has no spots available
-### Requesting spot from station Station0
-### Requesting spot from station Station2
-### Requesting spot from station Station4
-### Requesting spot from station Station5
-### Requesting spot from station Station6
-### Requesting spot from station Station7
-### Requesting spot from station Station8
-### Requesting spot from station Station9
-;-; No stations could lend a spot to station Station3 - car 7lvlj5
-;-; Car 7lvlj5 is in queue
-
-(EXTERNAL) Received message: LV.7aquzu in station Station3
-(EXTERNAL) Received message: LV.ijooen in station Station3
-(EXTERNAL) Received message: LV.a1sjcp in station Station3
+(EXTERNAL) Received message: FE in station Station3
 Shutting down...

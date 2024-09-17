@@ -122,6 +122,8 @@ class Manager:
             while True:
                 time.sleep(1)
         except KeyboardInterrupt:
+            # self.socket.close()
+            # self.context.term()
             print("Manager stopped")
 
 if __name__ == "__main__":

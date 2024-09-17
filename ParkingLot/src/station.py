@@ -23,9 +23,9 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## Aumentar o retry auumenta consideravelmete o fluxo de mensagens, porem apenas o response_timeout
 ## pode nao ser o suficiente para sync das threads e dar pra todas responderem
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
-response_timeout = 5
-DEFAULT_TIMEOUT = 3
-PING_RETRY = 3
+response_timeout = 4
+DEFAULT_TIMEOUT = 4
+PING_RETRY = 4
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
@@ -58,6 +58,8 @@ class Station:
 
         # Fila para guardar as respostas dos pings e nao embaralhar com as ordens de execução
         self.ping_responses = Queue()
+        
+        self.external_requests = Queue()
 
         self.in_election = False
         self.election_time = 0
@@ -306,7 +308,8 @@ class Station:
 
                         # Receber respostas dos pings
                         responses = []
-                        while True:
+                        start = time.time()
+                        while time.time() - start < response_timeout:
                             try:
                                 message = self.ping_responses.get_nowait()
                                 if message["type"] == "ping_response" and message["ping_id"] == ping_id:
@@ -701,68 +704,95 @@ class Station:
     def handle_app_requests(self):
         while True:
             try:
-                external_message = self.app_socket.recv(flags=zmq.NOBLOCK)
-                if external_message:
-                    external_message = external_message.decode()
-                    print(f"(EXTERNAL) Received message: {external_message} in station {self.station_id}")
-                    if  external_message == "AE":
-                        response = self.activate_station()
-                        self.app_socket.send(response.encode())
-                    
-                    elif external_message == "FE":
-                        # time.sleep(10)     
-                        self.app_socket.send(b"Station deactivated with success - election not triggered yet\n")
-                        self.deactivate_station()
-                    
-                    elif external_message[0:2] == "RV":
-                        if self.status == 0:
-                            self.app_socket.send(b"Station is inactive\n")
-                            continue
-                        car_id = external_message[3:]
-                        # print(f'\nRequisição de vaga em {self.station_id} = {car_id}')
-                        self.app_socket.send(b"Request allocate received\n")
-                        car = threading.Thread(target=self.allocate_spot, args=(car_id,))
-                        car.daemon = True
-                        car.start()
-                        car.join()
-                        # time.sleep(2)
-
-                    elif external_message[0:2] == "LV":
-                        if self.status == 0:
-                            self.app_socket.send(b"Station is inactive\n")
-                            continue
-                        car_id = external_message[3:]
-                        # print(f'\nLiberar vaga em {self.station_id} = {car_id}')
-                        self.app_socket.send(b"Request release received\n")
-                        # time.sleep(4)
-                        car = threading.Thread(target=self.release_car, args=(car_id,))
-                        car.daemon = True
-                        car.start()
-                        car.join()
-                        # time.sleep(3)
-
-                    elif external_message == "VD":
-                        if self.status == 0:
-                            self.app_socket.send(b"Station is inactive\n")
-                            continue
-                        self.manager_socket.send_json({"type": "request_format_active_stations"})
-                        time.sleep(0.3)
-                        try:
-                            response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
-                            # print(f"\t????? Active stations: {response['active_stations']}\n")
-                            self.app_socket.send(str(response["active_stations"]).encode())
-                        except zmq.Again as e:
-                            print("No response received from manager socket in non-blocking mode.")
-                            self.app_socket.send(b"No response received from manager.")
-
-                    # time.sleep(1)
-                    else:
-                        self.app_socket.send(b"Invalid request\n")
+                if not self.app_socket.closed:
+                    external_message = self.app_socket.recv(flags=zmq.NOBLOCK)
+                    if external_message:
+                        self.app_socket.send_string("Received\n")
+                        external_message = external_message.decode()
+                        self.external_requests.put(external_message)
+                else:
+                    print(f"App socket closed in station {self.station_id}")
+                    time.sleep(2)
 
             except zmq.Again:
-                time.sleep(1)
+                time.sleep(0.2)
                 continue
 
+    def process_app_requests(self):
+        while True:
+
+            if self.external_requests.empty():
+                time.sleep(1)
+                continue
+            try:
+                external_message = self.external_requests.get_nowait()
+                print(f"(EXTERNAL) Received message: {external_message} in station {self.station_id}")
+                if  external_message == "AE":
+                    response = self.activate_station()
+                    # self.app_socket.send(response.encode())
+                
+                elif external_message == "FE":
+                    # time.sleep(10)     
+                    # self.app_socket.send(b"Station deactivated with success - election not triggered yet\n")
+                    self.deactivate_station()
+                
+                elif external_message[0:2] == "RV":
+                    if self.status == 0:
+                        print(f"Station {self.station_id} is inactive")
+                        # self.app_socket.send(b"Station is inactive\n")
+                        continue
+                    car_id = external_message[3:]
+                    # print(f'\nRequisição de vaga em {self.station_id} = {car_id}')
+                    # self.app_socket.send(b"Request allocate received\n")
+                    car = threading.Thread(target=self.allocate_spot, args=(car_id,))
+                    car.daemon = True
+                    car.start()
+                    car.join()
+
+                elif external_message[0:2] == "LV":
+                    if self.status == 0:
+                        print(f"Station {self.station_id} is inactive")
+                        # self.app_socket.send(b"Station is inactive\n")
+                        continue
+                    car_id = external_message[3:]
+                    # print(f'\nLiberar vaga em {self.station_id} = {car_id}')
+                    # self.app_socket.send(b"Request release received\n")
+                    # time.sleep(4)
+                    car = threading.Thread(target=self.release_car, args=(car_id,))
+                    car.daemon = True
+                    car.start()
+                    car.join()
+
+                elif external_message == "VD":
+                    if self.status == 0:
+                        print(f"Station {self.station_id} is inactive")
+                        # self.app_socket.send(b"Station is inactive\n")
+                        continue
+                    self.manager_socket.send_json({"type": "request_format_active_stations"})
+                    time.sleep(0.3)
+                    try:
+                        response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
+                        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/Controle/output.txt", "a") as f:
+                            f.write(f"\n\t????? (VD {self.station_id}) Active stations (ID, VagasTotais, VagasLivres, VagasVazias):\n")
+                            for station in response["active_stations"]:
+                                f.write(f"\t\t -> {station}")
+                            # self.app_socket.send(str(response["active_stations"]).encode())
+                            print("\n")
+                    except zmq.Again as e:
+                        print("No response received from manager socket in non-blocking mode.")
+                        # self.app_socket.send(b"No response received from manager.")
+
+                # time.sleep(1)
+                else:
+                    print(f"Invalid request: {external_message}")
+                    # self.app_socket.send(b"Invalid request\n")
+
+                time.sleep(3)
+            
+            except Empty:
+                time.sleep(3)
+                continue
+            
 
     # Lida com as requisições de outras estações e é uma thread separada
     # Requisições possíveis:
@@ -900,6 +930,10 @@ class Station:
         external_thread.daemon = True
         external_thread.start()
 
+        process_thread = threading.Thread(target=self.process_app_requests)
+        process_thread.daemon = True
+        process_thread.start()
+
         request_thread = threading.Thread(target=self.handle_requests)
         request_thread.daemon = True
         request_thread.start()
@@ -910,7 +944,7 @@ class Station:
 
         # external_thread.join()
         # request_thread.join()
-        # # ping_thread.join()
+        # ping_thread.join()
 
         # return request_thread, ping_thread
     
@@ -965,7 +999,7 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         print("Shutting down...")
-        s.clean_up()
+        # s.clean_up()
 
 
 

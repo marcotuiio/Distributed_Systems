@@ -7,24 +7,24 @@ Station Station5 is active but hibernating in 5051
 
 Activating station Station5
 <<< Active stations before: 5
-(1) Timeout reached. 4 responded. Retrying...
-Station with most spots: Station1 = 4
- = Spots list: [[3, None], [4, None], [5, None], [6, None]]
-	>>>>> Confirmation received from station Station1
+Station with most spots: Station2 = 4
+ = Spots list: [[7, None], [8, None], [9, None], [10, None]]
+	>>>>> Confirmation received from station Station2
 <<< Active stations after: 6
 <<< Station Station5 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']
 
-<<< (0) Ping Retry - Station Station5 got 5 responses expected 6
 <<< (0) Ping Retry - Station Station5 got 8 responses expected 9
 
-;;; Received election trigger from Station7 in station Station5 = True
+;;; Received election trigger from Station6 in station Station5 = True
 
-<<< (1) Ping Retry - Station Station5 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station5 got 7 responses expected 9
-Received release car from 587jjl in station Station5
 
-Received car borrow spot from Station0 here in station Station5 = car hyy06m
-%%% Station Station5 lent spot 4 to car hyy06m | Station Station0 asked
-%%% Station Station5 spots: [(4, 'hyy06m')]
-(EXTERNAL) Received message: LV.0tyyia in station Station5
+;;; Received election trigger from Station6 in station Station5 = True
+
+<<< (0) Ping Retry - Station Station5 got 6 responses expected 7
+<<< (1) Ping Retry - Station Station5 got 6 responses expected 7
+
+;;; Received election trigger from Station0 in station Station5 = True
+
+<<< (2) Ping Retry - Station Station5 got 6 responses expected 7
+<<< (3) Ping Retry - Station Station5 got 5 responses expected 7
 Shutting down...

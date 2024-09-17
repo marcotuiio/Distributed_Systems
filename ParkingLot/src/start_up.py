@@ -57,7 +57,7 @@ def start():
 
 
 
-    # Wait for all processes to complete
+    # Wait for all processes to completea               
     try:
         for process in processes:
             process.wait()

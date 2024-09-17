@@ -13,7 +13,5 @@ Station with most spots: Station0 = 15
 <<< Active stations after: 2
 <<< Station Station1 known connections: ['Station0', 'Station1']
 
-<<< (0) Ping Retry - Station Station1 got 3 responses expected 4
-<<< (0) Ping Retry - Station Station1 got 8 responses expected 9
 (EXTERNAL) Received message: FE in station Station1
 Shutting down...

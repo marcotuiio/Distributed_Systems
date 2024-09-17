@@ -7,43 +7,25 @@ Station Station7 is active but hibernating in 5071
 
 Activating station Station7
 <<< Active stations before: 7
-(1) Timeout reached. 6 responded. Retrying...
 Station with most spots: Station3 = 3
  = Spots list: [[0, None], [1, None], [2, None]]
 	>>>>> Confirmation received from station Station3
 <<< Active stations after: 8
 <<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
 
-<<< (0) Ping Retry - Station Station7 got 8 responses expected 9
+<<< (0) Ping Retry - Station Station7 got 7 responses expected 8
 <<< (1) Ping Retry - Station Station7 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station7 got 8 responses expected 9
 
-Some station is inactive
-<<< (2) Ping responses (Station7): ['Station6', 'Station3', 'Station4', 'Station0', 'Station2', 'Station5', 'Station8', 'Station9']
-<<< (2) Known connections (Station7): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+;;; Received election trigger from Station6 in station Station7 = True
 
->>> Detected failure first: Station7
-!!!! Triggering election in station Station7 - dead station Station1
-<<< Deactivating station Station1 - detected by station Station7
-Station with least spots (that answerd first): Station7 = 1
----- Dead station spots (Station1): [[5, None], [6, None]]
-<<< Active stations after deactivation: 9
-<<< Station Station7 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-!!!! Election finished in station Station7 - dead station Station1
 
-Received release car from 587jjl in station Station7
-<<< (0) Ping Retry - Station Station7 got 5 responses expected 8
+;;; Received election trigger from Station6 in station Station7 = True
 
-Received car borrow spot from Station0 here in station Station7 = car hyy06m
-%%% Station Station7 lent spot 0 to car hyy06m | Station Station0 asked
-%%% Station Station7 spots: [(0, 'hyy06m'), [5, None], [6, None]]
-(EXTERNAL) Received message: RV.0tyyia in station Station7
-$$$ Station Station7 allocated spot 5 to car 0tyyia
-$$$ Station Station7 spots: [(0, 'hyy06m'), (5, '0tyyia'), [6, None]]
+<<< (0) Ping Retry - Station Station7 got 6 responses expected 7
+<<< (1) Ping Retry - Station Station7 got 6 responses expected 7
 
-(EXTERNAL) Received message: LV.gfwlxu in station Station7
-(EXTERNAL) Received message: LV.bobe0e in station Station7
-(EXTERNAL) Received message: LV.elr2xl in station Station7
-(EXTERNAL) Received message: LV.urdlsa in station Station7
-(EXTERNAL) Received message: FE in station Station7
+;;; Received election trigger from Station0 in station Station7 = True
+
+<<< (2) Ping Retry - Station Station7 got 6 responses expected 7
+<<< (3) Ping Retry - Station Station7 got 5 responses expected 7
 Shutting down...

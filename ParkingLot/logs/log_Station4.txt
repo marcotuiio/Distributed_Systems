@@ -7,30 +7,28 @@ Station Station4 is active but hibernating in 5041
 
 Activating station Station4
 <<< Active stations before: 4
-Station with most spots: Station2 = 4
- = Spots list: [[7, None], [8, None], [9, None], [10, None]]
-	>>>>> Confirmation received from station Station2
+Station with most spots: Station1 = 4
+ = Spots list: [[3, None], [4, None], [5, None], [6, None]]
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 5
 <<< Station Station4 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
 
-<<< (0) Ping Retry - Station Station4 got 4 responses expected 5
-
-;;; Received election trigger from Station7 in station Station4 = True
-
+<<< (0) Ping Retry - Station Station4 got 5 responses expected 6
 <<< (0) Ping Retry - Station Station4 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station4 got 7 responses expected 9
-<<< (2) Ping Retry - Station Station4 got 7 responses expected 9
-(EXTERNAL) Received message: RV.ijooen in station Station4
-$$$ Station Station4 allocated spot 7 to car ijooen
-$$$ Station Station4 spots: [(7, 'ijooen'), [8, None]]
+<<< (1) Ping Retry - Station Station4 got 8 responses expected 9
 
+;;; Received election trigger from Station6 in station Station4 = True
 
-Received car borrow spot from Station0 here in station Station4 = car a1sjcp
-%%% Station Station4 lent spot 8 to car a1sjcp | Station Station0 asked
-%%% Station Station4 spots: [(7, 'ijooen'), (8, 'a1sjcp')]
-Received release car from 587jjl in station Station4
+<<< (2) Ping Retry - Station Station4 got 8 responses expected 9
+<<< (3) Ping Retry - Station Station4 got 7 responses expected 9
+<<< (0) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station4 got 7 responses expected 8
 
-Received car borrow spot from Station0 here in station Station4 = car hyy06m
-(EXTERNAL) Received message: LV.fss4fd in station Station4
-(EXTERNAL) Received message: LV.obcpnl in station Station4
+;;; Received election trigger from Station6 in station Station4 = True
+
+<<< (2) Ping Retry - Station Station4 got 7 responses expected 8
+<<< (3) Ping Retry - Station Station4 got 6 responses expected 8
+
+;;; Received election trigger from Station0 in station Station4 = True
+
 Shutting down...
