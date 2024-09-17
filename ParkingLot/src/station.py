@@ -71,6 +71,8 @@ class Station:
 
         self.app_socket = self.context.socket(zmq.REP)
         self.app_socket.bind(f"tcp://{self.ipaddr}:{self.port-1}")
+        # self.app_socket = self.context.socket(zmq.REP)
+        # self.app_socket.bind(f"tcp://{self.ipaddr}:{self.port-2}")
 
         self.broadcast_socket = self.context.socket(zmq.PUB)
         self.broadcast_socket.bind(f"tcp://{self.ipaddr}:{self.port}")
@@ -963,7 +965,7 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         print("Shutting down...")
-        # s.clean_up()
+        s.clean_up()
 
 
 
