@@ -55,11 +55,11 @@ void CentralControl::handleCommand(string cmd, int dest_index, string dest_IP, i
         }
         if (cmd == "AE") {
             status[dest_index - 1] = '1';
+            sleep(5);
         }
         if (cmd == "FE") {
             status[dest_index - 1] = '0';
         }
-        sleep(3);
         std::cout << "Resuming the process...\n"
                   << std::endl;
     } else {

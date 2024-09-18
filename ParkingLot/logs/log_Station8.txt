@@ -6,33 +6,64 @@ Station Station8 is active but hibernating in 5081
 (EXTERNAL) Received message: AE in station Station8
 
 Activating station Station8
-<<< Active stations before: 7
-Station with most spots: Station0 = 2
- = Spots list: [[8, None], [9, None]]
-	>>>>> Confirmation received from station Station0
-<<< Active stations after: 8
-<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8']
+<<< Active stations before: 8
+Station with most spots: Station2 = 2
+ = Spots list: [[5, None], [6, None]]
+	>>>>> Confirmation received from station Station2
+<<< Active stations after: 9
+<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
 
-<<< (0) Ping Retry - Station Station8 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station8 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station8 got 8 responses expected 9
-
-Some station is inactive
-<<< (2) Ping responses (Station8): ['Station2', 'Station1', 'Station7', 'Station6', 'Station9', 'Station5', 'Station0', 'Station3']
-<<< (2) Known connections (Station8): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8', 'Station7', 'Station9']
-
-<<< (2) Election proposals (Station8): {'Station8': 1726625448.556686}
-
->>> Detected failure first: Station8
-<<< Station8 with time 1726625448.556686
-!!!! Triggering election in station Station8 - dead station Station4
-<<< Deactivating station Station4 - detected by station Station8
-Station with least spots (that answerd first): Station8 = 1
----- Dead station spots (Station4): [[2, None]]
-<<< Active stations after deactivation: 9
-Received release car from 9ip700 in station Station8
-<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station5', 'Station6', 'Station8', 'Station7', 'Station9']
-!!!! Election finished in station Station8 - dead station Station4
-
-Received release car from ttfss4 in station Station8
-Shutting down...
+(INTERNAL Station8) Received message:  {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'request_spots', 'station_id': 'Station9'}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1}
+(INTERNAL Station8) Received message:  {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2}
+(INTERNAL Station8) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station8) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station8) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station8) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station8) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station8) Received message:  {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': 'bq587j', 'start_time': 1726701964.0246038}
+(INTERNAL Station8) Received message:  {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station1', 'status': 'fail', 'spot_index': None, 'car_id': 'bq587j'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station2', 'car_id': 'bq587j', 'start_time': 1726701964.0246038}
+(INTERNAL Station8) Received message:  {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station2', 'status': 'success', 'spot_index': 0, 'car_id': 'bq587j'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': '6noul4', 'start_time': 1726701968.1178777}
+(INTERNAL Station8) Received message:  {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station1', 'status': 'fail', 'spot_index': None, 'car_id': '6noul4'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station2', 'car_id': '6noul4', 'start_time': 1726701968.1178777}
+(INTERNAL Station8) Received message:  {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station2', 'status': 'fail', 'spot_index': None, 'car_id': '6noul4'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station3', 'car_id': '6noul4', 'start_time': 1726701968.1178777}
+(INTERNAL Station8) Received message:  {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station3', 'status': 'success', 'spot_index': 0, 'car_id': '6noul4'}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station2', 'target_station_id': 'Station0', 'car_id': '7j6pur', 'start_time': 1726701972.8305347}
+(INTERNAL Station8) Received message:  {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': 'tiijoo', 'start_time': 1726701973.1805334}

@@ -7,18 +7,71 @@ Station Station7 is active but hibernating in 5071
 
 Activating station Station7
 <<< Active stations before: 7
-(1) Timeout reached. 6 responded. Retrying...
-Station with most spots: Station2 = 2
- = Spots list: [[5, None], [6, None]]
-	>>>>> Confirmation received from station Station2
+Station with most spots: Station3 = 2
+ = Spots list: [[0, None], [1, None]]
+	>>>>> Confirmation received from station Station3
 <<< Active stations after: 8
-<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8', 'Station7']
+<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
 
-<<< (0) Ping Retry - Station Station7 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station7 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station7 got 8 responses expected 9
-<<< Station7 Election already in progress
-Received release car from 9ip700 in station Station7
-Received release car from ttfss4 in station Station7
-(EXTERNAL) Received message: FE in station Station7
-Shutting down...
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots', 'station_id': 'Station8'}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]}
+(INTERNAL Station7) Received message:  {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots', 'station_id': 'Station9'}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2}
+(INTERNAL Station7) Received message:  {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station7) Received message:  {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'}
+(INTERNAL Station7) Received message:  {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]}
+(INTERNAL Station7) Received message:  

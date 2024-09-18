@@ -1,0 +1,2424 @@
+
+Processando {'type': 'request_spots', 'station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station1', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station1', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station1', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station1', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station1', 'connections': ['Station0', 'Station1']} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station2'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station2'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 5} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 5} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station2', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station2', 'connections': ['Station0', 'Station1', 'Station2']} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[5, None], [6, None], [7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station2', 'connections': ['Station0', 'Station1', 'Station2']} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station3'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station3'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 3} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station3'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 5} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 5} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 3} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station3', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station3', 'connections': ['Station0', 'Station1', 'Station2', 'Station3']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[0, None], [1, None], [2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station3', 'connections': ['Station0', 'Station1', 'Station2', 'Station3']} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station3', 'connections': ['Station0', 'Station1', 'Station2', 'Station3']} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station4'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station4'} em estação Station3
+
+Processando {'type': 'request_spots', 'station_id': 'Station4'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station4'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 3} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 3} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 3} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station4', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station4', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station4', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station4', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[7, None], [8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station4', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station5'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station5'} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station5'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station5'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station5'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 3} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station5', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station5', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station5', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station5', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[2, None], [3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station5', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station5', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station5
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station3
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station6'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station6', 'target_station_id': 'Station0'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station4
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station0', 'spots_list': [[8, None], [9, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station0', 'spots_list': [[9, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station6', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station6
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station3
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station5
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station7'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 2} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station6
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station7', 'target_station_id': 'Station3'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station6
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station5
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station5
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station4
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station3', 'spots_list': [[0, None], [1, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station3', 'spots_list': [[1, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station7', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station6
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station5
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station3
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station7
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station8'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 2} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station6
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station8', 'target_station_id': 'Station2'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station5
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station3
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station4
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station7
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station2', 'spots_list': [[5, None], [6, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station2', 'spots_list': [[6, None]]} em estação Station1
+
+Processando {'type': 'update_connections', 'station_id': 'Station8', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station8
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station0
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station3
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station6
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station5
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station4
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station7
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station2
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station1
+
+Processando {'type': 'request_spots', 'station_id': 'Station9'} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station6
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station5
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station5
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station7
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station7
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'response_spots', 'station_id': 'Station8', 'nspots': 1} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'response_spots', 'station_id': 'Station0', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station3', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station6', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station5', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station7', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station4', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station2', 'nspots': 1} em estação Station8
+
+Processando {'type': 'response_spots', 'station_id': 'Station1', 'nspots': 2} em estação Station8
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station8
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station8
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station8
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station0
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station6
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station6
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station5
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station3
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station4
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station2
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station1
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station1
+
+Processando {'type': 'request_spots_list', 'station_id': 'Station9', 'target_station_id': 'Station1'} em estação Station8
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station8
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station8
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station8
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station8
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station8
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station0
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station0
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station6
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station6
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station3
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station5
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station5
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station7
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station7
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station7
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station4
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station7
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station4
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station2
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station1
+
+Processando {'type': 'response_spots_list', 'station_id': 'Station1', 'spots_list': [[3, None], [4, None]]} em estação Station8
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station8
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station8
+
+Processando {'type': 'update_spots', 'station_id': 'Station1', 'spots_list': [[4, None]]} em estação Station8
+
+Processando {'type': 'update_connections', 'station_id': 'Station9', 'connections': ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station0
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station0
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station6
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station6
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station3
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station3
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station4
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station4
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station5
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station5
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station7
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station7
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station1
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station1
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station2
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station8
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station8
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station8
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station9
+
+Processando {'type': 'response_update_spots', 'station_id': 'Station1', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station1', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station0', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station6', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station5', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station3', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station7', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station4', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station2', 'status': 'success'} em estação Station9
+
+Processando {'type': 'responseupdate_connections', 'station_id': 'Station8', 'status': 'success'} em estação Station9
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': 'bq587j', 'start_time': 1726701964.0246038} em estação Station1
+
+Processando {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station1', 'status': 'fail', 'spot_index': None, 'car_id': 'bq587j'} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station2', 'car_id': 'bq587j', 'start_time': 1726701964.0246038} em estação Station2
+
+Processando {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station2', 'status': 'success', 'spot_index': 0, 'car_id': 'bq587j'} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': '6noul4', 'start_time': 1726701968.1178777} em estação Station1
+
+Processando {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station1', 'status': 'fail', 'spot_index': None, 'car_id': '6noul4'} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station2', 'car_id': '6noul4', 'start_time': 1726701968.1178777} em estação Station2
+
+Processando {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station2', 'status': 'fail', 'spot_index': None, 'car_id': '6noul4'} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station3', 'car_id': '6noul4', 'start_time': 1726701968.1178777} em estação Station3
+
+Processando {'type': 'response_car_borrow_spot', 'in_need_station_id': 'Station0', 'station_id': 'Station3', 'status': 'success', 'spot_index': 0, 'car_id': '6noul4'} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station2', 'target_station_id': 'Station0', 'car_id': '7j6pur', 'start_time': 1726701972.8305347} em estação Station0
+
+Processando {'type': 'car_borrow_spot', 'in_need_station_id': 'Station0', 'target_station_id': 'Station1', 'car_id': 'tiijoo', 'start_time': 1726701973.1805334} em estação Station1
