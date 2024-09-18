@@ -13,5 +13,25 @@ Station with most spots: Station0 = 15
 <<< Active stations after: 2
 <<< Station Station1 known connections: ['Station0', 'Station1']
 
-(EXTERNAL) Received message: FE in station Station1
+
+;;; Received election trigger from Station8 in station Station1 = True
+
+<<< (0) Ping Retry - Station Station1 got 7 responses expected 8
+<<< (1) Ping Retry - Station Station1 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station1 got 7 responses expected 8
+
+Some station is inactive
+<<< (2) Ping responses (Station1): ['Station7', 'Station3', 'Station5', 'Station0', 'Station4', 'Station9', 'Station6']
+<<< (2) Known connections (Station1): ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
+
+>>> Detected failure first: Station1
+<<< with time 1726619037.9783928
+!!!! Triggering election in station Station1 - dead station Station8
+<<< Deactivating station Station8 - detected by station Station1
+Station with least spots (that answerd first): Station9 = 1
+---- Dead station spots (Station8): [[0, None], [9, None], [10, None]]
+<<< Active stations after deactivation: 8
+<<< Station Station1 known connections: ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station9']
+!!!! Election finished in station Station1 - dead station Station8
+
 Shutting down...

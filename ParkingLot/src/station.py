@@ -23,9 +23,9 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## Aumentar o retry auumenta consideravelmete o fluxo de mensagens, porem apenas o response_timeout
 ## pode nao ser o suficiente para sync das threads e dar pra todas responderem
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
-response_timeout = 4
-DEFAULT_TIMEOUT = 4
-PING_RETRY = 4
+response_timeout = 5
+DEFAULT_TIMEOUT = 5
+PING_RETRY = 3
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
@@ -308,8 +308,7 @@ class Station:
 
                         # Receber respostas dos pings
                         responses = []
-                        start = time.time()
-                        while time.time() - start < response_timeout:
+                        while True:
                             try:
                                 message = self.ping_responses.get_nowait()
                                 if message["type"] == "ping_response" and message["ping_id"] == ping_id:
@@ -327,7 +326,7 @@ class Station:
                             # print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
                             break
                         print(f'<<< ({i}) Ping Retry - Station {self.station_id} got {len(responses)} responses expected {len(self.connections) - 1}')
-                    
+        
 
                     # if len(self.connections) - 1 > len(responses):
                     if len(self.connections) - 1 - len(responses) == 1: ## SO CONSIGO DETECTAR E DISPARAR ELEIÇÃO SE UMA ESTAÇÃO FALHAR
@@ -363,6 +362,7 @@ class Station:
                         winner = min(self.election_proposals, key=self.election_proposals.get)
                         print(f">>> Detected failure first: {winner}")
                         if winner == self.station_id:
+                            print(f"<<< with time {self.election_time}")
                             responses.append(self.station_id)
                             dead_station_id = list(set(self.connections) - set(responses))[0]
                             print(f'!!!! Triggering election in station {self.station_id} - dead station {dead_station_id}')
@@ -728,7 +728,11 @@ class Station:
                 external_message = self.external_requests.get_nowait()
                 print(f"(EXTERNAL) Received message: {external_message} in station {self.station_id}")
                 if  external_message == "AE":
-                    response = self.activate_station()
+                    starting = threading.Thread(target=self.activate_station)
+                    starting.daemon = True
+                    starting.start()
+                    starting.join()
+                    # response = self.activate_station()
                     # self.app_socket.send(response.encode())
                 
                 elif external_message == "FE":
@@ -757,9 +761,9 @@ class Station:
                     car_id = external_message[3:]
                     # print(f'\nLiberar vaga em {self.station_id} = {car_id}')
                     # self.app_socket.send(b"Request release received\n")
-                    # time.sleep(4)
                     car = threading.Thread(target=self.release_car, args=(car_id,))
                     car.daemon = True
+                    time.sleep(0.5)
                     car.start()
                     car.join()
 
@@ -773,11 +777,10 @@ class Station:
                     try:
                         response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
                         with open("/home/marcotuiio/Distributed_Systems/ParkingLot/Controle/output.txt", "a") as f:
-                            f.write(f"\n\t????? (VD {self.station_id}) Active stations (ID, VagasTotais, VagasLivres, VagasVazias):\n")
+                            f.write(f"\n????? (VD {self.station_id}) Active stations (ID, VagasTotais, VagasLivres, VagasVazias):\n")
                             for station in response["active_stations"]:
-                                f.write(f"\t\t -> {station}")
+                                f.write(f"\t -> {station}\n")
                             # self.app_socket.send(str(response["active_stations"]).encode())
-                            print("\n")
                     except zmq.Again as e:
                         print("No response received from manager socket in non-blocking mode.")
                         # self.app_socket.send(b"No response received from manager.")
@@ -961,22 +964,6 @@ if __name__ == "__main__":
         for line in file:
             station_id, ipaddr, port = line.strip().split(" ")
             stations.append((station_id, ipaddr, int(port)+1))
-    
-    # stations_obj = []
-    # for station_id, ipaddr, port in stations:
-    #     other_stations = [(s[1], s[2]) for s in stations if s[0] != station_id]
-    #     # print(f"Station {station_id} - IP: {ipaddr} - Port: {port} - Other stations: {other_stations}")
-    #     s = Station(
-    #         station_id=station_id,
-    #         ipaddr=ipaddr,
-    #         port=port,
-    #         manager_ip=manager_ip,
-    #         manager_port=manager_port,
-    #         other_stations=other_stations
-    #     )
-    #     s.run()
-    #     stations_obj.append(s)
-    # #     # time.sleep(1)
 
     station_id = sys.argv[1]
     ipaddr = sys.argv[2]
@@ -1000,39 +987,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Shutting down...")
         # s.clean_up()
-
-
-
-    # time.sleep(10)
-    # station1.deactivate_station()
-
-    ## TESTANDO REATIVAR A ESTAÇÃO - dependencia esquisita dos tempos de thread
-    # time.sleep(30)
-    # while GLOBAL_LOCK_IN_ELECTION.locked():
-    #     continue
-    # station2.broadcast_socket.send_json({"type": "reactivate_station", "station_id": "Station1"})
-    # time.sleep(0.3)
-    # # response = station2.subscriber_socket.recv_json()
-    # print(f"Station2 response: {response}")
-
-    # time.sleep(8)
-    
-
-    # Testando alocar vaga - carros sao threads
-    # car1 = threading.Thread(target=station1.allocate_spot, args=("Car1",))
-    # time.sleep(1)
-    # car1.daemon = True
-    # car1.start()
-
-    ## Esse teste assim faz com eventualmente a estacao 1 trave nessa thread mas ok depois resolvo
-    # for i in range(5):
-    #     time.sleep(5)
-    #     print(f"\n -->> Car{i}")
-    #     car = threading.Thread(target=station1.allocate_spot, args=(f"Car{i}",))
-    #     car.daemon = True
-    #     car.start()
-    #     car.join()
-
-    # time.sleep(6)
-    # print("\n==== Going to release car\n")
-    # station2.release_car("Car2")

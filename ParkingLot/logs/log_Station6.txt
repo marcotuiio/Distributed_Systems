@@ -6,51 +6,21 @@ Station Station6 is active but hibernating in 5061
 (EXTERNAL) Received message: AE in station Station6
 
 Activating station Station6
-<<< Active stations before: 6
+<<< Active stations before: 5
 Station with most spots: Station0 = 4
  = Spots list: [[11, None], [12, None], [13, None], [14, None]]
 	>>>>> Confirmation received from station Station0
-<<< Active stations after: 7
-<<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']
-
-<<< (0) Ping Retry - Station Station6 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station6 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station6 got 8 responses expected 9
-<<< (3) Ping Retry - Station Station6 got 8 responses expected 9
-
-Some station is inactive
-<<< (3) Ping responses (Station6): ['Station8', 'Station3', 'Station4', 'Station7', 'Station2', 'Station5', 'Station9', 'Station0']
-<<< (3) Known connections (Station6): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-
->>> Detected failure first: Station6
-!!!! Triggering election in station Station6 - dead station Station1
-<<< Deactivating station Station1 - detected by station Station6
-(2) Timeout reached. 6 responded. Retrying...
-Station with least spots (that answerd first): Station9 = 1
----- Dead station spots (Station1): [[6, None]]
-<<< Active stations after deactivation: 9
-<<< Station Station6 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-!!!! Election finished in station Station6 - dead station Station1
+<<< Active stations after: 6
+<<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6']
 
 <<< (0) Ping Retry - Station Station6 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station6 got 7 responses expected 8
-<<< (2) Ping Retry - Station Station6 got 7 responses expected 8
-<<< (3) Ping Retry - Station Station6 got 7 responses expected 8
+<<< (0) Ping Retry - Station Station6 got 8 responses expected 9
 
-Some station is inactive
-<<< (3) Ping responses (Station6): ['Station2', 'Station4', 'Station9', 'Station5', 'Station0', 'Station7', 'Station3']
-<<< (3) Known connections (Station6): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+;;; Received election trigger from Station8 in station Station6 = True
 
->>> Detected failure first: Station6
-!!!! Triggering election in station Station6 - dead station Station8
-<<< Deactivating station Station8 - detected by station Station6
-Station with least spots (that answerd first): Station7 = 1
----- Dead station spots (Station8): [[13, None]]
-<<< Active stations after deactivation: 8
-<<< Station Station6 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station9']
-!!!! Election finished in station Station6 - dead station Station8
+<<< (1) Ping Retry - Station Station6 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station6 got 7 responses expected 9
 
-
-;;; Received election trigger from Station0 in station Station6 = True
+;;; Received election trigger from Station1 in station Station6 = True
 
 Shutting down...

@@ -7,15 +7,30 @@ Station Station8 is active but hibernating in 5081
 
 Activating station Station8
 <<< Active stations before: 8
-(1) Timeout reached. 7 responded. Retrying...
-Station with most spots: Station0 = 2
- = Spots list: [[13, None], [14, None]]
-	>>>>> Confirmation received from station Station0
+Station with most spots: Station4 = 3
+ = Spots list: [[0, None], [1, None], [2, None]]
+	>>>>> Confirmation received from station Station4
 <<< Active stations after: 9
-<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
+<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8']
 
+<<< (0) Ping Retry - Station Station8 got 7 responses expected 9
+<<< (1) Ping Retry - Station Station8 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station8 got 8 responses expected 9
 
-;;; Received election trigger from Station6 in station Station8 = True
+Some station is inactive
+<<< (2) Ping responses (Station8): ['Station1', 'Station5', 'Station6', 'Station0', 'Station9', 'Station4', 'Station7', 'Station3']
+<<< (2) Known connections (Station8): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
+
+>>> Detected failure first: Station8
+<<< with time 1726618974.2686398
+!!!! Triggering election in station Station8 - dead station Station2
+<<< Deactivating station Station2 - detected by station Station8
+(2) Timeout reached. 7 responded. Retrying...
+Station with least spots (that answerd first): Station8 = 1
+---- Dead station spots (Station2): [[9, None], [10, None]]
+<<< Active stations after deactivation: 9
+<<< Station Station8 known connections: ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station8 - dead station Station2
 
 (EXTERNAL) Received message: FE in station Station8
 Shutting down...

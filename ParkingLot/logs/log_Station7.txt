@@ -7,25 +7,16 @@ Station Station7 is active but hibernating in 5071
 
 Activating station Station7
 <<< Active stations before: 7
-Station with most spots: Station3 = 3
- = Spots list: [[0, None], [1, None], [2, None]]
-	>>>>> Confirmation received from station Station3
+Station with most spots: Station1 = 4
+ = Spots list: [[3, None], [4, None], [5, None], [6, None]]
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 8
-<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
-
-<<< (0) Ping Retry - Station Station7 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station7 got 8 responses expected 9
-
-;;; Received election trigger from Station6 in station Station7 = True
+<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7']
 
 
-;;; Received election trigger from Station6 in station Station7 = True
+;;; Received election trigger from Station8 in station Station7 = True
 
-<<< (0) Ping Retry - Station Station7 got 6 responses expected 7
-<<< (1) Ping Retry - Station Station7 got 6 responses expected 7
 
-;;; Received election trigger from Station0 in station Station7 = True
+;;; Received election trigger from Station1 in station Station7 = True
 
-<<< (2) Ping Retry - Station Station7 got 6 responses expected 7
-<<< (3) Ping Retry - Station Station7 got 5 responses expected 7
 Shutting down...

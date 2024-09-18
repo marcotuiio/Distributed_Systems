@@ -7,18 +7,21 @@ Station Station3 is active but hibernating in 5031
 
 Activating station Station3
 <<< Active stations before: 3
+(1) Timeout reached. 2 responded. Retrying...
 Station with most spots: Station1 = 7
  = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None]]
 	>>>>> Confirmation received from station Station1
 <<< Active stations after: 4
-<<< Station Station3 known connections: ['Station0', 'Station1', 'Station2', 'Station3']
+<<< Station Station3 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
 
-<<< (0) Ping Retry - Station Station3 got 4 responses expected 5
+<<< (0) Ping Retry - Station Station3 got 5 responses expected 6
 
-;;; Received election trigger from Station6 in station Station3 = True
+;;; Received election trigger from Station8 in station Station3 = True
 
+<<< (0) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station3 got 7 responses expected 9
+<<< (2) Ping Retry - Station Station3 got 7 responses expected 9
 
-;;; Received election trigger from Station6 in station Station3 = True
+;;; Received election trigger from Station1 in station Station3 = True
 
-(EXTERNAL) Received message: FE in station Station3
 Shutting down...

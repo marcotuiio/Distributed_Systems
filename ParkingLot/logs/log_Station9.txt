@@ -6,24 +6,21 @@ Station Station9 is active but hibernating in 5091
 (EXTERNAL) Received message: AE in station Station9
 
 Activating station Station9
-<<< Active stations before: 8
-Station with most spots: Station1 = 2
- = Spots list: [[5, None], [6, None]]
-	>>>>> Confirmation received from station Station1
-<<< Active stations after: 9
-<<< Station Station9 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+<<< Active stations before: 9
+(1) Timeout reached. 8 responded. Retrying...
+Station with most spots: Station3 = 3
+ = Spots list: [[0, None], [1, None], [2, None]]
+	>>>>> Confirmation received from station Station3
+<<< Active stations after: 10
+<<< Station Station9 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
 
 
-;;; Received election trigger from Station6 in station Station9 = True
+;;; Received election trigger from Station8 in station Station9 = True
 
+<<< (0) Ping Retry - Station Station9 got 7 responses expected 8
 
-;;; Received election trigger from Station6 in station Station9 = True
+;;; Received election trigger from Station1 in station Station9 = True
 
-<<< (0) Ping Retry - Station Station9 got 6 responses expected 7
-<<< (1) Ping Retry - Station Station9 got 6 responses expected 7
-
-;;; Received election trigger from Station0 in station Station9 = True
-
-<<< (2) Ping Retry - Station Station9 got 6 responses expected 7
-<<< (3) Ping Retry - Station Station9 got 5 responses expected 7
+<<< (1) Ping Retry - Station Station9 got 7 responses expected 8
+<<< (2) Ping Retry - Station Station9 got 6 responses expected 8
 Shutting down...

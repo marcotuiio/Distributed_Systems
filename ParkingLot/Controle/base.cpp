@@ -41,6 +41,9 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
     std::string response(static_cast<char*>(reply.data()), reply.size());
     std::cout << "Received: " << response << "\n" << std::endl;
 
+    // Free the socket
+    // socket.close();
+
     return response;
 }
 

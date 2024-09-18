@@ -12,38 +12,9 @@ Activating station Station0
 
 <<< (0) Ping Retry - Station Station0 got 1 responses expected 2
 
-;;; Received election trigger from Station6 in station Station0 = True
-
-<<< (0) Ping Retry - Station Station0 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station0 got 7 responses expected 9
-<<< (2) Ping Retry - Station Station0 got 7 responses expected 9
-<<< (3) Ping Retry - Station Station0 got 7 responses expected 9
-(EXTERNAL) Received message: VD in station Station0
+;;; Received election trigger from Station8 in station Station0 = True
 
 
-
-;;; Received election trigger from Station6 in station Station0 = True
-
-<<< (0) Ping Retry - Station Station0 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station0 got 6 responses expected 8
-<<< (2) Ping Retry - Station Station0 got 6 responses expected 8
-<<< (3) Ping Retry - Station Station0 got 6 responses expected 8
-<<< (0) Ping Retry - Station Station0 got 6 responses expected 7
-<<< (1) Ping Retry - Station Station0 got 6 responses expected 7
-<<< (2) Ping Retry - Station Station0 got 6 responses expected 7
-<<< (3) Ping Retry - Station Station0 got 6 responses expected 7
-
-Some station is inactive
-<<< (3) Ping responses (Station0): ['Station9', 'Station5', 'Station4', 'Station2', 'Station7', 'Station6']
-<<< (3) Known connections (Station0): ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station9']
-
->>> Detected failure first: Station0
-!!!! Triggering election in station Station0 - dead station Station3
-<<< Deactivating station Station3 - detected by station Station0
-Station with least spots (that answerd first): Station0 = 1
----- Dead station spots (Station3): [[1, None], [2, None]]
-<<< Active stations after deactivation: 7
-<<< Station Station0 known connections: ['Station0', 'Station2', 'Station4', 'Station5', 'Station6', 'Station7', 'Station9']
-!!!! Election finished in station Station0 - dead station Station3
+;;; Received election trigger from Station1 in station Station0 = True
 
 Shutting down...

@@ -13,22 +13,5 @@ Station with most spots: Station0 = 8
 <<< Active stations after: 3
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
 
-<<< (0) Ping Retry - Station Station2 got 3 responses expected 4
-<<< (0) Ping Retry - Station Station2 got 8 responses expected 9
-
-;;; Received election trigger from Station6 in station Station2 = True
-
-<<< (1) Ping Retry - Station Station2 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station2 got 7 responses expected 9
-<<< (3) Ping Retry - Station Station2 got 7 responses expected 9
-<<< (0) Ping Retry - Station Station2 got 7 responses expected 8
-
-;;; Received election trigger from Station6 in station Station2 = True
-
-<<< (1) Ping Retry - Station Station2 got 7 responses expected 8
-<<< (2) Ping Retry - Station Station2 got 6 responses expected 8
-<<< (3) Ping Retry - Station Station2 got 6 responses expected 8
-
-;;; Received election trigger from Station0 in station Station2 = True
-
+(EXTERNAL) Received message: FE in station Station2
 Shutting down...
