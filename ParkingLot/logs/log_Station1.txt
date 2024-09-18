@@ -7,31 +7,21 @@ Station Station1 is active but hibernating in 5011
 
 Activating station Station1
 <<< Active stations before: 1
-Station with most spots: Station0 = 15
- = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None], [7, None], [8, None], [9, None], [10, None], [11, None], [12, None], [13, None], [14, None]]
+Station with most spots: Station0 = 10
+ = Spots list: [[0, None], [1, None], [2, None], [3, None], [4, None], [5, None], [6, None], [7, None], [8, None], [9, None]]
 	>>>>> Confirmation received from station Station0
 <<< Active stations after: 2
 <<< Station Station1 known connections: ['Station0', 'Station1']
 
+<<< (0) Ping Retry - Station Station1 got 5 responses expected 6
 
-;;; Received election trigger from Station8 in station Station1 = True
-
-<<< (0) Ping Retry - Station Station1 got 7 responses expected 8
-<<< (1) Ping Retry - Station Station1 got 7 responses expected 8
-<<< (2) Ping Retry - Station Station1 got 7 responses expected 8
-
-Some station is inactive
-<<< (2) Ping responses (Station1): ['Station7', 'Station3', 'Station5', 'Station0', 'Station4', 'Station9', 'Station6']
-<<< (2) Known connections (Station1): ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
-
->>> Detected failure first: Station1
-<<< with time 1726619037.9783928
-!!!! Triggering election in station Station1 - dead station Station8
-<<< Deactivating station Station8 - detected by station Station1
-Station with least spots (that answerd first): Station9 = 1
----- Dead station spots (Station8): [[0, None], [9, None], [10, None]]
-<<< Active stations after deactivation: 8
-<<< Station Station1 known connections: ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station9']
-!!!! Election finished in station Station1 - dead station Station8
+Received car borrow spot from Station0 here in station Station1 = car ttfss4
+%%% Station Station1 lent spot 4 to car ttfss4 | Station Station0 asked
+%%% Station Station1 spots: [(4, 'ttfss4')]
+Received release car from 9ip700 in station Station1
+Received release car from ttfss4 in station Station1
+*** Station Station1 released spot 4 from car ttfss4 in 0.00128936767578125 seconds
+*** Station Station1 spots: [(4, None)]
+*** Car left on station Station2
 
 Shutting down...

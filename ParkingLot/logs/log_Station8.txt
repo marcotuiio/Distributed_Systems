@@ -6,31 +6,33 @@ Station Station8 is active but hibernating in 5081
 (EXTERNAL) Received message: AE in station Station8
 
 Activating station Station8
-<<< Active stations before: 8
-Station with most spots: Station4 = 3
- = Spots list: [[0, None], [1, None], [2, None]]
-	>>>>> Confirmation received from station Station4
-<<< Active stations after: 9
-<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8']
+<<< Active stations before: 7
+Station with most spots: Station0 = 2
+ = Spots list: [[8, None], [9, None]]
+	>>>>> Confirmation received from station Station0
+<<< Active stations after: 8
+<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8']
 
-<<< (0) Ping Retry - Station Station8 got 7 responses expected 9
+<<< (0) Ping Retry - Station Station8 got 8 responses expected 9
 <<< (1) Ping Retry - Station Station8 got 8 responses expected 9
 <<< (2) Ping Retry - Station Station8 got 8 responses expected 9
 
 Some station is inactive
-<<< (2) Ping responses (Station8): ['Station1', 'Station5', 'Station6', 'Station0', 'Station9', 'Station4', 'Station7', 'Station3']
-<<< (2) Known connections (Station8): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
+<<< (2) Ping responses (Station8): ['Station2', 'Station1', 'Station7', 'Station6', 'Station9', 'Station5', 'Station0', 'Station3']
+<<< (2) Known connections (Station8): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8', 'Station7', 'Station9']
+
+<<< (2) Election proposals (Station8): {'Station8': 1726625448.556686}
 
 >>> Detected failure first: Station8
-<<< with time 1726618974.2686398
-!!!! Triggering election in station Station8 - dead station Station2
-<<< Deactivating station Station2 - detected by station Station8
-(2) Timeout reached. 7 responded. Retrying...
+<<< Station8 with time 1726625448.556686
+!!!! Triggering election in station Station8 - dead station Station4
+<<< Deactivating station Station4 - detected by station Station8
 Station with least spots (that answerd first): Station8 = 1
----- Dead station spots (Station2): [[9, None], [10, None]]
+---- Dead station spots (Station4): [[2, None]]
 <<< Active stations after deactivation: 9
-<<< Station Station8 known connections: ['Station0', 'Station1', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7', 'Station8', 'Station9']
-!!!! Election finished in station Station8 - dead station Station2
+Received release car from 9ip700 in station Station8
+<<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station5', 'Station6', 'Station8', 'Station7', 'Station9']
+!!!! Election finished in station Station8 - dead station Station4
 
-(EXTERNAL) Received message: FE in station Station8
+Received release car from ttfss4 in station Station8
 Shutting down...

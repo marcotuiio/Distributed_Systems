@@ -25,11 +25,19 @@ string Communication::sendMessage(const std::string& server_ip, int server_port,
 
     std::string message_str = request_msg;
 
-    // Send the JSON string
     std::cout << "Sending: " << message_str << std::endl;
     zmq::message_t message(message_str.size());
     memcpy(message.data(), message_str.c_str(), message_str.size());
-    socket.send(message, zmq::send_flags::none);
+    while (true) {
+        if (socket.send(message, zmq::send_flags::none)) {
+            break;
+        } else {
+            std::cerr << "Failed to send message" << std::endl;
+            sleep(2);
+        }
+
+    }
+
     std::cout << "Message sent" << std::endl;
 
     zmq::message_t reply;

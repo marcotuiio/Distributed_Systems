@@ -6,21 +6,14 @@ Station Station6 is active but hibernating in 5061
 (EXTERNAL) Received message: AE in station Station6
 
 Activating station Station6
-<<< Active stations before: 5
-Station with most spots: Station0 = 4
- = Spots list: [[11, None], [12, None], [13, None], [14, None]]
-	>>>>> Confirmation received from station Station0
-<<< Active stations after: 6
-<<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6']
+<<< Active stations before: 6
+Station with most spots: Station1 = 2
+ = Spots list: [[3, None], [4, None]]
+	>>>>> Confirmation received from station Station1
+<<< Active stations after: 7
+<<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']
 
-<<< (0) Ping Retry - Station Station6 got 7 responses expected 8
-<<< (0) Ping Retry - Station Station6 got 8 responses expected 9
-
-;;; Received election trigger from Station8 in station Station6 = True
-
-<<< (1) Ping Retry - Station Station6 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station6 got 7 responses expected 9
-
-;;; Received election trigger from Station1 in station Station6 = True
-
+Received release car from 9ip700 in station Station6
+Received release car from ttfss4 in station Station6
+<<< (0) Ping Retry - Station Station6 got 6 responses expected 7
 Shutting down...

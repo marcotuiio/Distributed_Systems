@@ -4,7 +4,7 @@ import time
 import os
 
 STATIONS_FILE = "stations.txt"
-TOTAL_SPOTS = 15
+TOTAL_SPOTS = 10
 
 manager_ip = "127.0.0.1"
 manager_port = 5555

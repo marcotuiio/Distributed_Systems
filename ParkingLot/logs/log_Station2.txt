@@ -7,11 +7,12 @@ Station Station2 is active but hibernating in 5021
 
 Activating station Station2
 <<< Active stations before: 2
-Station with most spots: Station0 = 8
- = Spots list: [[7, None], [8, None], [9, None], [10, None], [11, None], [12, None], [13, None], [14, None]]
+Station with most spots: Station0 = 5
+ = Spots list: [[5, None], [6, None], [7, None], [8, None], [9, None]]
 	>>>>> Confirmation received from station Station0
 <<< Active stations after: 3
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
 
-(EXTERNAL) Received message: FE in station Station2
+Received release car from 9ip700 in station Station2
+(EXTERNAL) Received message: LV.ttfss4 in station Station2
 Shutting down...

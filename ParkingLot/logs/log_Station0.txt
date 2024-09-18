@@ -10,11 +10,22 @@ Activating station Station0
 <<< Active stations after: 1
 <<< Station Station0 known connections: ['Station0']
 
-<<< (0) Ping Retry - Station Station0 got 1 responses expected 2
+<<< (0) Ping Retry - Station Station0 got 4 responses expected 5
+(EXTERNAL) Received message: RV.9ip700 in station Station0
+$$$ Station Station0 allocated spot 9 to car 9ip700 in 9.775161743164062e-06 seconds
+$$$ Station Station0 spots: [(9, '9ip700')]
 
-;;; Received election trigger from Station8 in station Station0 = True
+<<< (0) Ping Retry - Station Station0 got 8 responses expected 9
+(EXTERNAL) Received message: RV.ttfss4 in station Station0
 
+:( Station Station0 has no spots available
+### Requesting spot from station Station1
+:D Station Station0 borrowed spot from station Station1 in 0.0799555778503418 seconds
 
-;;; Received election trigger from Station1 in station Station0 = True
+Received release car from 9ip700 in station Station0
+*** Station Station0 released spot 9 from car 9ip700 in 0.07829999923706055 seconds
+*** Station Station0 spots: [(9, None)]
+*** Car left on station Station3
 
+Received release car from ttfss4 in station Station0
 Shutting down...

@@ -42,7 +42,7 @@ void CentralControl::handleCommand(string cmd, int dest_index, string dest_IP, i
         selectExit(exit_name, exit_ipaddr, &exit_port);
 
         newThread.emplace_back(&Car::carThread, this, dest_IP, dest_Port, exit_ipaddr, exit_port, setCarID(6));
-        sleep(5);
+        sleep(3);
         // criar a thread carro o "LV" será enviado pelo carro
 
     } else if ((cmd == "AE") || (cmd == "FE") || (cmd == "VD") || (cmd == "ST")) {
@@ -59,9 +59,9 @@ void CentralControl::handleCommand(string cmd, int dest_index, string dest_IP, i
         if (cmd == "FE") {
             status[dest_index - 1] = '0';
         }
+        sleep(3);
         std::cout << "Resuming the process...\n"
                   << std::endl;
-        sleep(5);
     } else {
         std::cout << "Unknown command!" << std::endl;
     }

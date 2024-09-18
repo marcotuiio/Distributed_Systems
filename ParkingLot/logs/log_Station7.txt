@@ -7,16 +7,18 @@ Station Station7 is active but hibernating in 5071
 
 Activating station Station7
 <<< Active stations before: 7
-Station with most spots: Station1 = 4
- = Spots list: [[3, None], [4, None], [5, None], [6, None]]
-	>>>>> Confirmation received from station Station1
+(1) Timeout reached. 6 responded. Retrying...
+Station with most spots: Station2 = 2
+ = Spots list: [[5, None], [6, None]]
+	>>>>> Confirmation received from station Station2
 <<< Active stations after: 8
-<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station6', 'Station5', 'Station7']
+<<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station8', 'Station7']
 
-
-;;; Received election trigger from Station8 in station Station7 = True
-
-
-;;; Received election trigger from Station1 in station Station7 = True
-
+<<< (0) Ping Retry - Station Station7 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station7 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station7 got 8 responses expected 9
+<<< Station7 Election already in progress
+Received release car from 9ip700 in station Station7
+Received release car from ttfss4 in station Station7
+(EXTERNAL) Received message: FE in station Station7
 Shutting down...

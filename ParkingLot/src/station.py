@@ -24,12 +24,12 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## pode nao ser o suficiente para sync das threads e dar pra todas responderem
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
 response_timeout = 5
-DEFAULT_TIMEOUT = 5
+DEFAULT_TIMEOUT = 3
 PING_RETRY = 3
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
-PING_INTERVAL = 10
+PING_INTERVAL = 15
 
 # Fila global de carros em espera, será atualiza por mensagens de broadcast quando um carro chegar e não tiver vaga
 # Entao de tempos em tempos as estações vão verificar se tem carro na fila e tentar alocar uma vaga
@@ -345,8 +345,10 @@ class Station:
                             self.election_time = time.time()
                             self.election_proposals = {self.station_id: self.election_time}
                             self.broadcast_socket.send_json({"type": "trigger_election", "station_id": self.station_id, "time": self.election_time})
+                            time.sleep(0.2)
+                            self.broadcast_socket.send_json({"type": "response_trigger_election", "station_id": self.station_id, "time": self.election_time})
                             start = time.time()
-                            while time.time() - start < 3:
+                            while time.time() - start < DEFAULT_TIMEOUT:
                                 try:
                                     message = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
                                     if message["type"] == "response_trigger_election":
@@ -359,10 +361,11 @@ class Station:
                         # time.sleep(0.5)
 
                         ## Decidir quem faz a eleição
+                        print(f"<<< ({i}) Election proposals ({self.station_id}): {self.election_proposals}\n")
                         winner = min(self.election_proposals, key=self.election_proposals.get)
                         print(f">>> Detected failure first: {winner}")
                         if winner == self.station_id:
-                            print(f"<<< with time {self.election_time}")
+                            print(f"<<< {self.station_id} with time {self.election_time}")
                             responses.append(self.station_id)
                             dead_station_id = list(set(self.connections) - set(responses))[0]
                             print(f'!!!! Triggering election in station {self.station_id} - dead station {dead_station_id}')
@@ -720,7 +723,6 @@ class Station:
 
     def process_app_requests(self):
         while True:
-
             if self.external_requests.empty():
                 time.sleep(1)
                 continue
@@ -790,7 +792,7 @@ class Station:
                     print(f"Invalid request: {external_message}")
                     # self.app_socket.send(b"Invalid request\n")
 
-                time.sleep(3)
+                time.sleep(8)
             
             except Empty:
                 time.sleep(3)
@@ -854,9 +856,10 @@ class Station:
 
                 elif message["type"] == "trigger_election":
                     self.in_election = True
-                    self.election_time = time.time()
+                    if self.election_time == 0:
+                        self.election_time = time.time()
                     
-                    print(f"\n;;; Received election trigger from {message['station_id']} in station {self.station_id} = {self.in_election}\n")
+                    # print(f"\n;;; Received election trigger from {message['station_id']} in station {self.station_id} = {self.in_election}\n")
                     self.broadcast_socket.send_json({"type": "response_trigger_election", "station_id": self.station_id, "time": self.election_time})
 
                 elif message["type"] == "terminate_election":
@@ -872,7 +875,11 @@ class Station:
 
                 elif message["type"] == "car_request_spot" and message["station_id"] == self.station_id:
                     print(f"Received car request spot from {message['car_id']} in station {self.station_id}")
-                    self.allocate_spot(message["car_id"])
+                    alloate = threading.Thread(target=self.allocate_spot, args=(message["car_id"],))
+                    alloate.daemon = True
+                    alloate.start()
+                    alloate.join()
+                    # self.allocate_spot(message["car_id"])
 
                 elif message["type"] == "car_borrow_spot" and message["target_station_id"] == self.station_id:
                     print(f"\nReceived car borrow spot from {message['in_need_station_id']} here in station {self.station_id} = car {message['car_id']}")
@@ -892,7 +899,6 @@ class Station:
                         self.broadcast_socket.send_json({"type": "response_car_borrow_spot", "in_need_station_id": message["in_need_station_id"], "station_id": self.station_id, "status": "success" if success else "fail"})
                         try:
                             response = self.subscriber_socket.recv_json(flags=zmq.NOBLOCK)
-                            # time.sleep(0.8)
                             if response["type"] == "confirmation_received" and response["station_id"] == self.station_id:
                                 break
                         except zmq.Again:
