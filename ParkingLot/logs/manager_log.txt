@@ -109,44 +109,44 @@ Estação Station9: []
 
 Estações ativas: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']
 >>> Received message: {'type': 'request_active_stations'}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, None]], 'status': 1}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station6', 'spots': [[8, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station2', 'spots': [[6, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station6', 'spots': [[5, None]], 'status': 1}
 >>> Received message: {'type': 'print_stations'}
 
 
-Estação Station0: [[9, None]]
+Estação Station0: [[8, None], [9, None]]
 Estação Station1: [[3, None], [4, None]]
-Estação Station2: [[5, None], [6, None]]
+Estação Station2: [[6, None]]
 Estação Station3: [[0, None], [1, None]]
 Estação Station4: [[7, None]]
 Estação Station5: [[2, None]]
-Estação Station6: [[8, None]]
+Estação Station6: [[5, None]]
 Estação Station7: []
 Estação Station8: []
 Estação Station9: []
 
 Estações ativas: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']
 >>> Received message: {'type': 'request_active_stations'}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station3', 'spots': [[1, None]], 'status': 1}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station7', 'spots': [[0, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station7', 'spots': [[8, None]], 'status': 1}
 >>> Received message: {'type': 'print_stations'}
 
 
 Estação Station0: [[9, None]]
 Estação Station1: [[3, None], [4, None]]
-Estação Station2: [[5, None], [6, None]]
-Estação Station3: [[1, None]]
+Estação Station2: [[6, None]]
+Estação Station3: [[0, None], [1, None]]
 Estação Station4: [[7, None]]
 Estação Station5: [[2, None]]
-Estação Station6: [[8, None]]
-Estação Station7: [[0, None]]
+Estação Station6: [[5, None]]
+Estação Station7: [[8, None]]
 Estação Station8: []
 Estação Station9: []
 
 Estações ativas: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
 >>> Received message: {'type': 'request_active_stations'}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station2', 'spots': [[6, None]], 'status': 1}
->>> Received message: {'type': 'update_station_spots', 'station_id': 'Station8', 'spots': [[5, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station3', 'spots': [[1, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station8', 'spots': [[0, None]], 'status': 1}
 >>> Received message: {'type': 'print_stations'}
 
 
@@ -156,9 +156,9 @@ Estação Station2: [[6, None]]
 Estação Station3: [[1, None]]
 Estação Station4: [[7, None]]
 Estação Station5: [[2, None]]
-Estação Station6: [[8, None]]
-Estação Station7: [[0, None]]
-Estação Station8: [[5, None]]
+Estação Station6: [[5, None]]
+Estação Station7: [[8, None]]
+Estação Station8: [[0, None]]
 Estação Station9: []
 
 Estações ativas: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
@@ -174,12 +174,31 @@ Estação Station2: [[6, None]]
 Estação Station3: [[1, None]]
 Estação Station4: [[7, None]]
 Estação Station5: [[2, None]]
-Estação Station6: [[8, None]]
-Estação Station7: [[0, None]]
-Estação Station8: [[5, None]]
+Estação Station6: [[5, None]]
+Estação Station7: [[8, None]]
+Estação Station8: [[0, None]]
 Estação Station9: [[3, None]]
 
 Estações ativas: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
 >>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, '9ip700']], 'status': 1}
 >>> Received message: {'type': 'update_station_spots', 'station_id': 'Station1', 'spots': [[4, 'ttfss4']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station8', 'spots': [[0, '6noul4']], 'status': 1}
 >>> Received message: {'type': 'update_station_spots', 'station_id': 'Station2', 'spots': [[6, 'bq587j']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station3', 'spots': [[1, 'tiijoo']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, '6pur8v']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station4', 'spots': [[7, 'pohyy0']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station2', 'spots': [[6, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station5', 'spots': [[2, '0tyyia']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station6', 'spots': [[5, '4l1kck']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, 'fc7aqu']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station7', 'spots': [[8, 'a1sjcp']], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station4', 'spots': [[7, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station8', 'spots': [[0, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station6', 'spots': [[5, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station3', 'spots': [[1, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station5', 'spots': [[2, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station1', 'spots': [[4, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station7', 'spots': [[8, None]], 'status': 1}
+>>> Received message: {'type': 'update_station_spots', 'station_id': 'Station0', 'spots': [[9, None]], 'status': 1}
