@@ -12,11 +12,10 @@ APP_PY_PATH = '/home/marcotuiio/Distributed_Systems/ParkingLot/src/app.py'
 
 def start():
 
-    if os.path.exists('/home/marcotuiio/Distributed_Systems/ParkingLot/logs/current.txt'):
+    if os.path.exists('/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt'):
         # remover esse arquivo
-        os.system('rm /home/marcotuiio/Distributed_Systems/ParkingLot/logs/current.txt')
+        os.system('rm /home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt')
         
-
     # Start Manager
     manager_log = os.path.join(LOG_PATH, "manager_log.txt")
     with open(manager_log, "w") as log:

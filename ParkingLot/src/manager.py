@@ -118,13 +118,9 @@ class Manager:
     def run(self):
         print("Manager is running...\n")
         self.manager_handle_requests()
-        try:
-            while True:
-                time.sleep(1)
-        except KeyboardInterrupt:
-            # self.socket.close()
-            # self.context.term()
-            print("Manager stopped")
+        while True:
+            pass
+        
 
 if __name__ == "__main__":
     manager = Manager(total_spots=TOTAL_SPOTS)
@@ -132,3 +128,11 @@ if __name__ == "__main__":
     manager_thread.start()
 
     manager.print_stations_to_file()
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        # manager_thread.join()
+        print("Manager exited successfully")

@@ -3,7 +3,9 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station5 is active but hibernating in 5051
+
 (EXTERNAL) Received message: AE in station Station5
+
 
 Activating station Station5
 <<< Active stations before: 5
@@ -16,28 +18,40 @@ Station with most spots: Station1 = 3
 
 --- Received release car from 9ip700 in station Station5
 
---- Received release car from bq587j in station Station5
-(EXTERNAL) Received message: RV.0tyyia in station Station5
-$$$ Station Station5 allocated spot 2 to car 0tyyia in 7.62939453125e-06 seconds
-$$$ Station Station5 spots: [(2, '0tyyia')]
+(EXTERNAL) Received message: LV.6noul4 in station Station5
 
 
---- Received release car from 6pur8v in station Station5
+(EXTERNAL) Received message: RV.yyiat2 in station Station5
 
-+++> REQUEST car borrow spot from Station3 here in station Station5 = car a1sjcp
+$$$ Station Station5 allocated spot 2 to car yyiat2 in 6.413459777832031e-05 seconds
+$$$ Station Station5 spots: [(2, 'yyiat2')]
+
+
++++> REQUEST car borrow spot from Station4 here in station Station5 = car pohyy0
 ### Station Station5 has spot available = False - spot_index = None
 
-(EXTERNAL) Received message: LV.6noul4 in station Station5
+
+--- Received release car from ttfss4 in station Station5
+
+--- Received release car from a1sjcp in station Station5
+
+--- Received release car from yyiat2 in station Station5
+
+*** Station5 released spot 2 from car yyiat2 in 0.8421 seconds
+*** Station5 spots: [(2, None)]
+
+--- Received release car from bq587j in station Station5
 
 --- Received release car from pohyy0 in station Station5
 
---- Received release car from 4l1kck in station Station5
+--- Received release car from 6pur8v in station Station5
 
---- Received release car from 0tyyia in station Station5
+--- Received release car from fc7aqu in station Station5
 
-*** Station5 released spot 2 from car 0tyyia in 0.6746 seconds
-*** Station5 spots: [(2, None)]
+(EXTERNAL) Received message: LV.4l1kck in station Station5
 
---- Received release car from a1sjcp in station Station5
+<<< (0) Ping Retry - Station Station5 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station5 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station5 got 6 responses expected 8
 
 Shutting down...

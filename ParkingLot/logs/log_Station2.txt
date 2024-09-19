@@ -3,7 +3,9 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5031), 
  	-----------
 
 Station Station2 is active but hibernating in 5021
+
 (EXTERNAL) Received message: AE in station Station2
+
 
 Activating station Station2
 <<< Active stations before: 2
@@ -17,43 +19,58 @@ Station with most spots: Station0 = 5
 +++> REQUEST car borrow spot from Station0 here in station Station2 = car bq587j
 ### Station Station2 has spot available = True - spot_index = 0
 
-%%% Station2 lent spot 6 to car bq587j in 2.9848 seconds | Station0 asked
+%%% Station2 lent spot 6 to car bq587j in 3.0219 seconds | Station0 asked
 %%% Station2 spots: [(6, 'bq587j')]
 
 
-+++> REQUEST car borrow spot from Station0 here in station Station2 = car tiijoo
-### Station Station2 has spot available = False - spot_index = None
-
-
 --- Received release car from 9ip700 in station Station2
+
 (EXTERNAL) Received message: RV.6pur8v in station Station2
+
 
 :( Station Station2 has no spots available
 ### Requesting spot from station Station0
-<+++ RESPONSE car borrow spot from Station0 here in station Station2 = success
+<+++ RESPONSE car borrow spot from Station0 here in station Station2 = fail
 
-:D Station2 borrowed spot to 6pur8v from station Station0 - FULL TIME 1.2270 seconds
+### Requesting spot from station Station1
+<+++ RESPONSE car borrow spot from Station1 here in station Station2 = fail
+
+### Requesting spot from station Station3
+<+++ RESPONSE car borrow spot from Station3 here in station Station2 = fail
+
+### Requesting spot from station Station4
+<+++ RESPONSE car borrow spot from Station4 here in station Station2 = success
+
+:D Station2 borrowed spot to 6pur8v from station Station4 - FULL TIME 5.2339 seconds
 
 
-+++> REQUEST car borrow spot from Station3 here in station Station2 = car a1sjcp
+--- Received release car from 6noul4 in station Station2
+
++++> REQUEST car borrow spot from Station4 here in station Station2 = car pohyy0
 ### Station Station2 has spot available = False - spot_index = None
 
 
+--- Received release car from ttfss4 in station Station2
+
+--- Received release car from a1sjcp in station Station2
+
+--- Received release car from yyiat2 in station Station2
+
 --- Received release car from bq587j in station Station2
 
-*** Station2 released spot 6 from car bq587j in 0.8942 seconds
+--- Received release car from pohyy0 in station Station2
+
+*** Station2 released spot 6 from car bq587j in 0.2238 seconds
 *** Station2 spots: [(6, None)]
 
 --- Received release car from 6pur8v in station Station2
 
---- Received release car from 6noul4 in station Station2
-
---- Received release car from pohyy0 in station Station2
+--- Received release car from fc7aqu in station Station2
 
 --- Received release car from 4l1kck in station Station2
-
---- Received release car from 0tyyia in station Station2
-
---- Received release car from a1sjcp in station Station2
+<<< (0) Ping Retry - Station Station2 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station2 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station2 got 8 responses expected 9
+<<< Station2 Election already in progress
 
 Shutting down...

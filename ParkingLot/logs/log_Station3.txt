@@ -3,7 +3,9 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station3 is active but hibernating in 5031
+
 (EXTERNAL) Received message: AE in station Station3
+
 
 Activating station Station3
 <<< Active stations before: 3
@@ -16,56 +18,44 @@ Station with most spots: Station1 = 5
 
 --- Received release car from 9ip700 in station Station3
 
-+++> REQUEST car borrow spot from Station0 here in station Station3 = car tiijoo
-### Station Station3 has spot available = True - spot_index = 0
-
-%%% Station3 lent spot 1 to car tiijoo in 3.9807 seconds | Station0 asked
-%%% Station3 spots: [(1, 'tiijoo')]
-
 (EXTERNAL) Received message: RV.a1sjcp in station Station3
 
-:( Station Station3 has no spots available
-### Requesting spot from station Station0
-<+++ RESPONSE car borrow spot from Station0 here in station Station3 = fail
+$$$ Station Station3 allocated spot 1 to car a1sjcp in 1.0251998901367188e-05 seconds
+$$$ Station Station3 spots: [(1, 'a1sjcp')]
 
-### Requesting spot from station Station1
-<+++ RESPONSE car borrow spot from Station1 here in station Station3 = fail
 
-### Requesting spot from station Station2
-<+++ RESPONSE car borrow spot from Station2 here in station Station3 = fail
-
-### Requesting spot from station Station4
-
---- Received release car from bq587j in station Station3
-<+++ RESPONSE car borrow spot from Station4 here in station Station3 = fail
-
-### Requesting spot from station Station5
-
---- Received release car from 6pur8v in station Station3
-<+++ RESPONSE car borrow spot from Station5 here in station Station3 = fail
-
-### Requesting spot from station Station6
-<+++ RESPONSE car borrow spot from Station6 here in station Station3 = fail
-
-### Requesting spot from station Station7
-<+++ RESPONSE car borrow spot from Station7 here in station Station3 = success
-
-:D Station3 borrowed spot to a1sjcp from station Station7 - FULL TIME 12.3248 seconds
++++> REQUEST car borrow spot from Station2 here in station Station3 = car 6pur8v
+### Station Station3 has spot available = False - spot_index = None
 
 
 --- Received release car from 6noul4 in station Station3
 
---- Received release car from pohyy0 in station Station3
++++> REQUEST car borrow spot from Station4 here in station Station3 = car pohyy0
+### Station Station3 has spot available = False - spot_index = None
 
---- Received release car from 4l1kck in station Station3
-(EXTERNAL) Received message: LV.tiijoo in station Station3
 
-*** Station3 released spot 1 from car tiijoo in 0.0000 seconds
-*** Station3 spots: [(1, None)]
-$$$ Car tiijoo left on same station that entered Station3
+(EXTERNAL) Received message: LV.ttfss4 in station Station3
 
---- Received release car from 0tyyia in station Station3
 
 --- Received release car from a1sjcp in station Station3
+
+*** Station3 released spot 1 from car a1sjcp in 0.8443 seconds
+*** Station3 spots: [(1, None)]
+
+--- Received release car from yyiat2 in station Station3
+
+--- Received release car from bq587j in station Station3
+
+--- Received release car from pohyy0 in station Station3
+
+--- Received release car from 6pur8v in station Station3
+
+--- Received release car from fc7aqu in station Station3
+
+--- Received release car from 4l1kck in station Station3
+<<< (0) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station3 got 8 responses expected 9
+<<< Station3 Election already in progress
 
 Shutting down...

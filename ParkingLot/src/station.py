@@ -15,13 +15,15 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## Aumentar o retry auumenta consideravelmete o fluxo de mensagens, porem apenas o response_timeout
 ## pode nao ser o suficiente para sync das threads e dar pra todas responderem
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
-response_timeout = 5
+response_timeout = 3
 DEFAULT_TIMEOUT = 3
 PING_RETRY = 3
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
-PING_INTERVAL = 15
+PING_INTERVAL = 20
+FIRST_PING = 30
+creation_time = 0
 
 # Fila global de carros em espera, será atualiza por mensagens de broadcast quando um carro chegar e não tiver vaga
 # Entao de tempos em tempos as estações vão verificar se tem carro na fila e tentar alocar uma vaga NAO FAZ ISSO
@@ -261,17 +263,22 @@ class Station:
         # Ai tendo a lista de estações ativas com o manager, se uma estação não responder ao ping
         # O processo de eleição é disparado, visto que a estação ja foi artificialmente desativada
         while True:
-            # if GLOBAL_LOCK_IN_ELECTION.locked():
             while self.in_election:
                 time.sleep(2)
                 continue
 
             if self.status == 0:
-                time.sleep(2)
+                time.sleep(1)
                 continue
-            
+
+            # Tentando garantir que todas as estações tenham sido ligadas antes de começar a pingar
+            # Senao ia começar o ping tendo 4 estaçoes conhecidas e terminar tendo 8 e ai problema
+            if time.time() - creation_time < FIRST_PING:
+                time.sleep(1)
+                continue
+
             if time.time() - self.last_ping < PING_INTERVAL:
-                time.sleep(2)
+                time.sleep(1)
                 continue
 
             try:
@@ -298,8 +305,11 @@ class Station:
 
                     # Mandar ping para todas as estações ativas
                     self.broadcast_socket.send_json({"type": "ping", "station_id": self.station_id, "ping_id": ping_id})
-                    # time.sleep(1) # Dando um alivio para as outras estações responderem
+                    time.sleep(6) # Dando um alivio para as outras estações responderem
 
+                    # DEBUG
+                    # with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                    #     f.write(f"\n ({self.station_id}) PING {i}\n")
                     # Receber respostas dos pings
                     responses = []
                     while True:
@@ -309,12 +319,17 @@ class Station:
                                 responses.append(message["station_id"])
                         except Empty:
                             break
-
+                    
+                    # DEBUG
+                    with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                        f.write(f"\n ({self.station_id}) PING {i} {responses}\n")
                     self.last_ping = time.time()
                     if len(responses) == 0: ### PROBLEMAO, depois que alguem sai da vaga, as estações demoram pra responder
                         time.sleep(1)
                         break
                     if len(self.connections) - 1 == len(responses):
+                        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                            f.write(f"\n ({self.station_id}) PING {i} ALL STATIONS ARE ACTIVE\n")
                         # print("\nAll stations are active")
                         # print(f"<<< ({i}) Ping responses ({self.station_id}): {responses}")
                         # print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
@@ -325,11 +340,16 @@ class Station:
                 # if len(self.connections) - 1 > len(responses):
                 if len(self.connections) - 1 - len(responses) == 1: ## SO CONSIGO DETECTAR E DISPARAR ELEIÇÃO SE UMA ESTAÇÃO FALHAR
                     # Parar todos os pings e executar a eleição - estrategia trapaceira global, mas é a unica que nao quebra as threads
-                    # if GLOBAL_LOCK_IN_ELECTION.locked():
                     if self.in_election:
                         print(f"<<< {self.station_id} Election already in progress")
                         continue
                     
+                    # DEBUG
+                    with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                        f.write(f"\n ({self.station_id}) PING {self.last_ping} SOME STATION IS INACTIVE\n")
+                        f.write(f"<<< ({i}) Ping responses ({self.station_id}): {responses}\n")
+                        f.write(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
+
                     print("\nSome station is inactive")
                     print(f"<<< ({i}) Ping responses ({self.station_id}): {responses}")
                     print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
@@ -357,11 +377,20 @@ class Station:
                     ## Decidir quem faz a eleição
                     print(f"<<< ({i}) Election proposals ({self.station_id}): {self.election_proposals}\n")
                     winner = min(self.election_proposals, key=self.election_proposals.get)
+
+                    # DEBUG
+                    with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                        f.write(f"\n Election proposals ({self.station_id}): {self.election_proposals}\n")
+                        f.write(f"\n WINNER ({self.station_id}): {winner}\n")
+                    
                     print(f">>> Detected failure first: {winner}")
                     if winner == self.station_id:
                         print(f"<<< {self.station_id} with time {self.election_time}")
                         responses.append(self.station_id)
                         dead_station_id = list(set(self.connections) - set(responses))[0]
+                        # DEBUG
+                        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                            f.write(f"\n ELECTION START in {self.station_id} - dead {dead_station_id}\n")
                         print(f'!!!! Triggering election in station {self.station_id} - dead station {dead_station_id}')
                         if not self.in_election :
                             self.in_election = True
@@ -382,7 +411,6 @@ class Station:
     # Implementa o sistema de eleição, é uma simulação pois isso ocorre apoós um ping falhar mas 
     # antes a estação foi desativada manualmente
     def election(self, dead_station_id, active_stations):
-        # if GLOBAL_LOCK_IN_ELECTION.locked():
         if self.in_election:
             print(f"<<< Deactivating station {dead_station_id} - detected by station {self.station_id}")
 
@@ -495,10 +523,11 @@ class Station:
 
                                 print(f"<<< Station {self.station_id} known connections: {self.connections}")
                                 print(f'!!!! Election finished in station {self.station_id} - dead station {dead_station_id}\n')
-                                
+                                with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                                    f.write(f"\n ELECTION END in {self.station_id} - dead {dead_station_id}\n")
+
                                 response_timeout = DEFAULT_TIMEOUT * len(self.connections)
 
-                                # GLOBAL_LOCK_IN_ELECTION.release()
                                 self.in_election = False
                                 self.election_time = 0
                                 self.election_proposals = {}
@@ -657,7 +686,6 @@ class Station:
     # Libera uma vaga de estacionamento
     # Broadcast para todas as estações para que elas busquem pelo carro e ja liberem a vaga
     def release_car(self, car_id):
-        # while GLOBAL_LOCK_IN_ELECTION.locked():
         while self.in_election:
             print(f"<<< Releasing - Station {self.station_id} is in election")
             time.sleep(1)
@@ -677,7 +705,7 @@ class Station:
 
         else:
             self.broadcast_socket.send_json({"type": "release_car", "leaving_station_id": self.station_id, "car_id": car_id, "start_time": start})
-            time.sleep(0.5) # Tempo para as estações processarem a requisição
+            # time.sleep(0.5) # Tempo para as estações processarem a requisição
 
 
     ## Lida com requisições externas - simula a camada de APP do projeto
@@ -686,6 +714,7 @@ class Station:
     ## VD - Vagas disponíveis em todas as estações
     ## RV - Requisitar vaga
     ## LV - Liberar vaga
+
     def handle_app_requests(self):
         while True:
             try:
@@ -711,7 +740,7 @@ class Station:
                 continue
             try:
                 external_message = self.external_requests.get_nowait()
-                print(f"(EXTERNAL) Received message: {external_message} in station {self.station_id}")
+                print(f"\n(EXTERNAL) Received message: {external_message} in station {self.station_id}\n")
                 if  external_message == "AE":
                     response = self.activate_station()
 
@@ -744,7 +773,7 @@ class Station:
                     try:
                         response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
                         with open("/home/marcotuiio/Distributed_Systems/ParkingLot/Controle/output.txt", "a") as f:
-                            f.write(f"\n????? (VD {self.station_id}) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):\n")
+                            f.write(f"\n(VD {self.station_id}) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):\n")
                             for station in response["active_stations"]:
                                 f.write(f"\t -> {station}\n")
                             # self.app_socket.send(str(response["active_stations"]).encode())
@@ -789,10 +818,13 @@ class Station:
                     if message:
                         # print(f"(INTERNAL {self.station_id}) Received message: ", message)
                         if message["type"] == "ping" and message["station_id"] != self.station_id:
-                            print(f"Received ping from {message['station_id']} in station {self.station_id}")
-                            self.broadcast_socket.send_json({"type": "ping_response", "station_id": self.station_id, "ping_id": message["ping_id"]})
+                            # print(f"Received ping from {message['station_id']} in station {self.station_id}")
+                            self.broadcast_socket.send_json({"type": "ping_response", "station_id": self.station_id, "ping_id": message["ping_id"], "target": message["station_id"]})
                 
-                        elif message["type"] == "ping_response":
+                        elif message["type"] == "ping_response" and message["target"] == self.station_id:
+                            # DEBUG
+                            # with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                            #     f.write(f"\n PING RESPONSE from {message['station_id']} in {self.station_id}\n")
                             self.ping_responses.put(message)
                     
                         else:
@@ -825,8 +857,8 @@ class Station:
                 message = self.internal_requests.get_nowait()
 
                 # DEBUG
-                with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/current.txt", "a") as f:
-                    f.write(f"\nProcessando {message} em estação {self.station_id}\n")
+                # with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                #     f.write(f"\nProcessando {message} em estação {self.station_id}\n")
 
                 if message["type"] == "request_spots":
                     # print(f"Request spots from {message['station_id']} - received here {self.station_id} = {self.nspots}")
@@ -850,6 +882,7 @@ class Station:
                     # print(f"Updating connections {message['station_id']} - received here {self.station_id}")
                     # print(f"Old connections: {self.connections} x New connections: {message['connections']}")
                     self.connections = message["connections"]
+                    self.last_ping = time.time()
                     # self.broadcast_socket.send_json({"type": "response_update_connections", "station_id": self.station_id, "status": "success"})
 
                 elif message["type"] == "trigger_election":
@@ -899,7 +932,7 @@ class Station:
 
     def run(self):
         print(f"Station {self.station_id} is active but hibernating in {self.port}")
-        # self.last_ping = time.time()
+        creation_time = time.time()
         external_thread = threading.Thread(target=self.handle_app_requests)
         external_thread.daemon = True
         external_thread.start()
@@ -916,9 +949,9 @@ class Station:
         process_internal_thread.daemon = True
         process_internal_thread.start()
         
-        # ping_thread = threading.Thread(target=self.ping)
-        # ping_thread.daemon = True
-        # ping_thread.start()
+        ping_thread = threading.Thread(target=self.ping)
+        ping_thread.daemon = True
+        ping_thread.start()
 
         # external_thread.join()
         # process_thread.join()

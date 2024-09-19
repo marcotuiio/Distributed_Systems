@@ -3,41 +3,54 @@ Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), 
  	-----------
 
 Station Station6 is active but hibernating in 5061
+
 (EXTERNAL) Received message: AE in station Station6
+
 
 Activating station Station6
 <<< Active stations before: 6
-Station with most spots: Station2 = 2
- = Spots list: [[5, None], [6, None]]
-	>>>>> Confirmation received from station Station2
+Station with most spots: Station3 = 2
+ = Spots list: [[0, None], [1, None]]
+	>>>>> Confirmation received from station Station3
 <<< Active stations after: 7
 <<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']
 
 
 --- Received release car from 9ip700 in station Station6
 
---- Received release car from bq587j in station Station6
+--- Received release car from 6noul4 in station Station6
 
---- Received release car from 6pur8v in station Station6
 (EXTERNAL) Received message: RV.4l1kck in station Station6
-$$$ Station Station6 allocated spot 5 to car 4l1kck in 6.9141387939453125e-06 seconds
-$$$ Station Station6 spots: [(5, '4l1kck')]
+
+$$$ Station Station6 allocated spot 0 to car 4l1kck in 7.3909759521484375e-06 seconds
+$$$ Station Station6 spots: [(0, '4l1kck')]
 
 
-+++> REQUEST car borrow spot from Station3 here in station Station6 = car a1sjcp
++++> REQUEST car borrow spot from Station4 here in station Station6 = car pohyy0
 ### Station Station6 has spot available = False - spot_index = None
 
 
---- Received release car from 6noul4 in station Station6
+--- Received release car from ttfss4 in station Station6
 
---- Received release car from pohyy0 in station Station6
+--- Received release car from a1sjcp in station Station6
+
+--- Received release car from yyiat2 in station Station6
+
+(EXTERNAL) Received message: LV.pohyy0 in station Station6
+
+
+--- Received release car from bq587j in station Station6
+
+--- Received release car from 6pur8v in station Station6
+
+--- Received release car from fc7aqu in station Station6
 
 --- Received release car from 4l1kck in station Station6
 
-*** Station6 released spot 5 from car 4l1kck in 0.2307 seconds
-*** Station6 spots: [(5, None)]
-
---- Received release car from 0tyyia in station Station6
-(EXTERNAL) Received message: LV.a1sjcp in station Station6
+*** Station6 released spot 0 from car 4l1kck in 0.1953 seconds
+*** Station6 spots: [(0, None)]
+<<< (0) Ping Retry - Station Station6 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station6 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station6 got 6 responses expected 8
 
 Shutting down...
