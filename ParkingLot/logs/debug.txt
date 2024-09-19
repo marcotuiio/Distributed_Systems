@@ -1,284 +1,280 @@
 
- (Station9) PING 0 ['Station5', 'Station3', 'Station7', 'Station6', 'Station8', 'Station4', 'Station1', 'Station0', 'Station2']
+ (Station9) PING 0 ['Station7', 'Station8', 'Station5', 'Station6', 'Station4', 'Station1', 'Station2', 'Station0', 'Station3']
 
  (Station9) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station5) PING 0 ['Station2', 'Station3', 'Station9', 'Station6', 'Station7', 'Station1', 'Station4', 'Station0', 'Station8']
-
- (Station5) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station6) PING 0 ['Station5', 'Station9', 'Station3', 'Station2', 'Station7', 'Station8', 'Station1', 'Station4', 'Station0']
-
- (Station6) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station7) PING 0 ['Station5', 'Station9', 'Station6', 'Station3', 'Station2', 'Station8', 'Station1', 'Station4', 'Station0']
+ (Station7) PING 0 ['Station0', 'Station8', 'Station9', 'Station3', 'Station6', 'Station5', 'Station4', 'Station1', 'Station2']
 
  (Station7) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station8) PING 0 ['Station3', 'Station9', 'Station6', 'Station7', 'Station5', 'Station2', 'Station1', 'Station4', 'Station0']
+ (Station6) PING 0 ['Station7', 'Station9', 'Station8', 'Station3', 'Station0', 'Station5', 'Station4', 'Station1', 'Station2']
+
+ (Station8) PING 0 ['Station7', 'Station6', 'Station0', 'Station9', 'Station3', 'Station2', 'Station5', 'Station4', 'Station1']
+
+ (Station6) PING 0 ALL STATIONS ARE ACTIVE
 
  (Station8) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station4) PING 0 ['Station5', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1', 'Station2', 'Station0']
-
- (Station4) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station0) PING 0 ['Station2', 'Station5', 'Station4', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station1']
+ (Station0) PING 0 ['Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1', 'Station2', 'Station3']
 
  (Station0) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station1) PING 0 ['Station2', 'Station4', 'Station5', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8', 'Station0']
+ (Station1) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station2']
 
  (Station1) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station2) PING 0 ['Station5', 'Station4', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station1', 'Station0']
-
- (Station2) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station3) PING 0 ['Station0', 'Station2', 'Station4', 'Station5', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1']
-
- (Station3) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station9) PING 0 ['Station2', 'Station5', 'Station4', 'Station3', 'Station6', 'Station7', 'Station8', 'Station1', 'Station0']
-
- (Station9) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station5) PING 0 ['Station0', 'Station2', 'Station4', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1']
+ (Station5) PING 0 ['Station8', 'Station9', 'Station6', 'Station1', 'Station4', 'Station2', 'Station3', 'Station0', 'Station7']
 
  (Station5) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station8) PING 0 ['Station5', 'Station6', 'Station2', 'Station4', 'Station3', 'Station9', 'Station0', 'Station7', 'Station1']
+ (Station2) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1', 'Station3']
 
- (Station8) PING 0 ALL STATIONS ARE ACTIVE
+ (Station2) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station6) PING 0 ['Station2', 'Station4', 'Station5', 'Station3', 'Station9', 'Station7', 'Station8', 'Station1', 'Station0']
+ (Station3) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station1', 'Station4', 'Station2']
 
- (Station6) PING 0 ALL STATIONS ARE ACTIVE
+ (Station3) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station7) PING 0 ['Station2', 'Station4', 'Station5', 'Station3', 'Station9', 'Station6', 'Station8', 'Station1', 'Station0']
-
- (Station7) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station4) PING 0 ['Station2', 'Station5', 'Station3', 'Station9', 'Station6', 'Station8', 'Station7', 'Station1', 'Station0']
+ (Station4) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station1', 'Station2', 'Station3']
 
  (Station4) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station0) PING 0 ['Station2', 'Station5', 'Station4', 'Station9', 'Station3', 'Station6', 'Station8', 'Station7', 'Station1']
+ (Station6) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station1', 'Station4', 'Station2']
+
+ (Station6) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station7) PING 0 ['Station2', 'Station3', 'Station0', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1']
+
+ (Station7) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station8) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station9', 'Station6', 'Station1', 'Station4', 'Station2']
+
+ (Station8) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station9) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station6', 'Station4', 'Station1', 'Station2', 'Station3']
+
+ (Station9) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station0) PING 0 ['Station3', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1', 'Station2']
 
  (Station0) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station1) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station9', 'Station3', 'Station6', 'Station8', 'Station7']
+ (Station1) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4']
 
  (Station1) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station2) PING 0 ['Station0', 'Station5', 'Station4', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1']
-
- (Station2) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station3) PING 0 ['Station0', 'Station2', 'Station4', 'Station5', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1']
-
- (Station3) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station9) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station3', 'Station6', 'Station7', 'Station8', 'Station1']
-
- (Station9) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station5) PING 0 ['Station0', 'Station2', 'Station4', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8', 'Station1']
+ (Station5) PING 0 ['Station0', 'Station7', 'Station8', 'Station9', 'Station6', 'Station1', 'Station4', 'Station2', 'Station3']
 
  (Station5) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station8) PING 0 ['Station5', 'Station0', 'Station2', 'Station4', 'Station9', 'Station3', 'Station6', 'Station7', 'Station1']
+ (Station2) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1']
 
- (Station8) PING 0 ALL STATIONS ARE ACTIVE
+ (Station2) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station6) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station9', 'Station3', 'Station7', 'Station8', 'Station1']
+ (Station3) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station1', 'Station2']
 
- (Station6) PING 0 ALL STATIONS ARE ACTIVE
+ (Station3) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station7) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station3', 'Station9', 'Station6', 'Station8', 'Station1']
-
- (Station7) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station4) PING 0 ['Station0', 'Station2', 'Station5', 'Station3', 'Station9', 'Station8', 'Station7', 'Station6', 'Station1']
+ (Station4) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station6', 'Station1']
 
  (Station4) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station0) PING 0 ['Station2', 'Station4', 'Station5', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station1']
+ (Station6) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station1', 'Station4']
+
+ (Station6) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station7) PING 0 ['Station6', 'Station1', 'Station4', 'Station2', 'Station3', 'Station0', 'Station5', 'Station8', 'Station9']
+
+ (Station7) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station8) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station9', 'Station6', 'Station4', 'Station1']
+
+ (Station8) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station9) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station6', 'Station4', 'Station1']
+
+ (Station9) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station0) PING 0 ['Station2', 'Station3', 'Station7', 'Station5', 'Station9', 'Station8', 'Station6', 'Station1', 'Station4']
 
  (Station0) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station1) PING 0 ['Station0', 'Station2', 'Station4', 'Station5', 'Station9', 'Station3', 'Station7', 'Station6', 'Station8']
+ (Station1) PING 0 ['Station9', 'Station8', 'Station6', 'Station4', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5']
 
  (Station1) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station2) PING 0 ['Station0', 'Station5', 'Station4', 'Station3', 'Station9', 'Station7', 'Station8', 'Station6', 'Station1']
-
- (Station2) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station3) PING 0 ['Station1', 'Station0', 'Station2', 'Station4', 'Station5', 'Station9', 'Station8', 'Station6', 'Station7']
-
- (Station3) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station9) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station3', 'Station6', 'Station7', 'Station8', 'Station1']
-
- (Station9) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station5) PING 0 ['Station1', 'Station0', 'Station2', 'Station4', 'Station3', 'Station9', 'Station8', 'Station7', 'Station6']
+ (Station5) PING 0 ['Station3', 'Station0', 'Station7', 'Station9', 'Station8', 'Station6', 'Station4', 'Station1', 'Station2']
 
  (Station5) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station8) PING 0 ['Station5', 'Station3', 'Station0', 'Station2', 'Station4', 'Station9', 'Station1', 'Station7', 'Station6']
-
- (Station8) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station6) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station3', 'Station9', 'Station8', 'Station7', 'Station1']
-
- (Station6) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station7) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station9', 'Station3', 'Station6', 'Station8', 'Station1']
-
- (Station7) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station4) PING 0 ['Station0', 'Station5', 'Station2', 'Station3', 'Station9', 'Station7', 'Station6', 'Station8']
-
- (Station0) PING 0 ['Station5', 'Station4', 'Station2', 'Station3', 'Station9', 'Station7', 'Station6', 'Station8']
-
- (Station2) PING 0 ['Station0', 'Station5', 'Station4', 'Station3', 'Station9', 'Station7', 'Station6', 'Station8']
-
- (Station3) PING 0 ['Station0', 'Station5', 'Station2', 'Station4', 'Station9', 'Station6', 'Station7', 'Station8']
-
- (Station4) PING 1 ['Station0', 'Station3', 'Station5', 'Station2', 'Station8', 'Station9', 'Station7', 'Station6']
-
- (Station0) PING 1 ['Station5', 'Station4', 'Station2', 'Station9', 'Station3', 'Station6', 'Station7', 'Station8']
-
- (Station9) PING 0 ['Station0', 'Station5', 'Station4', 'Station2', 'Station3', 'Station6', 'Station7', 'Station8']
-
- (Station5) PING 0 ['Station0', 'Station4', 'Station2', 'Station3', 'Station9', 'Station6', 'Station7', 'Station8']
-
- (Station8) PING 0 ['Station5', 'Station0', 'Station2', 'Station4', 'Station9', 'Station3', 'Station6', 'Station7']
-
- (Station2) PING 1 ['Station0', 'Station5', 'Station4', 'Station3', 'Station9', 'Station7', 'Station6', 'Station8']
-
- (Station6) PING 0 ['Station2', 'Station0', 'Station5', 'Station4', 'Station3', 'Station9', 'Station7', 'Station8']
-
- (Station3) PING 1 ['Station9', 'Station6', 'Station7', 'Station8', 'Station0', 'Station5', 'Station2', 'Station4']
-
- (Station7) PING 0 ['Station9', 'Station3', 'Station2', 'Station5', 'Station4', 'Station0', 'Station6', 'Station8']
-
- (Station4) PING 2 ['Station0', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station2', 'Station5']
-
- (Station4) PING 1726714892.8142421 SOME STATION IS INACTIVE
-<<< (2) Ping responses (Station4): ['Station0', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station2', 'Station5']
-<<< (2) Known connections (Station4): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-
- (Station0) PING 2 ['Station2', 'Station4', 'Station5', 'Station9', 'Station3', 'Station8', 'Station6', 'Station7']
-
- (Station0) PING 1726714893.7836065 SOME STATION IS INACTIVE
-<<< (2) Ping responses (Station0): ['Station2', 'Station4', 'Station5', 'Station9', 'Station3', 'Station8', 'Station6', 'Station7']
-<<< (2) Known connections (Station0): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-
- (Station9) PING 1 ['Station0', 'Station2', 'Station4', 'Station5', 'Station3', 'Station7', 'Station6', 'Station8']
-
- (Station5) PING 1 ['Station0', 'Station4', 'Station2', 'Station3', 'Station9', 'Station6', 'Station8', 'Station7']
-
- (Station8) PING 1 ['Station5', 'Station0', 'Station2', 'Station4', 'Station9', 'Station3', 'Station6', 'Station7']
-
- ELECTION START in Station4 - dead Station1
-
- (Station6) PING 1 ['Station5', 'Station3', 'Station9', 'Station2', 'Station0', 'Station4', 'Station7', 'Station8']
-
- (Station2) PING 2 ['Station0', 'Station4', 'Station6', 'Station5', 'Station3', 'Station9', 'Station7', 'Station8']
-
- ELECTION END in Station4 - dead Station1
-
- (Station3) PING 2 ['Station9', 'Station6', 'Station7', 'Station8', 'Station0', 'Station2', 'Station5', 'Station4']
-
- (Station7) PING 1 ['Station9', 'Station3', 'Station5', 'Station2', 'Station0', 'Station4', 'Station6', 'Station8']
-
- (Station9) PING 2 ['Station5', 'Station2', 'Station7', 'Station3', 'Station8', 'Station6']
-
- (Station5) PING 2 ['Station9', 'Station7', 'Station3', 'Station8', 'Station6', 'Station2']
-
- (Station8) PING 2 ['Station5', 'Station9', 'Station7', 'Station3', 'Station2', 'Station6']
-
- (Station6) PING 2 ['Station5', 'Station3', 'Station7', 'Station2', 'Station9', 'Station8']
-
- (Station7) PING 2 ['Station5', 'Station2', 'Station0', 'Station9', 'Station8', 'Station4', 'Station3', 'Station6']
-
- (Station7) PING 2 ALL STATIONS ARE ACTIVE
-
- (Station4) PING 0 ['Station0', 'Station5', 'Station2', 'Station3', 'Station9', 'Station7', 'Station8', 'Station6']
-
- (Station4) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station3) PING 0 ['Station0', 'Station5', 'Station2', 'Station4', 'Station7', 'Station9', 'Station8', 'Station6']
-
- (Station3) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station2) PING 0 ['Station3', 'Station0', 'Station5', 'Station7', 'Station6', 'Station4', 'Station8', 'Station9']
+ (Station2) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station9', 'Station8', 'Station6', 'Station1', 'Station4']
 
  (Station2) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station0) PING 0 ['Station3', 'Station4', 'Station9', 'Station8', 'Station7', 'Station6', 'Station5', 'Station2']
+ (Station3) PING 0 ['Station2', 'Station0', 'Station7', 'Station5', 'Station9', 'Station8', 'Station6', 'Station1', 'Station4']
+
+ (Station3) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station4) PING 0 ['Station6', 'Station1', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9']
+
+ (Station4) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station6) PING 0 ['Station4', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station9']
+
+ (Station7) PING 0 ['Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station2', 'Station3', 'Station0']
+
+ (Station8) PING 0 ['Station9', 'Station4', 'Station6', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5']
+
+ (Station6) PING 1 ['Station9', 'Station8', 'Station4', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5']
+
+ (Station9) PING 0 ['Station6', 'Station5', 'Station4', 'Station7', 'Station2', 'Station3', 'Station0', 'Station8']
+
+ (Station7) PING 1 ['Station0', 'Station5', 'Station8', 'Station9', 'Station6', 'Station4', 'Station2', 'Station3']
+
+ (Station8) PING 1 ['Station9', 'Station6', 'Station4', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5']
+
+ (Station6) PING 2 ['Station9', 'Station8', 'Station4', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5']
+
+ (Station9) PING 1 ['Station6', 'Station5', 'Station4', 'Station7', 'Station2', 'Station3', 'Station0', 'Station8']
+
+ (Station7) PING 2 ['Station0', 'Station5', 'Station9', 'Station8', 'Station4', 'Station6', 'Station2', 'Station3']
+
+ (Station8) PING 2 ['Station5', 'Station9', 'Station4', 'Station6', 'Station2', 'Station3', 'Station0', 'Station7']
+
+ (Station6) PING 3 ['Station7', 'Station5', 'Station8', 'Station4', 'Station9', 'Station2', 'Station3', 'Station0']
+
+ (Station6) PING 1726716727.0046065 SOME STATION IS INACTIVE
+<<< (3) Ping responses (Station6): ['Station7', 'Station5', 'Station8', 'Station4', 'Station9', 'Station2', 'Station3', 'Station0']
+<<< (3) Known connections (Station6): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+
+ (Station9) PING 2 ['Station6', 'Station7', 'Station5', 'Station8', 'Station4', 'Station0', 'Station2', 'Station3']
+
+ (Station7) PING 3 ['Station0', 'Station5', 'Station8', 'Station9', 'Station4', 'Station6', 'Station2', 'Station3']
+
+ (Station0) PING 0 ['Station9', 'Station8', 'Station4', 'Station6', 'Station2', 'Station3', 'Station7', 'Station5']
+
+ Election proposals (Station6): {'Station6': 1726716727.004788, 'Station5': 1726716727.082608, 'Station7': 1726716727.9863598, 'Station8': 1726716728.0184631, 'Station4': 1726716728.0222652, 'Station2': 1726716728.0274205, 'Station9': 1726716728.027959, 'Station0': 1726716728.0513015, 'Station3': 1726716728.0678828}
+
+ WINNER (Station6): Station6
+
+ ELECTION START in Station6 - dead Station1
+
+ (Station8) PING 3 ['Station7', 'Station5', 'Station9', 'Station4', 'Station6', 'Station2', 'Station3', 'Station0']
+
+ ELECTION END in Station6 - dead Station1
+
+ (Station9) PING 3 ['Station5', 'Station8', 'Station4', 'Station6', 'Station2', 'Station3', 'Station0', 'Station7']
+
+ (Station9) PING 3 ALL STATIONS ARE ACTIVE
+
+ (Station5) PING 0 ['Station7', 'Station0', 'Station2', 'Station3', 'Station9', 'Station8', 'Station4']
+
+ (Station2) PING 0 ['Station5', 'Station9', 'Station8', 'Station4', 'Station3', 'Station0', 'Station7']
+
+ (Station5) PING 1 ['Station6', 'Station2', 'Station3', 'Station0', 'Station7', 'Station9', 'Station8', 'Station4']
+
+ (Station5) PING 1 ALL STATIONS ARE ACTIVE
+
+ (Station2) PING 1 ['Station7', 'Station5', 'Station8', 'Station9', 'Station4', 'Station6', 'Station3', 'Station0']
+
+ (Station2) PING 1 ALL STATIONS ARE ACTIVE
+
+ (Station6) PING 0 ['Station2', 'Station3', 'Station0', 'Station5', 'Station7', 'Station9', 'Station8', 'Station4']
+
+ (Station6) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station7) PING 0 ['Station2', 'Station3', 'Station0', 'Station5', 'Station8', 'Station9', 'Station4', 'Station6']
+
+ (Station7) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station8) PING 0 ['Station7', 'Station5', 'Station0', 'Station9', 'Station2', 'Station3', 'Station4', 'Station6']
+
+ (Station8) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station4) PING 0 ['Station7', 'Station9', 'Station5', 'Station8', 'Station0', 'Station2', 'Station3', 'Station6']
+
+ (Station4) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station0) PING 0 ['Station7', 'Station8', 'Station4', 'Station2', 'Station3', 'Station5', 'Station9', 'Station6']
 
  (Station0) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station9) PING 0 ['Station6', 'Station0', 'Station5', 'Station2', 'Station7', 'Station4', 'Station8', 'Station3']
-
- (Station9) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station5) PING 0 ['Station0', 'Station2', 'Station3', 'Station7', 'Station9', 'Station4', 'Station6', 'Station8']
-
- (Station5) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station8) PING 0 ['Station0', 'Station5', 'Station2', 'Station3', 'Station9', 'Station7', 'Station4', 'Station6']
-
- (Station8) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station6) PING 0 ['Station5', 'Station2', 'Station8', 'Station4', 'Station7', 'Station3', 'Station9', 'Station0']
-
- (Station6) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station7) PING 0 ['Station8', 'Station4', 'Station9', 'Station6', 'Station3', 'Station0', 'Station5', 'Station2']
-
- (Station7) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station4) PING 0 ['Station5', 'Station2', 'Station8', 'Station9', 'Station7', 'Station3', 'Station6', 'Station0']
-
- (Station4) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station3) PING 0 ['Station0', 'Station5', 'Station4', 'Station8', 'Station9', 'Station7', 'Station2', 'Station6']
+ (Station3) PING 0 ['Station7', 'Station2', 'Station8', 'Station4', 'Station6', 'Station5', 'Station9', 'Station0']
 
  (Station3) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station2) PING 0 ['Station5', 'Station0', 'Station3', 'Station4', 'Station8', 'Station9', 'Station7', 'Station6']
-
- (Station2) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station0) PING 0 ['Station5', 'Station2', 'Station8', 'Station4', 'Station7', 'Station9', 'Station3', 'Station6']
-
- (Station0) PING 0 ALL STATIONS ARE ACTIVE
-
- (Station9) PING 0 ['Station0', 'Station5', 'Station2', 'Station7', 'Station4', 'Station8', 'Station6', 'Station3']
+ (Station9) PING 0 ['Station0', 'Station5', 'Station7', 'Station8', 'Station4', 'Station6', 'Station2', 'Station3']
 
  (Station9) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station5) PING 0 ['Station0', 'Station2', 'Station4', 'Station7', 'Station8', 'Station9', 'Station3', 'Station6']
+ (Station5) PING 0 ['Station7', 'Station9', 'Station8', 'Station4', 'Station6', 'Station2', 'Station3', 'Station0']
 
  (Station5) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station8) PING 0 ['Station5', 'Station0', 'Station2', 'Station7', 'Station4', 'Station9', 'Station6', 'Station3']
+ (Station2) PING 0 ['Station0', 'Station7', 'Station5', 'Station8', 'Station9', 'Station4', 'Station6', 'Station3']
 
- (Station8) PING 0 ALL STATIONS ARE ACTIVE
+ (Station2) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station6) PING 0 ['Station0', 'Station2', 'Station5', 'Station4', 'Station8', 'Station7', 'Station9', 'Station3']
+ (Station6) PING 0 ['Station8', 'Station9', 'Station4', 'Station2', 'Station3', 'Station0', 'Station5', 'Station7']
 
  (Station6) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station7) PING 0 ['Station0', 'Station5', 'Station2', 'Station9', 'Station4', 'Station8', 'Station6', 'Station3']
+ (Station7) PING 0 ['Station6', 'Station2', 'Station3', 'Station0', 'Station5', 'Station8', 'Station9', 'Station4']
 
  (Station7) PING 0 ALL STATIONS ARE ACTIVE
 
- (Station4) PING 0 ['Station0', 'Station2', 'Station5', 'Station8', 'Station7', 'Station9', 'Station6', 'Station3']
+ (Station8) PING 0 ['Station7', 'Station5', 'Station2', 'Station3', 'Station0', 'Station9', 'Station6', 'Station4']
+
+ (Station8) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station4) PING 0 ['Station7', 'Station9', 'Station8', 'Station2', 'Station5', 'Station0', 'Station3', 'Station6']
 
  (Station4) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station0) PING 0 ['Station2', 'Station3', 'Station7', 'Station8', 'Station4', 'Station6', 'Station5', 'Station9']
+
+ (Station0) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station3) PING 0 ['Station2', 'Station0', 'Station7', 'Station8', 'Station4', 'Station6', 'Station9', 'Station5']
+
+ (Station3) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station9) PING 0 ['Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station4', 'Station6']
+
+ (Station9) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station5) PING 0 ['Station0', 'Station7', 'Station8', 'Station9', 'Station4', 'Station6', 'Station2', 'Station3']
+
+ (Station5) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station2) PING 0 ['Station3', 'Station0', 'Station7', 'Station5', 'Station9', 'Station8', 'Station4', 'Station6']
+
+ (Station2) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station6) PING 0 ['Station0', 'Station5', 'Station7', 'Station9', 'Station8', 'Station4', 'Station2', 'Station3']
+
+ (Station6) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station7) PING 0 ['Station5', 'Station9', 'Station6', 'Station2', 'Station8', 'Station4', 'Station0', 'Station3']
+
+ (Station7) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station8) PING 0 ['Station7', 'Station5', 'Station9', 'Station4', 'Station6', 'Station2', 'Station0', 'Station3']
+
+ (Station8) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station4) PING 0 ['Station9', 'Station8', 'Station7', 'Station5', 'Station6', 'Station2', 'Station0', 'Station3']
+
+ (Station4) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station0) PING 0 ['Station2', 'Station6', 'Station3', 'Station9', 'Station8', 'Station4', 'Station7', 'Station5']
+
+ (Station0) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station3) PING 0 ['Station2', 'Station6', 'Station9', 'Station8', 'Station4', 'Station0', 'Station7', 'Station5']
+
+ (Station3) PING 0 ALL STATIONS ARE ACTIVE
+
+ (Station9) PING 0 ['Station6', 'Station2', 'Station3', 'Station0', 'Station7', 'Station5', 'Station8', 'Station4']
+
+ (Station9) PING 0 ALL STATIONS ARE ACTIVE

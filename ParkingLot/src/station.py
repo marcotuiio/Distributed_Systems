@@ -17,13 +17,11 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
 response_timeout = 3
 DEFAULT_TIMEOUT = 3
-PING_RETRY = 3
+PING_RETRY = 4
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
-PING_INTERVAL = 20
-FIRST_PING = 30
-creation_time = 0
+PING_INTERVAL = 25
 
 # Fila global de carros em espera, será atualiza por mensagens de broadcast quando um carro chegar e não tiver vaga
 # Entao de tempos em tempos as estações vão verificar se tem carro na fila e tentar alocar uma vaga NAO FAZ ISSO
@@ -273,9 +271,9 @@ class Station:
 
             # Tentando garantir que todas as estações tenham sido ligadas antes de começar a pingar
             # Senao ia começar o ping tendo 4 estaçoes conhecidas e terminar tendo 8 e ai problema
-            if time.time() - creation_time < FIRST_PING:
-                time.sleep(1)
-                continue
+            # if time.time() - creation_time < FIRST_PING:
+            #     time.sleep(1)
+            #     continue
 
             if time.time() - self.last_ping < PING_INTERVAL:
                 time.sleep(1)
@@ -297,6 +295,8 @@ class Station:
                 ## PROBLEMA: QUANDO UMA ESTAÇÃO RECEBE MENSAGEM DE LIBERAÇÃO DE VAGA, ELA PRECISA D
                 for i in range(PING_RETRY):
                     if self.status == 0:
+                        break
+                    if self.in_election:    
                         break
                     while not self.ping_responses.empty():
                         self.ping_responses.get()
@@ -932,7 +932,7 @@ class Station:
 
     def run(self):
         print(f"Station {self.station_id} is active but hibernating in {self.port}")
-        creation_time = time.time()
+        self.last_ping = time.time()
         external_thread = threading.Thread(target=self.handle_app_requests)
         external_thread.daemon = True
         external_thread.start()

@@ -16,82 +16,46 @@ Station with most spots: Station0 = 3
 <<< Station Station4 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
 
 
+(EXTERNAL) Received message: RV.c6pohy in station Station4
+
+$$$ Station Station4 allocated spot 7 to car c6pohy in 1.5020370483398438e-05 seconds
+$$$ Station Station4 spots: [(7, 'c6pohy')]
+
+
++++> REQUEST car borrow spot from Station2 here in station Station4 = car 7j6pur
+### Station Station4 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station3 here in station Station4 = car n3a1sj
+### Station Station4 has spot available = False - spot_index = None
+
+
 --- Received release car from 9ip700 in station Station4
 
-+++> REQUEST car borrow spot from Station2 here in station Station4 = car 6pur8v
-### Station Station4 has spot available = True - spot_index = 0
-
-%%% Station4 lent spot 7 to car 6pur8v in 5.1930 seconds | Station2 asked
-%%% Station4 spots: [(7, '6pur8v')]
+(EXTERNAL) Received message: LV.ttfss4 in station Station4
 
 
-(EXTERNAL) Received message: RV.pohyy0 in station Station4
-
-
-:( Station Station4 has no spots available
-### Requesting spot from station Station0
-<+++ RESPONSE car borrow spot from Station0 here in station Station4 = fail
++++> REQUEST car borrow spot from Station5 here in station Station4 = car 6mpl0t
+### Station Station4 has spot available = False - spot_index = None
 
 
 --- Received release car from 6noul4 in station Station4
-### Requesting spot from station Station1
-<+++ RESPONSE car borrow spot from Station1 here in station Station4 = fail
-
-### Requesting spot from station Station2
-<+++ RESPONSE car borrow spot from Station2 here in station Station4 = fail
-
-### Requesting spot from station Station3
-<+++ RESPONSE car borrow spot from Station3 here in station Station4 = fail
-
-### Requesting spot from station Station5
-<+++ RESPONSE car borrow spot from Station5 here in station Station4 = fail
-
-### Requesting spot from station Station6
-<+++ RESPONSE car borrow spot from Station6 here in station Station4 = fail
-
-### Requesting spot from station Station7
-<+++ RESPONSE car borrow spot from Station7 here in station Station4 = success
-
-:D Station4 borrowed spot to pohyy0 from station Station7 - FULL TIME 12.2413 seconds
-
-
---- Received release car from ttfss4 in station Station4
-
---- Received release car from a1sjcp in station Station4
-
---- Received release car from yyiat2 in station Station4
 
 --- Received release car from bq587j in station Station4
 
---- Received release car from pohyy0 in station Station4
+--- Received release car from tiijoo in station Station4
 
---- Received release car from 6pur8v in station Station4
+--- Received release car from 6mpl0t in station Station4
 
-*** Station4 released spot 7 from car 6pur8v in 0.3023 seconds
+--- Received release car from 7j6pur in station Station4
+
+--- Received release car from ck9vfc in station Station4
+
+--- Received release car from c6pohy in station Station4
+
+*** Station4 released spot 7 from car c6pohy in 0.9725 seconds
 *** Station4 spots: [(7, None)]
 
---- Received release car from fc7aqu in station Station4
-
---- Received release car from 4l1kck in station Station4
-<<< (0) Ping Retry - Station Station4 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station4 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station4 got 8 responses expected 9
-
-Some station is inactive
-<<< (2) Ping responses (Station4): ['Station0', 'Station3', 'Station9', 'Station8', 'Station6', 'Station7', 'Station2', 'Station5']
-
-<<< (2) Known connections (Station4): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-
->>> Detected failure first: Station4
-<<< Station4 with time 1726714892.8142953
-!!!! Triggering election in station Station4 - dead station Station1
-<<< Deactivating station Station1 - detected by station Station4
-(2) Timeout reached. 8 responded. Retrying...
-Station with least spots (that answerd first): Station4 = 1
----- Dead station spots (Station1): [[4, None]]
-<<< Active stations after deactivation: 9
-<<< Station Station4 known connections: ['Station0', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
-!!!! Election finished in station Station4 - dead station Station1
-
+--- Received release car from t28s4l in station Station4
 
 Shutting down...

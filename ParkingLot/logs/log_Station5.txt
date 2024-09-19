@@ -16,42 +16,75 @@ Station with most spots: Station1 = 3
 <<< Station Station5 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5']
 
 
---- Received release car from 9ip700 in station Station5
++++> REQUEST car borrow spot from Station2 here in station Station5 = car 7j6pur
+### Station Station5 has spot available = True - spot_index = 0
 
-(EXTERNAL) Received message: LV.6noul4 in station Station5
-
-
-(EXTERNAL) Received message: RV.yyiat2 in station Station5
-
-$$$ Station Station5 allocated spot 2 to car yyiat2 in 6.413459777832031e-05 seconds
-$$$ Station Station5 spots: [(2, 'yyiat2')]
+%%% Station5 lent spot 2 to car 7j6pur in 7.2405 seconds | Station2 asked
+%%% Station5 spots: [(2, '7j6pur')]
 
 
-+++> REQUEST car borrow spot from Station4 here in station Station5 = car pohyy0
+(EXTERNAL) Received message: RV.6mpl0t in station Station5
+
+
+:( Station Station5 has no spots available
+### Requesting spot from station Station0
+<+++ RESPONSE car borrow spot from Station0 here in station Station5 = fail
+
+### Requesting spot from station Station1
+<+++ RESPONSE car borrow spot from Station1 here in station Station5 = fail
+
+
++++> REQUEST car borrow spot from Station3 here in station Station5 = car n3a1sj
+### Requesting spot from station Station2
 ### Station Station5 has spot available = False - spot_index = None
 
 
+--- Received release car from 9ip700 in station Station5
+<+++ RESPONSE car borrow spot from Station2 here in station Station5 = fail
+
+### Requesting spot from station Station3
+<+++ RESPONSE car borrow spot from Station3 here in station Station5 = fail
+
+### Requesting spot from station Station4
+
 --- Received release car from ttfss4 in station Station5
+<+++ RESPONSE car borrow spot from Station4 here in station Station5 = fail
 
---- Received release car from a1sjcp in station Station5
+### Requesting spot from station Station6
+<+++ RESPONSE car borrow spot from Station6 here in station Station5 = fail
 
---- Received release car from yyiat2 in station Station5
+### Requesting spot from station Station7
+<+++ RESPONSE car borrow spot from Station7 here in station Station5 = fail
 
-*** Station5 released spot 2 from car yyiat2 in 0.8421 seconds
+### Requesting spot from station Station8
+<+++ RESPONSE car borrow spot from Station8 here in station Station5 = fail
+
+### Requesting spot from station Station9
+<+++ RESPONSE car borrow spot from Station9 here in station Station5 = success
+
+:D Station5 borrowed spot to 6mpl0t from station Station9 - FULL TIME 16.2960 seconds
+
+
+--- Received release car from 6noul4 in station Station5
+
+(EXTERNAL) Received message: LV.bq587j in station Station5
+
+
+--- Received release car from tiijoo in station Station5
+
+--- Received release car from 6mpl0t in station Station5
+
+--- Received release car from 7j6pur in station Station5
+
+*** Station5 released spot 2 from car 7j6pur in 0.2468 seconds
 *** Station5 spots: [(2, None)]
 
---- Received release car from bq587j in station Station5
+(EXTERNAL) Received message: LV.ck9vfc in station Station5
 
---- Received release car from pohyy0 in station Station5
 
---- Received release car from 6pur8v in station Station5
+--- Received release car from c6pohy in station Station5
 
---- Received release car from fc7aqu in station Station5
-
-(EXTERNAL) Received message: LV.4l1kck in station Station5
-
-<<< (0) Ping Retry - Station Station5 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station5 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station5 got 6 responses expected 8
+--- Received release car from t28s4l in station Station5
+<<< (0) Ping Retry - Station Station5 got 7 responses expected 8
 
 Shutting down...

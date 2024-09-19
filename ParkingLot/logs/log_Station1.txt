@@ -18,7 +18,7 @@ Station with most spots: Station0 = 10
 
 (EXTERNAL) Received message: RV.ttfss4 in station Station1
 
-$$$ Station Station1 allocated spot 4 to car ttfss4 in 5.054473876953125e-05 seconds
+$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.9550323486328125e-05 seconds
 $$$ Station Station1 spots: [(4, 'ttfss4')]
 
 
@@ -26,37 +26,45 @@ $$$ Station Station1 spots: [(4, 'ttfss4')]
 ### Station Station1 has spot available = False - spot_index = None
 
 
-(EXTERNAL) Received message: LV.9ip700 in station Station1
-
-
-+++> REQUEST car borrow spot from Station2 here in station Station1 = car 6pur8v
++++> REQUEST car borrow spot from Station0 here in station Station1 = car tiijoo
 ### Station Station1 has spot available = False - spot_index = None
 
 
---- Received release car from 6noul4 in station Station1
-
-+++> REQUEST car borrow spot from Station4 here in station Station1 = car pohyy0
++++> REQUEST car borrow spot from Station2 here in station Station1 = car 7j6pur
 ### Station Station1 has spot available = False - spot_index = None
 
+
++++> REQUEST car borrow spot from Station3 here in station Station1 = car n3a1sj
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station5 here in station Station1 = car 6mpl0t
+### Station Station1 has spot available = False - spot_index = None
+
+
+--- Received release car from 9ip700 in station Station1
 
 --- Received release car from ttfss4 in station Station1
 
-*** Station1 released spot 4 from car ttfss4 in 0.2069 seconds
+*** Station1 released spot 4 from car ttfss4 in 0.1611 seconds
 *** Station1 spots: [(4, None)]
 
---- Received release car from a1sjcp in station Station1
+(EXTERNAL) Received message: LV.6noul4 in station Station1
 
---- Received release car from yyiat2 in station Station1
 
 --- Received release car from bq587j in station Station1
 
---- Received release car from pohyy0 in station Station1
+--- Received release car from tiijoo in station Station1
 
---- Received release car from 6pur8v in station Station1
+--- Received release car from 6mpl0t in station Station1
 
---- Received release car from fc7aqu in station Station1
+--- Received release car from 7j6pur in station Station1
 
---- Received release car from 4l1kck in station Station1
+--- Received release car from ck9vfc in station Station1
+
+--- Received release car from c6pohy in station Station1
+
+--- Received release car from t28s4l in station Station1
 
 (EXTERNAL) Received message: FE in station Station1
 

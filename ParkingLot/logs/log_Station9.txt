@@ -18,25 +18,35 @@ Station with most spots: Station1 = 2
 
 --- Received release car from 9ip700 in station Station9
 
---- Received release car from 6noul4 in station Station9
-
 --- Received release car from ttfss4 in station Station9
 
---- Received release car from a1sjcp in station Station9
++++> REQUEST car borrow spot from Station5 here in station Station9 = car 6mpl0t
+### Station Station9 has spot available = True - spot_index = 0
 
---- Received release car from yyiat2 in station Station9
+%%% Station9 lent spot 3 to car 6mpl0t in 16.2443 seconds | Station5 asked
+%%% Station9 spots: [(3, '6mpl0t')]
+
+
+--- Received release car from 6noul4 in station Station9
 
 --- Received release car from bq587j in station Station9
 
---- Received release car from pohyy0 in station Station9
+--- Received release car from tiijoo in station Station9
 
---- Received release car from 6pur8v in station Station9
+--- Received release car from 6mpl0t in station Station9
 
---- Received release car from fc7aqu in station Station9
+*** Station9 released spot 3 from car 6mpl0t in 0.2255 seconds
+*** Station9 spots: [(3, None)]
 
---- Received release car from 4l1kck in station Station9
+--- Received release car from 7j6pur in station Station9
+
+--- Received release car from ck9vfc in station Station9
+
+--- Received release car from c6pohy in station Station9
+
+--- Received release car from t28s4l in station Station9
 <<< (0) Ping Retry - Station Station9 got 8 responses expected 9
 <<< (1) Ping Retry - Station Station9 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station9 got 6 responses expected 8
+<<< (2) Ping Retry - Station Station9 got 8 responses expected 9
 
 Shutting down...
