@@ -15,7 +15,7 @@ Activating station Station0
 
 (EXTERNAL) Received message: RV.9ip700 in station Station0
 
-$$$ Station Station0 allocated spot 9 to car 9ip700 in 1.049041748046875e-05 seconds
+$$$ Station Station0 allocated spot 9 to car 9ip700 in 1.4781951904296875e-05 seconds
 $$$ Station Station0 spots: [(9, '9ip700')]
 
 
@@ -29,7 +29,7 @@ $$$ Station Station0 spots: [(9, '9ip700')]
 ### Requesting spot from station Station2
 <+++ RESPONSE car borrow spot from Station2 here in station Station0 = success
 
-:D Station0 borrowed spot to bq587j from station Station2 - FULL TIME 4.0423 seconds
+:D Station0 borrowed spot to bq587j from station Station2 - FULL TIME 3.9934 seconds
 
 
 (EXTERNAL) Received message: RV.tiijoo in station Station0
@@ -40,19 +40,19 @@ $$$ Station Station0 spots: [(9, '9ip700')]
 <+++ RESPONSE car borrow spot from Station1 here in station Station0 = fail
 
 ### Requesting spot from station Station2
-<+++ RESPONSE car borrow spot from Station2 here in station Station0 = fail
-
 
 +++> REQUEST car borrow spot from Station2 here in station Station0 = car 7j6pur
-### Requesting spot from station Station3
 ### Station Station0 has spot available = False - spot_index = None
 
-<+++ RESPONSE car borrow spot from Station3 here in station Station0 = success
+<+++ RESPONSE car borrow spot from Station2 here in station Station0 = fail
 
-:D Station0 borrowed spot to tiijoo from station Station3 - FULL TIME 6.0451 seconds
+### Requesting spot from station Station3
+<+++ RESPONSE car borrow spot from Station3 here in station Station0 = success
 
 
 +++> REQUEST car borrow spot from Station3 here in station Station0 = car n3a1sj
+:D Station0 borrowed spot to tiijoo from station Station3 - FULL TIME 6.0385 seconds
+
 ### Station Station0 has spot available = False - spot_index = None
 
 
@@ -60,40 +60,70 @@ $$$ Station Station0 spots: [(9, '9ip700')]
 ### Station Station0 has spot available = False - spot_index = None
 
 
+(EXTERNAL) Received message: RV.1kck9v in station Station0
+
+
+:( Station Station0 has no spots available
+### Requesting spot from station Station1
+<+++ RESPONSE car borrow spot from Station1 here in station Station0 = fail
+
+### Requesting spot from station Station2
+<+++ RESPONSE car borrow spot from Station2 here in station Station0 = fail
+
+### Requesting spot from station Station3
+(EXTERNAL) VD in Station0
+
+
+(VD Station0) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):
+Active stations: [['Station0', 1, 1, 0], ['Station1', 1, 1, 0], ['Station2', 1, 1, 0], ['Station3', 1, 1, 0], ['Station4', 1, 1, 0], ['Station5', 1, 1, 0], ['Station6', 1, 1, 0], ['Station7', 1, 1, 0], ['Station8', 1, 1, 0], ['Station9', 1, 0, 1]]
+<+++ RESPONSE car borrow spot from Station3 here in station Station0 = fail
+
+### Requesting spot from station Station4
+<+++ RESPONSE car borrow spot from Station4 here in station Station0 = fail
+
+### Requesting spot from station Station5
+
+--- Received release car from bq587j in station Station0
+<+++ RESPONSE car borrow spot from Station5 here in station Station0 = fail
+
+### Requesting spot from station Station6
+<+++ RESPONSE car borrow spot from Station6 here in station Station0 = fail
+
+### Requesting spot from station Station7
+<+++ RESPONSE car borrow spot from Station7 here in station Station0 = fail
+
+### Requesting spot from station Station8
+
 --- Received release car from 9ip700 in station Station0
 
-*** Station0 released spot 9 from car 9ip700 in 0.2304 seconds
+*** Station0 released spot 9 from car 9ip700 in 0.2666 seconds
 *** Station0 spots: [(9, None)]
+<+++ RESPONSE car borrow spot from Station8 here in station Station0 = fail
 
-(EXTERNAL) Received message: RV.ck9vfc in station Station0
+### Requesting spot from station Station9
+<+++ RESPONSE car borrow spot from Station9 here in station Station0 = fail
 
-$$$ Station Station0 allocated spot 9 to car ck9vfc in 1.239776611328125e-05 seconds
-$$$ Station Station0 spots: [(9, 'ck9vfc')]
+;-; No stations could lend a spot to station Station0 - car 1kck9v in 14.1057 seconds
+;-; Car 1kck9v is in queue
 
 
---- Received release car from ttfss4 in station Station0
+(EXTERNAL) Received message: LV.n3a1sj in station Station0
+
 
 --- Received release car from 6noul4 in station Station0
 
---- Received release car from bq587j in station Station0
-
 --- Received release car from tiijoo in station Station0
 
---- Received release car from 6mpl0t in station Station0
+--- Received release car from iat28s in station Station0
+
+--- Received release car from ttfss4 in station Station0
+
+--- Received release car from c6pohy in station Station0
 
 --- Received release car from 7j6pur in station Station0
 
---- Received release car from ck9vfc in station Station0
+--- Received release car from 6mpl0t in station Station0
 
-*** Station0 released spot 9 from car ck9vfc in 0.9725 seconds
-*** Station0 spots: [(9, None)]
-
-(EXTERNAL) Received message: LV.c6pohy in station Station0
-
-
-(EXTERNAL) Received message: LV.t28s4l in station Station0
-
-<<< (0) Ping Retry - Station Station0 got 8 responses expected 9
-<<< Station0 Election already in progress
+--- Received release car from 1kck9v in station Station0
 
 Shutting down...

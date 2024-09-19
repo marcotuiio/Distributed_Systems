@@ -10,3 +10,15 @@
 	 -> ['Station7', 1, 1, 0]
 	 -> ['Station8', 1, 1, 0]
 	 -> ['Station9', 1, 1, 0]
+
+(VD Station0) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):
+	 -> ['Station0', 1, 0, 1]
+	 -> ['Station1', 1, 1, 0]
+	 -> ['Station2', 1, 1, 0]
+	 -> ['Station3', 1, 1, 0]
+	 -> ['Station4', 1, 1, 0]
+	 -> ['Station5', 1, 1, 0]
+	 -> ['Station6', 1, 1, 0]
+	 -> ['Station7', 1, 1, 0]
+	 -> ['Station8', 1, 1, 0]
+	 -> ['Station9', 1, 1, 0]

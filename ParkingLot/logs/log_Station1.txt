@@ -18,7 +18,7 @@ Station with most spots: Station0 = 10
 
 (EXTERNAL) Received message: RV.ttfss4 in station Station1
 
-$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.9550323486328125e-05 seconds
+$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.3589859008789062e-05 seconds
 $$$ Station Station1 spots: [(4, 'ttfss4')]
 
 
@@ -42,31 +42,34 @@ $$$ Station Station1 spots: [(4, 'ttfss4')]
 ### Station Station1 has spot available = False - spot_index = None
 
 
---- Received release car from 9ip700 in station Station1
-
---- Received release car from ttfss4 in station Station1
-
-*** Station1 released spot 4 from car ttfss4 in 0.1611 seconds
-*** Station1 spots: [(4, None)]
-
-(EXTERNAL) Received message: LV.6noul4 in station Station1
++++> REQUEST car borrow spot from Station0 here in station Station1 = car 1kck9v
+### Station Station1 has spot available = False - spot_index = None
 
 
 --- Received release car from bq587j in station Station1
 
+--- Received release car from 9ip700 in station Station1
+
+--- Received release car from n3a1sj in station Station1
+
+--- Received release car from 6noul4 in station Station1
+
 --- Received release car from tiijoo in station Station1
 
---- Received release car from 6mpl0t in station Station1
+--- Received release car from iat28s in station Station1
+
+--- Received release car from ttfss4 in station Station1
+
+*** Station1 released spot 4 from car ttfss4 in 0.2273 seconds
+*** Station1 spots: [(4, None)]
+
+(EXTERNAL) Received message: LV.c6pohy in station Station1
+
 
 --- Received release car from 7j6pur in station Station1
 
---- Received release car from ck9vfc in station Station1
+--- Received release car from 6mpl0t in station Station1
 
---- Received release car from c6pohy in station Station1
-
---- Received release car from t28s4l in station Station1
-
-(EXTERNAL) Received message: FE in station Station1
-
+--- Received release car from 1kck9v in station Station1
 
 Shutting down...

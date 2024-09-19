@@ -19,12 +19,8 @@ Station with most spots: Station0 = 5
 +++> REQUEST car borrow spot from Station0 here in station Station2 = car bq587j
 ### Station Station2 has spot available = True - spot_index = 0
 
-%%% Station2 lent spot 6 to car bq587j in 3.0068 seconds | Station0 asked
+%%% Station2 lent spot 6 to car bq587j in 2.9606 seconds | Station0 asked
 %%% Station2 spots: [(6, 'bq587j')]
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station2 = car tiijoo
-### Station Station2 has spot available = False - spot_index = None
 
 
 (EXTERNAL) Received message: RV.7j6pur in station Station2
@@ -32,6 +28,10 @@ Station with most spots: Station0 = 5
 
 :( Station Station2 has no spots available
 ### Requesting spot from station Station0
+
++++> REQUEST car borrow spot from Station0 here in station Station2 = car tiijoo
+### Station Station2 has spot available = False - spot_index = None
+
 <+++ RESPONSE car borrow spot from Station0 here in station Station2 = fail
 
 ### Requesting spot from station Station1
@@ -43,42 +43,49 @@ Station with most spots: Station0 = 5
 ### Requesting spot from station Station4
 <+++ RESPONSE car borrow spot from Station4 here in station Station2 = fail
 
-### Requesting spot from station Station5
 
 +++> REQUEST car borrow spot from Station3 here in station Station2 = car n3a1sj
 ### Station Station2 has spot available = False - spot_index = None
 
+### Requesting spot from station Station5
 <+++ RESPONSE car borrow spot from Station5 here in station Station2 = success
 
-:D Station2 borrowed spot to 7j6pur from station Station5 - FULL TIME 8.2887 seconds
+:D Station2 borrowed spot to 7j6pur from station Station5 - FULL TIME 9.2603 seconds
 
-
---- Received release car from 9ip700 in station Station2
 
 +++> REQUEST car borrow spot from Station5 here in station Station2 = car 6mpl0t
 ### Station Station2 has spot available = False - spot_index = None
 
 
---- Received release car from ttfss4 in station Station2
++++> REQUEST car borrow spot from Station0 here in station Station2 = car 1kck9v
+### Station Station2 has spot available = False - spot_index = None
 
---- Received release car from 6noul4 in station Station2
 
 --- Received release car from bq587j in station Station2
 
-*** Station2 released spot 6 from car bq587j in 0.9520 seconds
+*** Station2 released spot 6 from car bq587j in 0.9801 seconds
 *** Station2 spots: [(6, None)]
+
+--- Received release car from 9ip700 in station Station2
+
+--- Received release car from n3a1sj in station Station2
+
+--- Received release car from 6noul4 in station Station2
 
 --- Received release car from tiijoo in station Station2
 
---- Received release car from 6mpl0t in station Station2
+(EXTERNAL) Received message: LV.iat28s in station Station2
 
---- Received release car from 7j6pur in station Station2
 
---- Received release car from ck9vfc in station Station2
+--- Received release car from ttfss4 in station Station2
 
 --- Received release car from c6pohy in station Station2
 
---- Received release car from t28s4l in station Station2
-<<< (0) Ping Retry - Station Station2 got 7 responses expected 8
+--- Received release car from 7j6pur in station Station2
+
+--- Received release car from 6mpl0t in station Station2
+
+(EXTERNAL) Received message: LV.1kck9v in station Station2
+
 
 Shutting down...

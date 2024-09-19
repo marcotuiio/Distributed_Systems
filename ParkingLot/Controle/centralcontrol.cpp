@@ -51,6 +51,7 @@ void CentralControl::handleCommand(string cmd, int dest_index, string dest_IP, i
 
         response = Communication::actFunction(dest_IP, dest_Port, cmd);
         if (cmd == "VD") {
+            writeVDToFile(response, dest_index);
             // writeToFile(response);
         }
         if (cmd == "AE") {

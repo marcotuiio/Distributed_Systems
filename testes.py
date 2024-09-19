@@ -176,10 +176,16 @@
 # print(vags2)
 # print(vags3)
 
-# stations ={ 
-#             "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
-#             "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 1, "spots": [(12, None), (10, 'carro1'), (11, 'carro2'), (13, 'carro3'), (14, 'carro5')]}
-#         }
+stations ={ 
+            "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 1, "spots": [(13, 'carro3'), (14, 'carro5')]},
+            "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 1, "spots": [(12, None), (10, 'carro1'), (11, 'carro2')]}
+        }
+
+# for spots in stations["Station0"]["spots"]:
+#     print(spots)
+# stations["Station0"]["spots"] = []
+# for spots in stations["Station0"]["spots"]:
+#     print(spots)
 
 # active_stations = []
 # for station in stations:
@@ -190,7 +196,7 @@
 #         active_stations.append((station, total, ocupadas, vazias))
 # print(active_stations)
 
-message = "RV.ohxwys"
+# message = "RV.ohxwys"
 
-print(message[3:])
-print(message[0:2])
+# print(message[3:])
+# print(message[0:2])

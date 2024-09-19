@@ -18,41 +18,43 @@ Station with most spots: Station2 = 2
 
 (EXTERNAL) Received message: RV.6noul4 in station Station8
 
-$$$ Station Station8 allocated spot 5 to car 6noul4 in 1.4543533325195312e-05 seconds
+$$$ Station Station8 allocated spot 5 to car 6noul4 in 7.152557373046875e-06 seconds
 $$$ Station Station8 spots: [(5, '6noul4')]
 
-
---- Received release car from 9ip700 in station Station8
-
---- Received release car from ttfss4 in station Station8
 
 +++> REQUEST car borrow spot from Station5 here in station Station8 = car 6mpl0t
 ### Station Station8 has spot available = False - spot_index = None
 
 
---- Received release car from 6noul4 in station Station8
-
-*** Station8 released spot 5 from car 6noul4 in 0.2276 seconds
-*** Station8 spots: [(5, None)]
-
 --- Received release car from bq587j in station Station8
 
---- Received release car from tiijoo in station Station8
-
-(EXTERNAL) Received message: LV.6mpl0t in station Station8
+(EXTERNAL) Received message: LV.9ip700 in station Station8
 
 
---- Received release car from 7j6pur in station Station8
++++> REQUEST car borrow spot from Station0 here in station Station8 = car 1kck9v
+### Station Station8 has spot available = False - spot_index = None
 
---- Received release car from ck9vfc in station Station8
+
+--- Received release car from n3a1sj in station Station8
+
+--- Received release car from 6noul4 in station Station8
+
+*** Station8 released spot 5 from car 6noul4 in 0.2258 seconds
+*** Station8 spots: [(5, None)]
+
+(EXTERNAL) Received message: LV.tiijoo in station Station8
+
+
+--- Received release car from iat28s in station Station8
+
+--- Received release car from ttfss4 in station Station8
 
 --- Received release car from c6pohy in station Station8
 
---- Received release car from t28s4l in station Station8
-<<< (0) Ping Retry - Station Station8 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station8 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station8 got 8 responses expected 9
-<<< (3) Ping Retry - Station Station8 got 8 responses expected 9
-<<< Station8 Election already in progress
+--- Received release car from 7j6pur in station Station8
+
+--- Received release car from 6mpl0t in station Station8
+
+--- Received release car from 1kck9v in station Station8
 
 Shutting down...

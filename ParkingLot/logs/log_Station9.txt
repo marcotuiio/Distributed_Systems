@@ -16,37 +16,40 @@ Station with most spots: Station1 = 2
 <<< Station Station9 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
 
 
---- Received release car from 9ip700 in station Station9
-
---- Received release car from ttfss4 in station Station9
+--- Received release car from bq587j in station Station9
 
 +++> REQUEST car borrow spot from Station5 here in station Station9 = car 6mpl0t
 ### Station Station9 has spot available = True - spot_index = 0
 
-%%% Station9 lent spot 3 to car 6mpl0t in 16.2443 seconds | Station5 asked
+%%% Station9 lent spot 3 to car 6mpl0t in 15.2841 seconds | Station5 asked
 %%% Station9 spots: [(3, '6mpl0t')]
 
 
---- Received release car from 6noul4 in station Station9
+--- Received release car from 9ip700 in station Station9
 
---- Received release car from bq587j in station Station9
++++> REQUEST car borrow spot from Station0 here in station Station9 = car 1kck9v
+### Station Station9 has spot available = False - spot_index = None
+
+
+--- Received release car from n3a1sj in station Station9
+
+--- Received release car from 6noul4 in station Station9
 
 --- Received release car from tiijoo in station Station9
 
---- Received release car from 6mpl0t in station Station9
+--- Received release car from iat28s in station Station9
 
-*** Station9 released spot 3 from car 6mpl0t in 0.2255 seconds
-*** Station9 spots: [(3, None)]
-
---- Received release car from 7j6pur in station Station9
-
---- Received release car from ck9vfc in station Station9
+--- Received release car from ttfss4 in station Station9
 
 --- Received release car from c6pohy in station Station9
 
---- Received release car from t28s4l in station Station9
-<<< (0) Ping Retry - Station Station9 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station9 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station9 got 8 responses expected 9
+--- Received release car from 7j6pur in station Station9
+
+--- Received release car from 6mpl0t in station Station9
+
+*** Station9 released spot 3 from car 6mpl0t in 0.9283 seconds
+*** Station9 spots: [(3, None)]
+
+--- Received release car from 1kck9v in station Station9
 
 Shutting down...

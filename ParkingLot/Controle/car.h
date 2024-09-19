@@ -18,6 +18,7 @@ public:
     ~Car();
     void carThread(string dest_IP, int dest_Port, string exit_IP, int exit_Port, string carID);
     void writeToFile(string text);
+    void writeVDToFile(string text, int station);
 private:
     ofstream outResultFile;
     

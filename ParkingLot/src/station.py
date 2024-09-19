@@ -714,23 +714,47 @@ class Station:
     ## VD - Vagas disponíveis em todas as estações
     ## RV - Requisitar vaga
     ## LV - Liberar vaga
-
     def handle_app_requests(self):
+        poller = zmq.Poller()
+        poller.register(self.app_socket, zmq.POLLIN)
+        
         while True:
-            try:
-                if not self.app_socket.closed:
-                    external_message = self.app_socket.recv(flags=zmq.NOBLOCK)
-                    if external_message:
-                        self.app_socket.send_string("Received\n")
-                        external_message = external_message.decode()
-                        self.external_requests.put(external_message)
-                else:
-                    print(f"App socket closed in station {self.station_id}")
-                    time.sleep(2)
+            socks = dict(poller.poll(timeout=1000))  # Verifica as sockets a cada 1 segundo
 
-            except zmq.Again:
-                time.sleep(0.2)
-                continue
+            # TENTATIVA PARA QUE A ESPERA PARA RESPONDER A MESNAGEM VD NAO TRAVE A CHEGADA DE OUTRAS MENSAGENS
+            if self.app_socket in socks and socks[self.app_socket] == zmq.POLLIN:
+                try:
+                    if not self.app_socket.closed:
+                        external_message = self.app_socket.recv(flags=zmq.NOBLOCK)
+                        if external_message:
+                            external_message = external_message.decode()
+                            if external_message != "VD":
+                                self.app_socket.send_string("Received\n")
+                                self.external_requests.put(external_message)
+
+                            else:
+                                print(f'(EXTERNAL) {external_message} in {self.station_id}\n')
+                                if self.status == 0:
+                                    self.app_socket.send(b"Station is inactive\n")
+                                    continue
+                                self.manager_socket.send_json({"type": "request_format_active_stations"})
+                                time.sleep(0.1)
+                                try:
+                                    response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
+                                    print(f"\n(VD {self.station_id}) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):")
+                                    print(f"Active stations: {response['active_stations']}")
+                                    self.app_socket.send(str(response["active_stations"]).encode())
+                                except zmq.Again as e:
+                                    print("No response received from manager socket in non-blocking mode.")
+                                    self.app_socket.send(b"No response received from manager.")
+                    
+                    else:
+                        print(f"App socket closed in station {self.station_id}")
+                        time.sleep(2)
+
+                except zmq.Again:
+                    time.sleep(0.2)
+                    continue
 
 
     def process_app_requests(self):
@@ -763,23 +787,6 @@ class Station:
                     car_id = external_message[3:]
                     # print(f'\nLiberar vaga em {self.station_id} = {car_id}')
                     self.release_car(car_id)
-
-                elif external_message == "VD":
-                    if self.status == 0:
-                        print(f"Station {self.station_id} is inactive")
-                        continue
-                    self.manager_socket.send_json({"type": "request_format_active_stations"})
-                    time.sleep(0.3)
-                    try:
-                        response = self.manager_socket.recv_json(flags=zmq.NOBLOCK)
-                        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/Controle/output.txt", "a") as f:
-                            f.write(f"\n(VD {self.station_id}) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):\n")
-                            for station in response["active_stations"]:
-                                f.write(f"\t -> {station}\n")
-                            # self.app_socket.send(str(response["active_stations"]).encode())
-                    except zmq.Again as e:
-                        print("No response received from manager socket in non-blocking mode.")
-                        # self.app_socket.send(b"No response received from manager.")
 
                     # time.sleep(1)
                 else:

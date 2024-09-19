@@ -91,6 +91,9 @@ class Manager:
                     station_id = message["station_id"]
                     spots = self.stations[station_id]["spots"]
                     self.socket.send_json({"type": "response_spots_from_station", "spots": spots})
+                    # Deixar os spots de quem cedeu vazios para nao duplicar a vaga
+                    self.stations[station_id]["spots"] = []
+                        
 
                 elif message["type"] == "request_format_active_stations":
                     active_stations = []
