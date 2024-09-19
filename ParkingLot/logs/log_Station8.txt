@@ -18,7 +18,7 @@ Station with most spots: Station2 = 2
 
 (EXTERNAL) Received message: RV.6noul4 in station Station8
 
-$$$ Station Station8 allocated spot 5 to car 6noul4 in 7.152557373046875e-06 seconds
+$$$ Station Station8 allocated spot 5 to car 6noul4 in 9.059906005859375e-06 seconds
 $$$ Station Station8 spots: [(5, '6noul4')]
 
 
@@ -26,35 +26,46 @@ $$$ Station Station8 spots: [(5, '6noul4')]
 ### Station Station8 has spot available = False - spot_index = None
 
 
---- Received release car from bq587j in station Station8
+(EXTERNAL) Received message: LV.6noul4 in station Station8
 
-(EXTERNAL) Received message: LV.9ip700 in station Station8
 
+*** Station8 released spot 5 from car 6noul4 in 0.0000 seconds
+*** Station8 spots: [(5, None)]
+$$$ Car 6noul4 left on same station that entered Station8
 
 +++> REQUEST car borrow spot from Station0 here in station Station8 = car 1kck9v
-### Station Station8 has spot available = False - spot_index = None
+### Station Station8 has spot available = True - spot_index = 0
 
+%%% Station8 lent spot 5 to car 1kck9v in 12.9677 seconds | Station0 asked
+%%% Station8 spots: [(5, '1kck9v')]
 
---- Received release car from n3a1sj in station Station8
-
---- Received release car from 6noul4 in station Station8
-
-*** Station8 released spot 5 from car 6noul4 in 0.2258 seconds
-*** Station8 spots: [(5, None)]
-
-(EXTERNAL) Received message: LV.tiijoo in station Station8
-
-
---- Received release car from iat28s in station Station8
 
 --- Received release car from ttfss4 in station Station8
 
---- Received release car from c6pohy in station Station8
+--- Received release car from bq587j in station Station8
 
---- Received release car from 7j6pur in station Station8
+--- Received release car from n3a1sj in station Station8
+
+--- Received release car from 9ip700 in station Station8
+
+--- Received release car from tiijoo in station Station8
+
+--- Received release car from c6pohy in station Station8
 
 --- Received release car from 6mpl0t in station Station8
 
+--- Received release car from 7j6pur in station Station8
+
 --- Received release car from 1kck9v in station Station8
+
+*** Station8 released spot 5 from car 1kck9v in 0.2189 seconds
+*** Station8 spots: [(5, None)]
+
+(EXTERNAL) Received message: LV.iat28s in station Station8
+
+<<< (0) Ping Retry - Station Station8 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station8 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station8 got 8 responses expected 9
+<<< Station8 Election already in progress
 
 Shutting down...

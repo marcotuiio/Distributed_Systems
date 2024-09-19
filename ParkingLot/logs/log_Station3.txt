@@ -19,7 +19,7 @@ Station with most spots: Station1 = 5
 +++> REQUEST car borrow spot from Station0 here in station Station3 = car tiijoo
 ### Station Station3 has spot available = True - spot_index = 0
 
-%%% Station3 lent spot 1 to car tiijoo in 4.9741 seconds | Station0 asked
+%%% Station3 lent spot 1 to car tiijoo in 4.9897 seconds | Station0 asked
 %%% Station3 spots: [(1, 'tiijoo')]
 
 
@@ -28,11 +28,11 @@ Station with most spots: Station1 = 5
 
 :( Station Station3 has no spots available
 ### Requesting spot from station Station0
-
-+++> REQUEST car borrow spot from Station2 here in station Station3 = car 7j6pur
 <+++ RESPONSE car borrow spot from Station0 here in station Station3 = fail
 
 ### Requesting spot from station Station1
+
++++> REQUEST car borrow spot from Station2 here in station Station3 = car 7j6pur
 ### Station Station3 has spot available = False - spot_index = None
 
 <+++ RESPONSE car borrow spot from Station1 here in station Station3 = fail
@@ -50,12 +50,12 @@ Station with most spots: Station1 = 5
 <+++ RESPONSE car borrow spot from Station6 here in station Station3 = fail
 
 ### Requesting spot from station Station7
-
-+++> REQUEST car borrow spot from Station5 here in station Station3 = car 6mpl0t
 <+++ RESPONSE car borrow spot from Station7 here in station Station3 = success
 
-:D Station3 borrowed spot to n3a1sj from station Station7 - FULL TIME 12.2646 seconds
+:D Station3 borrowed spot to n3a1sj from station Station7 - FULL TIME 12.2806 seconds
 
+
++++> REQUEST car borrow spot from Station5 here in station Station3 = car 6mpl0t
 ### Station Station3 has spot available = False - spot_index = None
 
 
@@ -63,31 +63,46 @@ Station with most spots: Station1 = 5
 ### Station Station3 has spot available = False - spot_index = None
 
 
-(EXTERNAL) Received message: LV.bq587j in station Station3
+--- Received release car from ttfss4 in station Station3
 
-
---- Received release car from 9ip700 in station Station3
+--- Received release car from bq587j in station Station3
 
 --- Received release car from n3a1sj in station Station3
 
---- Received release car from 6noul4 in station Station3
+--- Received release car from 9ip700 in station Station3
 
 --- Received release car from tiijoo in station Station3
 
-*** Station3 released spot 1 from car tiijoo in 0.2014 seconds
+*** Station3 released spot 1 from car tiijoo in 1.0128 seconds
 *** Station3 spots: [(1, None)]
-
---- Received release car from iat28s in station Station3
-
---- Received release car from ttfss4 in station Station3
 
 --- Received release car from c6pohy in station Station3
 
-(EXTERNAL) Received message: LV.7j6pur in station Station3
-
-
 --- Received release car from 6mpl0t in station Station3
 
+--- Received release car from 7j6pur in station Station3
+
 --- Received release car from 1kck9v in station Station3
+
+--- Received release car from iat28s in station Station3
+<<< (0) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (2) Ping Retry - Station Station3 got 8 responses expected 9
+<<< (3) Ping Retry - Station Station3 got 8 responses expected 9
+
+Some station is inactive
+<<< (3) Ping responses (Station3): ['Station0', 'Station7', 'Station6', 'Station4', 'Station1', 'Station8', 'Station9', 'Station5']
+<<< (3) Known connections (Station3): ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+
+<<< Detected failure Station3 with time 0
+!!!! Triggering election in station Station3 - dead station Station2
+<<< Deactivating station Station2 - detected by station Station3
+(2) Timeout reached. 8 responded. Retrying...
+Station with least spots (that answerd first): Station3 = 1
+---- Dead station spots (Station2): [[6, None]]
+<<< Active stations after deactivation: 9
+<<< Station Station3 known connections: ['Station0', 'Station1', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8', 'Station9']
+!!!! Election finished in station Station3 - dead station Station2
+
 
 Shutting down...

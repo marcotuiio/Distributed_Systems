@@ -12,7 +12,6 @@ manager_port = 5555
 class Manager:
     def __init__(self, total_spots):
         self.total_spots = total_spots
-        # self.lock = threading.Lock()
         self.stations = {
             "Station0": {"id": "Station0", "ipaddr": "127.0.0.1", "port": 5000, "status": 0, "spots": []},
             "Station1": {"id": "Station1", "ipaddr": "127.0.0.1", "port": 5010, "status": 0, "spots": []},
@@ -56,16 +55,20 @@ class Manager:
 
     # Lida com as requisições que envolvem o manager
     # Requisições possíveis:
-    # - request_active_stations: Requisição das estações ativas
-    # - request_total_spots: Requisição do número total de vagas
-    # - update_station_spots: Atualiza vagas de uma estação
+    # - request_active_stations: Requisição das estações ativas, usada na ativação de uma estação
+    # - request_total_spots: Requisição do número total de vagas usadas na ativação de uma estação
+    # - update_station_spots: Atualiza vagas de uma estação, usada na ativação, desativação, alocação e desalocação de vagas
+    # - request_spots_from_station: Requisição das vagas de uma estação, usada na desativação de uma estação (backup das vagas)
+    # - request_format_active_stations: Requisição das estações ativas formatadas, usada na impressão das estações (VD)
+    # - print_stations: Imprime as estações e suas vagas DEBUG
+    # - test_connection: Testa a conexão com o manager DEBUG
     def manager_handle_requests(self):
         while True:
             try:
                 message = self.socket.recv_json(flags=zmq.NOBLOCK)
                 print(f">>> Received message: {message}")
+                
                 if message["type"] == "request_active_stations":
-                    # with self.lock:
                     self.socket.send_json({"type": "response_active_stations", "active_stations": self.active_stations})
 
                 elif message["type"] == "request_total_spots":
@@ -87,14 +90,14 @@ class Manager:
                     self.stations[station_id]["spots"] = spots
                     self.socket.send_json({"type": "response_update_station_spots", "status": "success", "active_stations": self.active_stations})
 
-                elif message["type"] == "request_spots_from_station":
+                elif message["type"] == "request_spots_from_station": 
                     station_id = message["station_id"]
                     spots = self.stations[station_id]["spots"]
                     self.socket.send_json({"type": "response_spots_from_station", "spots": spots})
                     # Deixar os spots de quem cedeu vazios para nao duplicar a vaga
                     self.stations[station_id]["spots"] = []
+                    self.stations[station_id]["status"] = 0
                         
-
                 elif message["type"] == "request_format_active_stations":
                     active_stations = []
                     for station in self.stations:

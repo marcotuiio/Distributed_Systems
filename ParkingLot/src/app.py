@@ -70,6 +70,5 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         print("Closing app socket")
-        app_socket.app_socket.close()
-        app_socket.middleware_socket.close()
-        sys.exit(0)
+        # app_socket.app_socket.close()
+        # app_socket.middleware_socket.close()
