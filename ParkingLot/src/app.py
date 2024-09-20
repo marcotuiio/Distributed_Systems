@@ -9,6 +9,8 @@ from queue import Queue, Empty
 class AppSocket:
     def __init__(self, station_id, ipaddr, port):
         self.station_id = station_id
+        self.ipaddr = ipaddr
+        self.port = port
         
         # Requisições externas do Controle .cpp
         self.app_socket = zmq.Context().socket(zmq.REP)
@@ -16,10 +18,8 @@ class AppSocket:
         
         # Encaminhar requisições para o Middleware
         self.middleware_socket = zmq.Context().socket(zmq.REQ)
-        self.middleware_socket(f"tcp://{self.ipaddr}:{self.port-2}")
+        self.middleware_socket.bind(f"tcp://{self.ipaddr}:{self.port-2}")
 
-        # Fila de mensagens
-        self.message_queue = Queue()
 
 
     ## Lida com requisições externas - simula a camada de APP do projeto
@@ -29,29 +29,43 @@ class AppSocket:
     ## RV - Requisitar vaga
     ## LV - Liberar vaga
     def handle_app_requests(self):
+        poller = zmq.Poller()
+        poller.register(self.app_socket, zmq.POLLIN)
+
         while True:
-            try:
-                message = self.app_socket.recv(flags=zmq.NOBLOCK)
-                if message:
-                    message = message.decode()
-                    self.app_socket.send(b"Message received\n")
+            socks = dict(poller.poll(timeout=1000))
 
-                    self.message_queue.put(message)
-                    external_message = self.message_queue.get()
+            # TENTATIVA PARA QUE A ESPERA PARA RESPONDER A MESNAGEM VD NAO TRAVE A CHEGADA DE OUTRAS MENSAGENS
+            if self.app_socket in socks and socks[self.app_socket] == zmq.POLLIN:
+                try:
+                    if not self.app_socket.closed:
+                        external_message = self.app_socket.recv(flags=zmq.NOBLOCK).decode()
+                        
+                        print(f"(APP) Received message: {external_message} in station {self.station_id}\n")
+                        if external_message != "VD":
+                            self.app_socket.send(b"Message received\n")
 
-                    print(f"(EXTERNAL) Received message: {external_message} in station {self.station_id}")
-                    self.middleware_socket.send_string(external_message)
+                            self.middleware_socket.send_string(external_message)
+                            middleware_response = self.middleware_socket.recv_string()
+                            # print(f"(APP) Middleware response: {middleware_response} in station {self.station_id}")
 
-                    middleware_response = self.middleware_socket.recv_string()
-                    print(f"(EXTERNAL) Middleware response: {middleware_response} in station {self.station_id}")
-                    # self.app_socket.send_string(middleware_response)
-                else:
+                        else:
+                            self.middleware_socket.send_string(external_message)
+                            time.sleep(0.5)
+                            try:
+                                middleware_response = self.middleware_socket.recv_string(flags=zmq.NOBLOCK)
+                                # print(f"(APP) Middleware response: {middleware_response} in station {self.station_id}")
+                                self.app_socket.send_string(middleware_response)
+                            except zmq.Again:
+                                print("\n(APP) Timeout")
+                                self.app_socket.send(b"Failed to send VD response\n")
+                    else:
+                        time.sleep(1)
+                        continue
+
+                except zmq.Again:
                     time.sleep(1)
                     continue
-
-            except zmq.Again:
-                time.sleep(1)
-                continue
 
 
 if __name__ == "__main__":
@@ -63,12 +77,12 @@ if __name__ == "__main__":
     
     app_thread = threading.Thread(target=app_socket.handle_app_requests)
     app_thread.start()
-    app_thread.join()
+    # app_thread.join()
 
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print("Closing app socket")
+        print("Closing app socket\n")
         # app_socket.app_socket.close()
         # app_socket.middleware_socket.close()

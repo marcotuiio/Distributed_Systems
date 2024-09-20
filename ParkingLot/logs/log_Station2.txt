@@ -1,3 +1,7 @@
+(APP) Received message: AE in station Station2
+
+Closing app socket
+
 Station Station2 - IP: 127.0.0.1 - Port: 5021
 Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
  	-----------
@@ -16,77 +20,8 @@ Station with most spots: Station0 = 5
 <<< Station Station2 known connections: ['Station0', 'Station1', 'Station2']
 
 
-+++> REQUEST car borrow spot from Station0 here in station Station2 = car bq587j
-### Station Station2 has spot available = True - spot_index = 0
-
-%%% Station2 lent spot 6 to car bq587j in 2.9890 seconds | Station0 asked
-%%% Station2 spots: [(6, 'bq587j')]
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station2 = car tiijoo
-### Station Station2 has spot available = False - spot_index = None
-
-
-(EXTERNAL) Received message: RV.7j6pur in station Station2
-
-
-:( Station Station2 has no spots available
-### Requesting spot from station Station0
-<+++ RESPONSE car borrow spot from Station0 here in station Station2 = fail
-
-### Requesting spot from station Station1
-<+++ RESPONSE car borrow spot from Station1 here in station Station2 = fail
-
-### Requesting spot from station Station3
-<+++ RESPONSE car borrow spot from Station3 here in station Station2 = fail
-
-### Requesting spot from station Station4
-
-+++> REQUEST car borrow spot from Station3 here in station Station2 = car n3a1sj
-### Station Station2 has spot available = False - spot_index = None
-
-<+++ RESPONSE car borrow spot from Station4 here in station Station2 = fail
-
-### Requesting spot from station Station5
-<+++ RESPONSE car borrow spot from Station5 here in station Station2 = success
-
-:D Station2 borrowed spot to 7j6pur from station Station5 - FULL TIME 9.2757 seconds
-
-
-+++> REQUEST car borrow spot from Station5 here in station Station2 = car 6mpl0t
-### Station Station2 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station2 = car 1kck9v
-### Station Station2 has spot available = False - spot_index = None
-
-
---- Received release car from ttfss4 in station Station2
-
---- Received release car from bq587j in station Station2
-
-*** Station2 released spot 6 from car bq587j in 0.2820 seconds
-*** Station2 spots: [(6, None)]
-
---- Received release car from n3a1sj in station Station2
-
 --- Received release car from 9ip700 in station Station2
 
-(EXTERNAL) Received message: LV.tiijoo in station Station2
-
-
---- Received release car from c6pohy in station Station2
-
---- Received release car from 6mpl0t in station Station2
-
-(EXTERNAL) Received message: LV.7j6pur in station Station2
-
-
---- Received release car from 1kck9v in station Station2
-
---- Received release car from iat28s in station Station2
-
-(EXTERNAL) Received message: FE in station Station2
-
+--- Received release car from ttfss4 in station Station2
 
 Shutting down...

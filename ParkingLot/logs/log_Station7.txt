@@ -9,54 +9,19 @@ Station Station7 is active but hibernating in 5071
 
 Activating station Station7
 <<< Active stations before: 7
-Station with most spots: Station3 = 2
- = Spots list: [[0, None], [1, None]]
-	>>>>> Confirmation received from station Station3
+Station with most spots: Station1 = 2
+ = Spots list: [[3, None], [4, None]]
+	>>>>> Confirmation received from station Station1
 <<< Active stations after: 8
 <<< Station Station7 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
 
 
-+++> REQUEST car borrow spot from Station3 here in station Station7 = car n3a1sj
-### Station Station7 has spot available = True - spot_index = 0
-
-%%% Station7 lent spot 0 to car n3a1sj in 11.2214 seconds | Station3 asked
-%%% Station7 spots: [(0, 'n3a1sj')]
-
-
-+++> REQUEST car borrow spot from Station5 here in station Station7 = car 6mpl0t
-### Station Station7 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station7 = car 1kck9v
-### Station Station7 has spot available = False - spot_index = None
-
-
-(EXTERNAL) Received message: LV.bq587j in station Station7
-
+--- Received release car from 9ip700 in station Station7
 
 --- Received release car from ttfss4 in station Station7
 
---- Received release car from n3a1sj in station Station7
-
-*** Station7 released spot 0 from car n3a1sj in 0.2358 seconds
-*** Station7 spots: [(0, None)]
-
---- Received release car from 9ip700 in station Station7
-
---- Received release car from tiijoo in station Station7
-
---- Received release car from c6pohy in station Station7
-
---- Received release car from 6mpl0t in station Station7
-
---- Received release car from 7j6pur in station Station7
-
---- Received release car from 1kck9v in station Station7
-
---- Received release car from iat28s in station Station7
-<<< (0) Ping Retry - Station Station7 got 8 responses expected 9
-<<< (1) Ping Retry - Station Station7 got 8 responses expected 9
-<<< (2) Ping Retry - Station Station7 got 8 responses expected 9
-<<< Station7 Election already in progress
-
 Shutting down...
+(APP) Received message: AE in station Station7
+
+Closing app socket
+

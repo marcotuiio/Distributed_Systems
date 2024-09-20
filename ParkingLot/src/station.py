@@ -65,10 +65,10 @@ class Station:
         self.manager_socket = self.context.socket(zmq.REQ)
         self.manager_socket.connect(f"tcp://{manager_ip}:{manager_port}")
 
-        self.app_socket = self.context.socket(zmq.REP)
-        self.app_socket.bind(f"tcp://{self.ipaddr}:{self.port-1}")
         # self.app_socket = self.context.socket(zmq.REP)
-        # self.app_socket.bind(f"tcp://{self.ipaddr}:{self.port-2}")
+        # self.app_socket.bind(f"tcp://{self.ipaddr}:{self.port-1}")
+        self.app_socket = self.context.socket(zmq.REP)
+        self.app_socket.connect(f"tcp://{self.ipaddr}:{self.port-2}")
 
         self.broadcast_socket = self.context.socket(zmq.PUB)
         self.broadcast_socket.bind(f"tcp://{self.ipaddr}:{self.port}")

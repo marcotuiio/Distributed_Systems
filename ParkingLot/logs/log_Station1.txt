@@ -1,3 +1,9 @@
+(APP) Received message: AE in station Station1
+
+(APP) Received message: RV.ttfss4 in station Station1
+
+Closing app socket
+
 Station Station1 - IP: 127.0.0.1 - Port: 5011
 Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
  	-----------
@@ -18,56 +24,15 @@ Station with most spots: Station0 = 10
 
 (EXTERNAL) Received message: RV.ttfss4 in station Station1
 
-$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.5497207641601562e-05 seconds
+$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.3113021850585938e-05 seconds
 $$$ Station Station1 spots: [(4, 'ttfss4')]
 
 
-+++> REQUEST car borrow spot from Station0 here in station Station1 = car bq587j
-### Station Station1 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station1 = car tiijoo
-### Station Station1 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station2 here in station Station1 = car 7j6pur
-### Station Station1 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station3 here in station Station1 = car n3a1sj
-### Station Station1 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station5 here in station Station1 = car 6mpl0t
-### Station Station1 has spot available = False - spot_index = None
-
-
-+++> REQUEST car borrow spot from Station0 here in station Station1 = car 1kck9v
-### Station Station1 has spot available = False - spot_index = None
-
+--- Received release car from 9ip700 in station Station1
 
 --- Received release car from ttfss4 in station Station1
 
---- Received release car from bq587j in station Station1
-
-*** Station1 released spot 4 from car ttfss4 in 0.8913 seconds
+*** Station1 released spot 4 from car ttfss4 in 0.3216 seconds
 *** Station1 spots: [(4, None)]
-
---- Received release car from n3a1sj in station Station1
-
---- Received release car from 9ip700 in station Station1
-
---- Received release car from tiijoo in station Station1
-
-(EXTERNAL) Received message: LV.c6pohy in station Station1
-
-
---- Received release car from 6mpl0t in station Station1
-
---- Received release car from 7j6pur in station Station1
-
---- Received release car from 1kck9v in station Station1
-
---- Received release car from iat28s in station Station1
 
 Shutting down...

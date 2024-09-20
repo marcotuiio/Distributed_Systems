@@ -44,13 +44,14 @@ def start():
     for station_id, ipaddr, port in stations:
         log_file = os.path.join(LOG_PATH, f"log_{station_id}.txt")
         with open(log_file, "w") as log:
-            # print(f'* Running: {sys.executable} {APP_PY_PATH} {station_id} {ipaddr} {port}')
-            # process = subprocess.Popen(
-            #     [sys.executable, APP_PY_PATH, station_id, ipaddr, str(port)],
-            #     stdout=log,
-            #     stderr=log
-            # )
-            # processes.append(process)
+            print(f'* Running: {sys.executable} {APP_PY_PATH} {station_id} {ipaddr} {port}')
+            process = subprocess.Popen(
+                [sys.executable, APP_PY_PATH, station_id, ipaddr, str(port)],
+                stdout=log,
+                stderr=log
+            )
+            processes.append(process)
+            time.sleep(0.1)
             print(f'* Running: {sys.executable} {STATION_PY_PATH} {station_id} {ipaddr} {port}')
             process = subprocess.Popen(
                 [sys.executable, STATION_PY_PATH, station_id, ipaddr, str(port)],
