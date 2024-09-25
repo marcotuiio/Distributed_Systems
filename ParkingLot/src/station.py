@@ -17,7 +17,7 @@ from manager import STATIONS_FILE, manager_ip, manager_port
 ## A MEDIDA QUE MAIS ESTAÇÕES ESTIVEREM ATIVAS, MAIS TEMPO DEVE SER DADO PARA AS RESPOSTAS
 # response_timeout = 3
 DEFAULT_TIMEOUT = 3
-PING_RETRY = 4
+PING_RETRY = 3
 
 ## Aumentar aqui pode atrasar muito a detecção de eleições mas diminuir MUITO o fluxo de mensagens
 ## ja que foi adotado um heartbeat distribuido de 10 UT, isto é, todas as estações perguntam a todas
@@ -53,6 +53,7 @@ class Station:
         self.external_requests = Queue()
 
         self.in_election = False
+        self.performing_election_id = None
         self.election_time = 0
         # self.election_proposals = None
 
@@ -311,22 +312,31 @@ class Station:
                     #     f.write(f"\n ({self.station_id}) PING {i}\n")
                     # Receber respostas dos pings
                     responses = []
+                    aux_set = set()
                     while True:
                         try:
                             message = self.ping_responses.get_nowait()
                             if message["type"] == "ping_response" and message["ping_id"] == ping_id:
                                 responses.append(message["station_id"])
+                                aux_set.add(message["station_id"])
                         except Empty:
                             break
                     
+                    if self.performing_election_id is not None and self.performing_election_id not in aux_set:
+                        responses.append(self.performing_election_id)
+                        
                     # DEBUG
                     with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
                         f.write(f"\n ({self.station_id}) PING {i} {responses}\n")
+                    
                     self.last_ping = time.time()
-                    if len(responses) == 0: ### PROBLEMAO, depois que alguem sai da vaga, as estações demoram pra responder
+
+                    if len(responses) == 0: ### PROBLEMAO, depois que alguem sai da vaga ou fim de eleição, as estações demoram pra responder
                         time.sleep(1)
                         break
+                    
                     if len(self.connections) - 1 == len(responses):
+                        self.performing_election_id = None
                         with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
                             f.write(f"\n ({self.station_id}) PING {i} ALL STATIONS ARE ACTIVE\n")
                         # print("\nAll stations are active")
@@ -334,13 +344,16 @@ class Station:
                         # print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
                         break
                     print(f'<<< ({i}) Ping Retry - Station {self.station_id} got {len(responses)} responses expected {len(self.connections) - 1}')
-    
+
+                if self.in_election:
+                    print(f"<<< {self.station_id} Election already in progress")
+                    continue
 
                 # if len(self.connections) - 1 > len(responses):
                 if len(self.connections) - 1 - len(responses) == 1: ## SO CONSIGO DETECTAR E DISPARAR ELEIÇÃO SE UMA ESTAÇÃO FALHAR
-                    if self.in_election:
-                        print(f"<<< {self.station_id} Election already in progress")
-                        continue
+                    # if self.in_election:
+                    #     print(f"<<< {self.station_id} Election already in progress")
+                    #     continue
 
                     self.election_time = time.time()
                     self.broadcast_socket.send_json({"type": "trigger_election", "station_id": self.station_id, "time": self.election_time})
@@ -351,6 +364,7 @@ class Station:
                         f.write(f"<<< ({i}) Ping responses ({self.station_id}): {responses}\n")
                         f.write(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
 
+                    self.performing_election_id = None
                     print("\nSome station is inactive")
                     print(f"<<< ({i}) Ping responses ({self.station_id}): {responses}")
                     print(f"<<< ({i}) Known connections ({self.station_id}): {self.connections}\n")
@@ -483,13 +497,13 @@ class Station:
 
                                 print(f"<<< Active stations after deactivation: {len(active_stations)}")
                                 self.broadcast_socket.send_json({"type": "update_connections", "station_id": self.station_id, "connections": self.connections})
-                                time.sleep(0.3)
+                                time.sleep(0.1)
                                 
                                 self.manager_socket.send_json({"type": "print_stations"})
                                 response = self.manager_socket.recv_json()
 
                                 self.broadcast_socket.send_json({"type": "terminate_election"})
-                                time.sleep(0.2)
+                                time.sleep(0.1)
 
                                 print(f"<<< Station {self.station_id} known connections: {self.connections}")
                                 print(f'!!!! Election finished in station {self.station_id} - dead station {dead_station_id}\n')
@@ -867,10 +881,13 @@ class Station:
 
                 elif message["type"] == "trigger_election":
                     self.in_election = True
+                    self.performing_election_id = message["station_id"]
                     if self.election_time == 0:
                         self.election_time = time.time()
                     
-                    # print(f"\n;;; Received election trigger from {message['station_id']} in station {self.station_id} = {self.in_election}\n")
+                    # with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                    #     f.write(f"\n;;; Received election trigger from {message['station_id']} in station {self.station_id} = {self.in_election}\n")
+
                     self.broadcast_socket.send_json({"type": "response_trigger_election", "station_id": self.station_id, "time": self.election_time})
 
                 elif message["type"] == "terminate_election":

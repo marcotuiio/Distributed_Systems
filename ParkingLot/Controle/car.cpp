@@ -53,6 +53,6 @@ void Car::writeToFile(string text) {
 void Car::writeVDToFile(string text, int station) {
     // cout << "Escrevendo no arquvio de resultado" << text << "\n" << endl;
 
-    outResultFile << "(VD "<< station << ") Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):" << "\n";
-    outResultFile << text << "\n";
+    outResultFile << "\n(VD "<< station << ") Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):" << "\n";
+    outResultFile << text << "\n\n";
 }

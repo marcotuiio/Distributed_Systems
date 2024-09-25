@@ -73,6 +73,7 @@ class Manager:
 
                 elif message["type"] == "request_total_spots":
                     self.socket.send_json({"type": "response_total_spots", "total_spots": self.total_spots})
+                    self.total_spots == 0;
                 
                 elif message["type"] == "update_station_spots":
                     station_id = message["station_id"]
