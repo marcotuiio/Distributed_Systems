@@ -19,7 +19,7 @@ def start():
     # Start Manager
     manager_log = os.path.join(LOG_PATH, "manager_log.txt")
     with open(manager_log, "w") as log:
-        print(f'* Running: {sys.executable} {MANAGER_PY_PATH}')
+        print(f'* Running: {sys.executable} {MANAGER_PY_PATH}\n')
         manager_process = subprocess.Popen(
             [sys.executable, MANAGER_PY_PATH],
             stdout=log,
@@ -52,7 +52,7 @@ def start():
             )
             processes.append(process)
             time.sleep(0.1)
-            print(f'* Running: {sys.executable} {STATION_PY_PATH} {station_id} {ipaddr} {port}')
+            print(f'* Running: {sys.executable} {STATION_PY_PATH} {station_id} {ipaddr} {port}\n')
             process = subprocess.Popen(
                 [sys.executable, STATION_PY_PATH, station_id, ipaddr, str(port)],
                 stdout=log,

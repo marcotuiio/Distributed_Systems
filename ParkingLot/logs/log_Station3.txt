@@ -16,12 +16,77 @@ Station with most spots: Station1 = 5
 <<< Station Station3 known connections: ['Station0', 'Station1', 'Station2', 'Station3']
 
 
---- Received release car from 9ip700 in station Station3
++++> REQUEST car borrow spot from Station0 here in station Station3 = car 6noul4
+### Station Station3 has spot available = True - spot_index = 0
+
+%%% Station3 lent spot 1 to car 6noul4 in 3.3157 seconds | Station0 asked
+%%% Station3 spots: [(1, '6noul4')]
+
+
++++> REQUEST car borrow spot from Station0 here in station Station3 = car ijooen
+### Station Station3 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station2 here in station Station3 = car 6pur8v
+### Station Station3 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station3 = car a1sjcp
+### Station Station3 has spot available = False - spot_index = None
+
+(EXTERNAL) VD in Station3
+
+
+(VD Station3) Active stations (ID, VagasTotais, VagasOcupadas, VagasVazias):
+Active stations: [['Station0', 1, 1, 0], ['Station1', 1, 1, 0], ['Station2', 1, 1, 0], ['Station3', 1, 1, 0], ['Station4', 1, 1, 0], ['Station5', 1, 1, 0], ['Station6', 1, 0, 1], ['Station7', 1, 0, 1], ['Station8', 1, 0, 1], ['Station9', 1, 0, 1]]
+
++++> REQUEST car borrow spot from Station5 here in station Station3 = car 0tyyia
+### Station Station3 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station3 = car pohyy0
+### Station Station3 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station6 here in station Station3 = car 8s4l1k
+### Station Station3 has spot available = False - spot_index = None
+
+
+--- Received release car from bq587j in station Station3
+
++++> REQUEST car borrow spot from Station0 here in station Station3 = car 9vfc7a
+### Station Station3 has spot available = False - spot_index = None
+
+
+--- Received release car from 6noul4 in station Station3
+
+*** Station3 released spot 1 from car 6noul4 in 0.6485 seconds
+*** Station3 spots: [(1, None)]
+
+--- Received release car from 6pur8v in station Station3
 
 --- Received release car from ttfss4 in station Station3
 
+--- Received release car from pohyy0 in station Station3
+
+--- Received release car from 9ip700 in station Station3
+
+(EXTERNAL) Received message: LV.ijooen in station Station3
+
+
+--- Received release car from a1sjcp in station Station3
+
+--- Received release car from 9vfc7a in station Station3
+
+--- Received release car from 8s4l1k in station Station3
+<<< (0) Ping Retry - Station Station3 got 8 responses expected 9
+
 Shutting down...
 (APP) Received message: AE in station Station3
+
+(APP) Received message: VD in station Station3
+
+(APP) Received message: LV.ijooen in station Station3
 
 Closing app socket
 

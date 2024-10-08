@@ -138,6 +138,10 @@ class Station:
             self.manager_socket.send_json({"type": "print_stations"})
             response = self.manager_socket.recv_json()
 
+            # DEBUG
+            with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                f.write(f"\n First Station Activated {self.station_id} = {self.local_spots}\n")
+
 
         elif active_stations > 0:
             # Da estação que mais tiver vagas, requisitar sua lista de vagas
@@ -240,6 +244,12 @@ class Station:
 
                     self.connections = response["active_stations"]
                     self.status = 1
+
+                    # DEBUG
+                    with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                        f.write(f'\n Station Emprestou {max_spots_station["station_id"]} = {remaining_spots}\n')
+                        f.write(f" Station Activated {self.station_id} = {self.local_spots}\n")
+
 
                     self.manager_socket.send_json({"type": "print_stations"})
                     response = self.manager_socket.recv_json()
@@ -404,7 +414,7 @@ class Station:
             # Como é uma falha simulada, deve ser antes identificada por ping para disparar a eleição
             # O critério de eleição adotado é dar as vagas da estação que falhou para a estação com menos vagas
             # Se houver empate, a primeira estação que tiver menos vagas herdará as vagas
-            
+
             if len(active_stations) > 0:
 
                 # Mandar broadcast para todas as estações requisitando quantas vagas elas tem e ter um timeout
@@ -436,7 +446,7 @@ class Station:
                     min_spots_station = min(spots_info, key=lambda x: x[1])
                     spots_list = []
 
-                    print(f"Station with least spots (that answerd first): {min_spots_station[0]} = {min_spots_station[1]}")
+                    print(f"\t Station with least spots (that answerd first): {min_spots_station[0]} = {min_spots_station[1]}")
                     
                     # Se a propria estação for a que tem menos vagas, ela herda as vagas da estação que falhou e nem precisa enviar requests
                     if min_spots_station[0] == self.station_id:
@@ -467,14 +477,24 @@ class Station:
                     # A estacao com menos vagas herda as vagas da estacao que falhou
                     if spots_list:
                         retry = 0
+                    
+                        # DEBUG
+                        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                            f.write(f"\n\t Station with least spots (that answerd first): {min_spots_station[0]} = {spots_list}\n")   
+                        
                         while retry < PING_RETRY:
                             try:
                                 self.manager_socket.send_json({"type": "request_spots_from_station", "station_id": dead_station_id})
                                 response = self.manager_socket.recv_json()
                                 dead_station_spots = response["spots"]
                                 print(f"---- Dead station spots ({dead_station_id}): {dead_station_spots}")
-                            
+                                
                                 remaining_spots = spots_list + dead_station_spots
+
+                                # DEBUG
+                                with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                                    f.write(f"\t Station Deactivated {dead_station_id} = {dead_station_spots}\n")
+                                    f.write(f"\t Station Herdou {min_spots_station} = {remaining_spots}\n")
                             
                                 # Remover a nova lista de vagas para a estação que falhou - Testar se precisa disso aqui, ou pode ser antes
                                 # self.broadcast_socket.send_json({"type": "update_spots", "station_id": dead_station_id, "spots_list": []})
@@ -549,7 +569,12 @@ class Station:
             print(f"<<< Allocating - Station {self.station_id} is in election")
             time.sleep(1)
             continue
-        
+            
+        # DEBUG
+        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+            f.write(f"\n ({self.station_id}) Allocating spot for car {car_id}\n")
+
+
         start = time.time()
         sucess, spot_index = self.check_for_empty_spots()
         if sucess:
@@ -562,11 +587,19 @@ class Station:
             self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
             response = self.manager_socket.recv_json()
 
+            # DEBUG
+            with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                f.write(f"\n ({self.station_id}) Allocated spot {spot} for car {car_id}\n")
+
         elif not sucess:
             # A Estrategia adotada é requisitar vagas para as estações conhecidas até conseguir uma vaga
             print(f"\n:( Station {self.station_id} has no spots available")
             borrowed = False
             futures = []
+
+            # DEBUG
+            with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                f.write(f"\n ({self.station_id}) No local spots, Requesting spot for car {car_id}\n")
 
             ## ISSO AQUI É BEM RUIM EM OTIMIZAÇÕES DE TEMPO, POIS COMO TENTA LINEARMENTE, PODE DEMORAR O(ESTAÇÕES OCUPADAS + 1)
             ## A SOLUÇÃO SERIA FAZER UM BROADCAST PARA TODAS AS ESTAÇÕES E ESPERAR A RESPOSTA DE TODAS, MAS ISSO GERAO PROBLEMA DE PRECISAR
@@ -596,6 +629,9 @@ class Station:
                             self.current_car = None
                             self.current_station_borrowing = None
                             self.current_status_borrowing = None
+                            # DEBUG
+                            with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                                f.write(f"\n ({self.station_id}) Car {car_id} borrowed spot from station {con}\n")
                             break
 
                         elif self.current_status_borrowing == "fail":
@@ -608,6 +644,10 @@ class Station:
                 global_car_queue.put(car_id)
                 print(f";-; Car {car_id} is in queue\n")
 
+                # DEBUG
+                with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                    f.write(f"\n ({self.station_id}) Car {car_id} is in queue\n")
+
 
     # Executada como uma thread separada pelo ThreadExecutor
     # Apenas tenta emprestar uma vaga para o carro contido na mensagem
@@ -618,6 +658,10 @@ class Station:
                 
         self.broadcast_socket.send_json({"type": "response_car_borrow_spot", "in_need_station_id": message["in_need_station_id"], "station_id": self.station_id, "status": "success" if success else "fail", "spot_index": spot_index, "car_id": message["car_id"]})
         print(f"### Station {self.station_id} has spot available = {success} - spot_index = {spot_index}\n")
+
+        # DEBUG
+        # with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+        #     f.write(f"\n ({self.station_id}) Response Borrow Spot for car {message['car_id']} - {success} - spot_index = {spot_index}\n")
 
         self.last_ping = time.time()
         if not success:
@@ -651,6 +695,8 @@ class Station:
                     print(f"*** {self.station_id} spots: {self.local_spots}")
                     self.manager_socket.send_json({"type": "update_station_spots", "station_id": self.station_id, "spots": self.local_spots, "status": 1})
                     response = self.manager_socket.recv_json()
+                    with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                        f.write(f"\n {self.station_id} Car {car_id} left \n")
                     return True
             return False
 
@@ -678,6 +724,10 @@ class Station:
             time.sleep(1)
             continue
         
+        # DEBUG
+        with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+            f.write(f"\n {self.station_id} Looking for car {car_id} to release\n")
+
         start = time.time()
         
         if self.look_for_car(car_id, start):
@@ -685,6 +735,9 @@ class Station:
 
         elif self.look_for_car_in_queue(car_id):
             print(f"$$$ Car {car_id} left on queue in station {self.station_id} in {time.time() - start} seconds") 
+            # DEBUG
+            with open("/home/marcotuiio/Distributed_Systems/ParkingLot/logs/debug.txt", "a") as f:
+                f.write(f"\n {self.station_id} Car {car_id} left on queue\n")
 
         else:
             self.broadcast_socket.send_json({"type": "release_car", "leaving_station_id": self.station_id, "car_id": car_id, "start_time": start})

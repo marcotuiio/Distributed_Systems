@@ -24,15 +24,69 @@ Station with most spots: Station0 = 10
 
 (EXTERNAL) Received message: RV.ttfss4 in station Station1
 
-$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.3113021850585938e-05 seconds
+$$$ Station Station1 allocated spot 4 to car ttfss4 in 1.2874603271484375e-05 seconds
 $$$ Station Station1 spots: [(4, 'ttfss4')]
 
 
---- Received release car from 9ip700 in station Station1
++++> REQUEST car borrow spot from Station0 here in station Station1 = car bq587j
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station1 = car 6noul4
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station1 = car ijooen
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station2 here in station Station1 = car 6pur8v
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station1 = car a1sjcp
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station5 here in station Station1 = car 0tyyia
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station1 = car pohyy0
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station6 here in station Station1 = car 8s4l1k
+### Station Station1 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station1 = car 9vfc7a
+### Station Station1 has spot available = False - spot_index = None
+
+
+--- Received release car from bq587j in station Station1
+
+--- Received release car from 6noul4 in station Station1
+
+--- Received release car from 6pur8v in station Station1
 
 --- Received release car from ttfss4 in station Station1
 
-*** Station1 released spot 4 from car ttfss4 in 0.3216 seconds
+*** Station1 released spot 4 from car ttfss4 in 0.2464 seconds
 *** Station1 spots: [(4, None)]
+
+--- Received release car from pohyy0 in station Station1
+
+--- Received release car from 9ip700 in station Station1
+
+--- Received release car from ijooen in station Station1
+
+--- Received release car from a1sjcp in station Station1
+
+--- Received release car from 9vfc7a in station Station1
+
+--- Received release car from 8s4l1k in station Station1
+<<< (0) Ping Retry - Station Station1 got 8 responses expected 9
+<<< (1) Ping Retry - Station Station1 got 8 responses expected 9
 
 Shutting down...

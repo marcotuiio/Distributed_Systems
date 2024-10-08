@@ -1,3 +1,11 @@
+(APP) Received message: AE in station Station4
+
+(APP) Received message: LV.9ip700 in station Station4
+
+(APP) Received message: FE in station Station4
+
+Closing app socket
+
 Station Station4 - IP: 127.0.0.1 - Port: 5041
 Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
  	-----------
@@ -16,18 +24,62 @@ Station with most spots: Station0 = 3
 <<< Station Station4 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4']
 
 
++++> REQUEST car borrow spot from Station0 here in station Station4 = car ijooen
+### Station Station4 has spot available = True - spot_index = 0
+
+%%% Station4 lent spot 7 to car ijooen in 4.3743 seconds | Station0 asked
+%%% Station4 spots: [(7, 'ijooen')]
+
+
++++> REQUEST car borrow spot from Station2 here in station Station4 = car 6pur8v
+### Station Station4 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station4 = car a1sjcp
+### Station Station4 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station5 here in station Station4 = car 0tyyia
+### Station Station4 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station0 here in station Station4 = car pohyy0
+### Station Station4 has spot available = False - spot_index = None
+
+
++++> REQUEST car borrow spot from Station6 here in station Station4 = car 8s4l1k
+### Station Station4 has spot available = False - spot_index = None
+
+
+--- Received release car from bq587j in station Station4
+
++++> REQUEST car borrow spot from Station0 here in station Station4 = car 9vfc7a
+### Station Station4 has spot available = False - spot_index = None
+
+
+--- Received release car from 6noul4 in station Station4
+
+--- Received release car from 6pur8v in station Station4
+
+--- Received release car from ttfss4 in station Station4
+
+--- Received release car from pohyy0 in station Station4
+
 (EXTERNAL) Received message: LV.9ip700 in station Station4
 
 
-(EXTERNAL) Received message: LV.ttfss4 in station Station4
+--- Received release car from ijooen in station Station4
+
+*** Station4 released spot 7 from car ijooen in 0.7394 seconds
+*** Station4 spots: [(7, None)]
+
+--- Received release car from a1sjcp in station Station4
+
+--- Received release car from 9vfc7a in station Station4
+
+--- Received release car from 8s4l1k in station Station4
+
+(EXTERNAL) Received message: FE in station Station4
 
 
 Shutting down...
-(APP) Received message: AE in station Station4
-
-(APP) Received message: LV.9ip700 in station Station4
-
-(APP) Received message: LV.ttfss4 in station Station4
-
-Closing app socket
-

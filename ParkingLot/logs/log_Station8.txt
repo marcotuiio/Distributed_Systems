@@ -1,7 +1,3 @@
-(APP) Received message: AE in station Station8
-
-Closing app socket
-
 Station Station8 - IP: 127.0.0.1 - Port: 5081
 Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5061), ('127.0.0.1', 5071), ('127.0.0.1', 5091)]
  	-----------
@@ -20,8 +16,56 @@ Station with most spots: Station2 = 2
 <<< Station Station8 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7', 'Station8']
 
 
++++> REQUEST car borrow spot from Station0 here in station Station8 = car pohyy0
+### Station Station8 has spot available = True - spot_index = 0
+
+%%% Station8 lent spot 5 to car pohyy0 in 8.7002 seconds | Station0 asked
+%%% Station8 spots: [(5, 'pohyy0')]
+
+
+--- Received release car from bq587j in station Station8
+
++++> REQUEST car borrow spot from Station6 here in station Station8 = car 8s4l1k
+### Station Station8 has spot available = False - spot_index = None
+
+
+--- Received release car from 6noul4 in station Station8
+
++++> REQUEST car borrow spot from Station0 here in station Station8 = car 9vfc7a
+### Station Station8 has spot available = False - spot_index = None
+
+
+--- Received release car from 6pur8v in station Station8
+
+(EXTERNAL) Received message: LV.ttfss4 in station Station8
+
+
+--- Received release car from pohyy0 in station Station8
+
+*** Station8 released spot 5 from car pohyy0 in 0.5408 seconds
+*** Station8 spots: [(5, None)]
+
 --- Received release car from 9ip700 in station Station8
 
---- Received release car from ttfss4 in station Station8
+--- Received release car from ijooen in station Station8
+
+(EXTERNAL) Received message: LV.a1sjcp in station Station8
+
+
+(EXTERNAL) Received message: LV.9vfc7a in station Station8
+
+
+--- Received release car from 8s4l1k in station Station8
+<<< Station8 Election already in progress
 
 Shutting down...
+(APP) Received message: AE in station Station8
+
+(APP) Received message: LV.ttfss4 in station Station8
+
+(APP) Received message: LV.a1sjcp in station Station8
+
+(APP) Received message: LV.9vfc7a in station Station8
+
+Closing app socket
+

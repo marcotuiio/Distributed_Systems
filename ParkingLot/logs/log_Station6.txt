@@ -1,3 +1,11 @@
+(APP) Received message: AE in station Station6
+
+(APP) Received message: RV.8s4l1k in station Station6
+
+(APP) Received message: LV.6noul4 in station Station6
+
+Closing app socket
+
 Station Station6 - IP: 127.0.0.1 - Port: 5061
 Other stations: [('127.0.0.1', 5001), ('127.0.0.1', 5011), ('127.0.0.1', 5021), ('127.0.0.1', 5031), ('127.0.0.1', 5041), ('127.0.0.1', 5051), ('127.0.0.1', 5071), ('127.0.0.1', 5081), ('127.0.0.1', 5091)]
  	-----------
@@ -16,12 +24,82 @@ Station with most spots: Station0 = 2
 <<< Station Station6 known connections: ['Station0', 'Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6']
 
 
---- Received release car from 9ip700 in station Station6
++++> REQUEST car borrow spot from Station0 here in station Station6 = car a1sjcp
+### Station Station6 has spot available = True - spot_index = 0
+
+%%% Station6 lent spot 8 to car a1sjcp in 6.5502 seconds | Station0 asked
+%%% Station6 spots: [(8, 'a1sjcp')]
+
+
+(EXTERNAL) Received message: RV.8s4l1k in station Station6
+
+
+:( Station Station6 has no spots available
+### Requesting spot from station Station0
+<+++ RESPONSE car borrow spot from Station0 here in station Station6 = fail
+
+### Requesting spot from station Station1
+<+++ RESPONSE car borrow spot from Station1 here in station Station6 = fail
+
+
++++> REQUEST car borrow spot from Station5 here in station Station6 = car 0tyyia
+### Requesting spot from station Station2
+### Station Station6 has spot available = False - spot_index = None
+
+<+++ RESPONSE car borrow spot from Station2 here in station Station6 = fail
+
+### Requesting spot from station Station3
+
++++> REQUEST car borrow spot from Station0 here in station Station6 = car pohyy0
+<+++ RESPONSE car borrow spot from Station3 here in station Station6 = fail
+
+### Requesting spot from station Station4
+### Station Station6 has spot available = False - spot_index = None
+
+<+++ RESPONSE car borrow spot from Station4 here in station Station6 = fail
+
+### Requesting spot from station Station5
+<+++ RESPONSE car borrow spot from Station5 here in station Station6 = fail
+
+### Requesting spot from station Station7
+
+--- Received release car from bq587j in station Station6
+<+++ RESPONSE car borrow spot from Station7 here in station Station6 = fail
+
+### Requesting spot from station Station8
+<+++ RESPONSE car borrow spot from Station8 here in station Station6 = fail
+
+### Requesting spot from station Station9
+<+++ RESPONSE car borrow spot from Station9 here in station Station6 = success
+
+:D Station6 borrowed spot to 8s4l1k from station Station9 - FULL TIME 11.0614 seconds
+
+
++++> REQUEST car borrow spot from Station0 here in station Station6 = car 9vfc7a
+### Station Station6 has spot available = False - spot_index = None
+
+
+(EXTERNAL) Received message: LV.6noul4 in station Station6
+
+
+--- Received release car from 6pur8v in station Station6
 
 --- Received release car from ttfss4 in station Station6
 
+--- Received release car from pohyy0 in station Station6
+
+--- Received release car from 9ip700 in station Station6
+
+--- Received release car from ijooen in station Station6
+
+--- Received release car from a1sjcp in station Station6
+
+*** Station6 released spot 8 from car a1sjcp in 0.8164 seconds
+*** Station6 spots: [(8, None)]
+
+--- Received release car from 9vfc7a in station Station6
+
+--- Received release car from 8s4l1k in station Station6
+<<< (0) Ping Retry - Station Station6 got 8 responses expected 9
+
 Shutting down...
-(APP) Received message: AE in station Station6
-
-Closing app socket
-
